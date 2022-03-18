@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const FrontPage: React.FC = () => {
+const FrontPage: React.FC = () =>{
 
-    return(
+    return (
         <div>
-            MFC Metaverse
+            MFC-Metaverse
         </div>
     )
-
 }
 
-export default FrontPage;
+
+export default FrontPage
