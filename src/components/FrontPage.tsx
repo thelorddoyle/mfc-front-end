@@ -1,23 +1,27 @@
-import React from "react";
-import { useState } from "react";
-import {gql} from 'graphql-tag';
-import { useMutation } from "@apollo/client";
+import React, { useEffect } from "react";
+import { gql } from 'graphql-tag'
+import { useMutation } from '@apollo/client'
+import { useDispatch } from "react-redux";
 
 const FrontPage: React.FC = () => {
-
     const [loginUser, {loading}] = useMutation(LOGIN_USER, {
-
         update(_, {data: {login: userData}}){
+            //context.login(userData)
+            console.log('userData');
             
-        },
-    
-       onError(err){
-           console.log(err.graphQLErrors[0].extensions.errors);
        },
-    
-    //    variables: values
-    
-    })
+       onError(err){
+        console.log(err);
+         
+       },
+       variables: {
+           username: "user",
+           password: "chicken"
+       }
+   })
+useEffect(()=>{
+    loginUser();
+},[])
 
     return (
         <div>
@@ -25,9 +29,6 @@ const FrontPage: React.FC = () => {
         </div>
     )
 }
-
-
-export default FrontPage
 
 export const LOGIN_USER = gql`
     mutation login(
@@ -42,3 +43,5 @@ export const LOGIN_USER = gql`
         }
     }
 `
+
+export default FrontPage

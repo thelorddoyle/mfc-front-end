@@ -1,8 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import { useState } from 'react';
 import thunk from 'redux-thunk';
-import {gql} from 'graphql-tag';
-import { useMutation } from '@apollo/client';
 
 const initialState: object = {
     data: {},
@@ -10,9 +8,9 @@ const initialState: object = {
     error: null
 }
 
-const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
-const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
-const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
+export const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
+export const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
+export const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
 
 export const pendingUser = () => ({
     type: PENDING_USER_FETCH
