@@ -7,6 +7,10 @@ const initialState: object = {
     pending: false,
     error: null
 }
+
+const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
+const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
+const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
 declare global {
     interface Window {
       __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
@@ -37,15 +41,15 @@ const reducer = ( state: object = initialState, action: any  ) => {
     }
 }       
 
-export const store = createStore(
-    reducer,
+const allMyMiddleWare = {
     applyMiddleware(thunk),
     composeEnhancers()
-)
+}
 
-const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
-const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
-const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
+export const store = createStore(
+    reducer,
+    allMyMiddleWare
+)
 
 export const pendingUser = () => ({
     type: PENDING_USER_FETCH
