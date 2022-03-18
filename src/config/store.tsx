@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
+import { useState } from 'react';
 import thunk from 'redux-thunk';
-
 
 const initialState: object = {
     data: {},
