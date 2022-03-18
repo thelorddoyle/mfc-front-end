@@ -1,15 +1,33 @@
 import { createStore, compose, applyMiddleware } from 'redux';
+import { useState } from 'react';
 import thunk from 'redux-thunk';
-//import gql from 'graphql-tag';
+import {gql} from 'graphql-tag';
+import { useMutation } from '@apollo/client';
 
 const initialState: object = {
     data: {},
     pending: false,
     error: null
 }
+
 const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
 const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
 const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
+
+export const pendingUser = () => ({
+    type: PENDING_USER_FETCH
+})
+
+export const succeedUserFetch = (user: any) => ({
+    type: SUCCEED_USER_FETCH,
+    data: user
+})
+
+export const failUserFetch = (err: any) => ({
+    type: FAIL_USER_FETCH,
+    error: err
+})
+
 declare global {
     interface Window {
         __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
@@ -38,21 +56,7 @@ const reducer = ( state: object = initialState, action: any  ) => {
         default:
             return state
     }
-}       
-
-export const pendingUser = () => ({
-    type: PENDING_USER_FETCH
-})
-
-export const succeedUserFetch = (user: any) => ({
-    type: SUCCEED_USER_FETCH,
-    data: user
-})
-
-export const failUserFetch = (err: any) => ({
-    type: FAIL_USER_FETCH,
-    error: err
-})
+}
 
 export const store = createStore(
     reducer,
