@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import ApolloProvider from "./ApolloProvider"
+import env from 'dotenv'
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+<React.StrictMode>
+      { ApolloProvider }
+</React.StrictMode>,
   document.getElementById('root')
 );
