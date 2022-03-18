@@ -1,10 +1,15 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import FrontPage from './components/FrontPage';
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+        <Navbar/>
+        <Routes>
+          <Route  path="/" element={ <FrontPage/> } />
+        </Routes>
+    </Router>
   );
 }
 
