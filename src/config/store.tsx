@@ -1,19 +1,18 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import gql from 'graphql-tag';
+//import gql from 'graphql-tag';
 
 const initialState: object = {
     data: {},
     pending: false,
     error: null
 }
-
 const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
 const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
 const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
 declare global {
     interface Window {
-      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
     }
   }
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -41,16 +40,6 @@ const reducer = ( state: object = initialState, action: any  ) => {
     }
 }       
 
-const allMyMiddleWare = {
-    applyMiddleware(thunk),
-    composeEnhancers()
-}
-
-export const store = createStore(
-    reducer,
-    allMyMiddleWare
-)
-
 export const pendingUser = () => ({
     type: PENDING_USER_FETCH
 })
@@ -64,3 +53,8 @@ export const failUserFetch = (err: any) => ({
     type: FAIL_USER_FETCH,
     error: err
 })
+
+export const store = createStore(
+    reducer,
+    composeEnhancers(applyMiddleware(thunk))
+)
