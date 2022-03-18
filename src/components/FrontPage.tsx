@@ -7,11 +7,11 @@ const FrontPage: React.FC = () => {
     const [loginUser, {loading}] = useMutation(LOGIN_USER, {
         update(_, {data: {login: userData}}){
             //context.login(userData)
-            console.log('userData');
+            console.log(userData);
             
        },
        onError(err){
-        console.log(err);
+        console.log(err.graphQLErrors[0].extensions.errors);
          
        },
        variables: {
@@ -19,9 +19,9 @@ const FrontPage: React.FC = () => {
            password: "chicken"
        }
    })
-useEffect(()=>{
-    loginUser();
-},[])
+    useEffect(()=>{
+        loginUser();
+    },[])
 
     return (
         <div>
@@ -32,12 +32,12 @@ useEffect(()=>{
 
 export const LOGIN_USER = gql`
     mutation login(
-        $username: String
-        $password: String
+        $username: String!
+        $password: String!
     ) {
         login(
-            username: "user"
-            password: "password"
+            username: $username
+            password: $password
         ) {
             id email username createdAt token
         }
