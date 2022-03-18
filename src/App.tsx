@@ -7,7 +7,7 @@ function App() {
     <Router>
         <Navbar/>
         <Routes>
-          <Route  path="/" element={ <FrontPage/> } />
+          <Route path="/" element={ <FrontPage/> } />
         </Routes>
     </Router>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ApolloProvider from "./ApolloProvider"
+import ApolloProvider from "./config/ApolloProvider"
 
 ReactDOM.render(
 <React.StrictMode>
