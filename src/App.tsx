@@ -6,9 +6,9 @@ import { store } from './config/store'
 
 //COMPONENTS/PAGES
 import Navbar from './components/Navbar';
-import FrontPage from './components/FrontPage';
 import Login from './pages/LoginPage';
 import ConnectPage from './pages/ConnectPage';
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={ <FrontPage/> } />
+          <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
           <Route path="/connect"  element = { <ConnectPage/> } />
         </Routes>
