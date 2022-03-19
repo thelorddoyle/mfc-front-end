@@ -18,9 +18,7 @@ function App() {
     <Router>
         <Navbar/>
         <Routes>
-          <Route  path='/' element={<AuthRoute/>}>
-              <Route path="/" element={ <LandingPage/> } />
-          </Route>
+          <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
           <Route path="/connect"  element = { <ConnectPage/> } />
         </Routes>

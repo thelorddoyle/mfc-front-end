@@ -11,15 +11,14 @@ const Navbar: React.FC = () =>{
 
     return (
         <>
-            
+             <Link to="/"> Home</Link>   
             
             { 
                 user === undefined 
                 ?
-                    <Link to="/login">Login</Link>
+                    <Link to="/connect">Connect</Link>
                 :
                 <>
-                    <Link to="/"> Home</Link>
                     <Link to="" onClick={()=> dispatch({type: 'logoutUser'})} >Logout</Link>
                 </>
             }

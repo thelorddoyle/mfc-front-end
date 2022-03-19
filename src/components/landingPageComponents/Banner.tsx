@@ -10,7 +10,7 @@ const Banner: React.FC = () => {
             <h2>Own. Fight. Win</h2>
 
             {/* TODO: CHANGE TO MINT PAGE */}
-            <Link to="/login">
+            <Link to="/">
                 <button type="button">
                     Mint
                 </button>
