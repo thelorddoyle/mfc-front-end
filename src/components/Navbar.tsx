@@ -5,8 +5,9 @@ const Navbar: React.FC = () =>{
 
     return (
         <>
-            <Link to="/login">Login</Link>
             <Link to="/">Home</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/connect">Connect Wallet</Link>
         </>
     )
 }

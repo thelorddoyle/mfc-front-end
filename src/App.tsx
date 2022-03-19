@@ -8,6 +8,7 @@ import { store } from './config/store'
 import Navbar from './components/Navbar';
 import FrontPage from './components/FrontPage';
 import Login from './pages/LoginPage';
+import ConnectPage from './pages/ConnectPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <FrontPage/> } />
           <Route path="/login"  element = { <Login/> } />
+          <Route path="/connect"  element = { <ConnectPage/> } />
         </Routes>
     </Router>
   </Provider>
