@@ -12,26 +12,30 @@ const Login: React.FC = () => {
     //const data = useSelector((state:  RootStateOrAny) => state.data)
 
     const [errors, setError]  = useState<ErrorSetter | null>(null)
-    let variables: UserLoginInfo = {
+    let values: UserLoginInfo = {
         username:'',
         password: '',
     }
-    const handleSubmit =  (values: UserLoginInfo):void => {
-        variables.username = values.username;
-        variables.password = values.password;
+    const handleSubmit =  (data: UserLoginInfo):void => {
+        values.username = data.username;
+        values.password = data.password;
         loginUser();
     }
     
     const dispatch = useDispatch();
 
-    const [loginUser, {loading}] = useMutation(LOGIN_USER, {
+    const [loginUser, {loading, error}] = useMutation(LOGIN_USER, {
+
         update(_, {data: {login: userData}}){
+            console.log(userData);
+            
             dispatch({type: 'loginUser', payload: userData})
        },
        onError(err){
+        console.log(err.graphQLErrors[0].extensions.errors );
         setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
     },
-       variables
+       variables: values
    })
 
     return (
