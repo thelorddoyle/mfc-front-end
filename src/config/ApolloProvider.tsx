@@ -3,7 +3,7 @@ import App from '../App';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink, ApolloLink, NormalizedCacheObject } from '@apollo/client'
 
 const httpLink: ApolloLink = createHttpLink({
-    uri: `${process.env.REACT_APP_BASE_URL}`
+    uri: `${process.env.REACT_APP_BASE_URL}`,
 })
 
 //Establishing connection

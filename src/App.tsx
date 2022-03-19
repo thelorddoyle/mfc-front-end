@@ -11,6 +11,7 @@ import Login from './pages/LoginPage';
 import ConnectPage from './pages/ConnectPage';
 import LandingPage from './pages/LandingPage';
 import ProfileHomePage from './components/profilePageComponents/ProfileHomePage';
+import MintPage from './pages/MintPage';
 
 
 function App() {
@@ -22,11 +23,12 @@ function App() {
           <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
           <Route path="/connect"  element = { <ConnectPage/> } />
-
-            <Route path="/profile" element={<AuthRoute />} >
-                <Route path="/profile" element={<ProfileHomePage />} />
-            </Route>
-
+          <Route path="/profile" element={<AuthRoute />} >
+              <Route path="/profile" element={<ProfileHomePage />} />
+          </Route>
+          <Route path="/mint" element={<AuthRoute />} >
+              <Route path="/mint" element={<MintPage />} />
+          </Route>
         </Routes>
     </Router>
   </Provider>

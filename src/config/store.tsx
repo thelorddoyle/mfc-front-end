@@ -9,7 +9,8 @@ const initialState: any = {
 //Check if Token hasn't expired 
 if(localStorage.getItem('token')){
     //We decode token to get expiration date
-    const decodeToken:any = jwtDecode(localStorage.getItem('token') || '{}')
+    const token = localStorage.getItem('token')
+    const decodeToken:any = jwtDecode(token || '{}')
     //If expired we remove token 
     if(Date.now() >= (decodeToken.exp * 1000)){
         localStorage.removeItem('token')
@@ -17,7 +18,8 @@ if(localStorage.getItem('token')){
         //We set the user state with the his information
         initialState.data = { 
             ...initialState.data,
-            ...decodeToken
+            ...decodeToken,
+            token: token
         } ;
     }
 }
@@ -35,7 +37,8 @@ const reducer = ( state: object = initialState, action: any  ) => {
             localStorage.setItem('token', action.payload.token)
             return {
                 ...state,
-                data: action.payload
+                data: action.payload,
+                token: action.payload.token
             }
         case "logoutUser":
         localStorage.removeItem('token')

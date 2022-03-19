@@ -12,7 +12,7 @@ const Navbar: React.FC = () =>{
     return (
         <>
              <Link to="/"> Home</Link>
-            
+             <Link to="/mint" >Mint</Link>   
             { 
                 user === undefined 
                 ?
