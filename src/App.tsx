@@ -7,8 +7,9 @@ import { AuthRoute } from './helpers/AuthRoute';
 
 //COMPONENTS/PAGES
 import Navbar from './components/Navbar';
-import FrontPage from './components/FrontPage';
 import Login from './pages/LoginPage';
+import ConnectPage from './pages/ConnectPage';
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
@@ -18,9 +19,10 @@ function App() {
         <Navbar/>
         <Routes>
           <Route  path='/' element={<AuthRoute/>}>
-              <Route path="/" element={ <FrontPage/> } />
+              <Route path="/" element={ <LandingPage/> } />
           </Route>
           <Route path="/login"  element = { <Login/> } />
+          <Route path="/connect"  element = { <ConnectPage/> } />
         </Routes>
     </Router>
   </Provider>
