@@ -10,7 +10,7 @@ type Props = {
     whichForm(): void
 }
 
-export const Login: React.FC<Props>  =  ({whichForm,isForm}) => {
+export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

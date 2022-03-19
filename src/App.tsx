@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/LoginPage';
 import ConnectPage from './pages/ConnectPage';
 import LandingPage from './pages/LandingPage';
+import ProfileHomePage from './components/profilePageComponents/ProfileHomePage';
 
 
 function App() {
@@ -21,6 +22,11 @@ function App() {
           <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
           <Route path="/connect"  element = { <ConnectPage/> } />
+
+            <Route path="/profile" element={<AuthRoute />} >
+                <Route path="/profile" element={<ProfileHomePage />} />
+            </Route>
+
         </Routes>
     </Router>
   </Provider>
