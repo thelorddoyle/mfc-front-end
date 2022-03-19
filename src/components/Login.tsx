@@ -29,11 +29,13 @@ export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
     const [loginUser, {loading, error}] = useMutation(LOGIN_USER, {
 
         update(_, {data: {login: userData}}){
+            console.log(userData)
             dispatch({type: 'loginUser', payload: userData})
             navigate('/');
         },
         onError(err){
-            setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
+            console.log(err)
+            // setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
         },
         variables: values
         

@@ -9,7 +9,7 @@ export const LOGIN_USER = gql `
             username: $username
             password: $password
         ){
-            id email username createdAt token amountInWallet
+            id email username token amountInWallet
         }
     }
 `
@@ -30,6 +30,13 @@ export const REGISTER_USER = gql`
                     }
         ){
             id username email
+        }
+    }
+`
+export const GET_MY_TOURNAMENTS = gql`
+    query getTournamentsForUser {
+        getAllMyTournaments {
+            id
         }
     }
 `
