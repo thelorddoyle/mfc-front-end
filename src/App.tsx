@@ -16,6 +16,7 @@ import MintPage from './pages/MintPage';
 
 function App() {
   return (
+  <div className="container">
   <Provider store={ store }>
     <Router>
         <Navbar/>
@@ -32,6 +33,7 @@ function App() {
         </Routes>
     </Router>
   </Provider>
+  </div>
   );
 }
 

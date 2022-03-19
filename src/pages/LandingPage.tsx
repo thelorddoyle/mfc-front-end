@@ -5,6 +5,7 @@ import HowItWorks2 from "../components/landingPageComponents/HowItWorks2"
 import HowItWorks3 from "../components/landingPageComponents/HowItWorks3"
 import Roadmap from "../components/landingPageComponents/Roadmap"
 import EarlyAccessNft from "../components/landingPageComponents/EarlyAccessNft"
+import '../styles/landingpage.scss'
 
 
 const LandingPage: React.FC = () => {
