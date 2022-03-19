@@ -2,14 +2,10 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import jwtDecode from "jwt-decode";
 
-
-
-
 const initialState: any = {
-    data: {},
-    pending: false,
-   
+    data:  undefined,
 }
+
 //Check if Token hasn't expired 
 if(localStorage.getItem('token')){
     //We decode token to get expiration date
@@ -25,13 +21,13 @@ if(localStorage.getItem('token')){
         } ;
     }
 }
-
 declare global {
     interface Window {
         __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
     }
   }
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 
 const reducer = ( state: object = initialState, action: any  ) => {
     switch(action.type){
@@ -41,6 +37,12 @@ const reducer = ( state: object = initialState, action: any  ) => {
                 ...state,
                 data: action.payload
             }
+        case "logoutUser":
+        localStorage.removeItem('token')
+        return {
+            ...state,
+            data: undefined
+        }
         default:
             return state
     }

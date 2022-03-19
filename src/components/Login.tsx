@@ -3,11 +3,17 @@ import { useDispatch } from "react-redux";
 import { ErrorSetter } from "../interfaces/index"
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from '../graphql/user'
+import { useNavigate } from "react-router";
 
-export const Login: React.FC = () => {
+type Props = {
+    isForm: string;
+    whichForm(): void
+}
+
+export const Login: React.FC<Props>  =  ({whichForm,isForm}) => {
 
     const dispatch = useDispatch();
-    
+    const navigate = useNavigate();
     const [values,setValues] = useState<object | ''> ({})
     const [errors, setError]  = useState<ErrorSetter | null>(null)
 
@@ -24,6 +30,7 @@ export const Login: React.FC = () => {
 
         update(_, {data: {login: userData}}){
             dispatch({type: 'loginUser', payload: userData})
+            navigate('/');
         },
         onError(err){
             setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
@@ -34,12 +41,14 @@ export const Login: React.FC = () => {
 
     return (
         <>
+        {isForm === 'login' && 
          <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Username" name="username" onChange={onChange} />  
             <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
-            <button type="submit">Login</button>           
+            <button type="submit">Login</button>    
+            <h4 onClick={whichForm} >Don't have account ? Sign up</h4>      
          </form>
+        }
         </>
     )
-
 }

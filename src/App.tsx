@@ -1,8 +1,9 @@
-//MODULES
+//MODULES//HELPERS
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { store } from './config/store'
+import { AuthRoute } from './helpers/AuthRoute';
 
 //COMPONENTS/PAGES
 import Navbar from './components/Navbar';
@@ -16,7 +17,9 @@ function App() {
     <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={ <FrontPage/> } />
+          <Route  path='/' element={<AuthRoute/>}>
+              <Route path="/" element={ <FrontPage/> } />
+          </Route>
           <Route path="/login"  element = { <Login/> } />
         </Routes>
     </Router>
