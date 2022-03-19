@@ -1,0 +1,29 @@
+@import 'reset-css';
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+* body{
+    box-sizing: border-box;
+    background-image: radial-gradient(circle, #5e0000, #4a040c, #35080f, #20070c, #000000) !important;    
+}
+
+$max-width: 1200px;
+
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100vw;
+    max-width: $max-width;
+    margin: 20px auto;
+    color: white;
+}
+    
+.main-button{
+    all:unset;
+    background-color: rgb(23, 22, 22);
+    border: 2px solid rgb(208, 22, 22);
+    border-radius: 20px;
+    padding: 7px 70px;
+    color: #fff !important;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
