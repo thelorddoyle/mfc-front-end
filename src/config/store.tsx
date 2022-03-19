@@ -5,13 +5,12 @@ import thunk from 'redux-thunk';
 const initialState: object = {
     data: {},
     pending: false,
-    error: null
+   
 }
 
-export const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
-export const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
-export const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
-
+// export const PENDING_USER_FETCH = 'user/PENDING_USER_FETCH'
+// export const SUCCEED_USER_FETCH = 'user/SUCCEED_USER_FETCH'
+// export const FAIL_USER_FETCH = 'user/FAIL_USER_FETCH'
 
 
 declare global {
@@ -27,16 +26,6 @@ const reducer = ( state: object = initialState, action: any  ) => {
             return {
                 ...state,
                 data: action.payload
-            }
-        case SUCCEED_USER_FETCH:
-            return {
-                ...state,
-                user: {}
-            }
-        case FAIL_USER_FETCH:
-            return {
-                ...state,
-                error: action.error
             }
         default:
             return state
