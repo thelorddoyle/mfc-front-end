@@ -1,9 +1,6 @@
 import React, { useState } from "react";
+import { UserLoginInfo } from "../interfaces/index"
 
-interface UserLoginInfo{
-    username: string;
-    password: string;
-}
 interface Props {
     handleEvent(values :UserLoginInfo): void;
 }

@@ -4,18 +4,22 @@ import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 import { LOGIN_USER } from "../graphql/user"
 import { ErrorSetter } from '../interfaces/index';
 import {LoginComponent} from  '../components/LoginComponent';
+import { UserLoginInfo } from "../interfaces/index"
 
 
 
 const Login: React.FC = () => {
-
     //const data = useSelector((state:  RootStateOrAny) => state.data)
-    const [errors, setError]  = useState<ErrorSetter | null>(null)
-    const [username, setUsername] = useState<string | ''> ('')
-    const [password, setPassword] = useState<string | ''> ('')
 
-    const handleSubmit = (values: object):void => {
-      
+    const [errors, setError]  = useState<ErrorSetter | null>(null)
+    let variables: UserLoginInfo = {
+        username:'',
+        password: '',
+    }
+    const handleSubmit =  (values: UserLoginInfo):void => {
+        variables.username = values.username;
+        variables.password = values.password;
+        loginUser();
     }
     
     const dispatch = useDispatch();
@@ -25,14 +29,10 @@ const Login: React.FC = () => {
             dispatch({type: 'loginUser', payload: userData})
        },
        onError(err){
-       setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
+        setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
     },
-       variables: {
-           username: "user",
-           password: "chicken"
-       }
+       variables
    })
-
 
     return (
         <div>
