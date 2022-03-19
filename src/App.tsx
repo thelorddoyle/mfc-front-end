@@ -7,7 +7,7 @@ import { store } from './config/store'
 //COMPONENTS/PAGES
 import Navbar from './components/Navbar';
 import FrontPage from './components/FrontPage';
-import Login from './pages/Login';
+import Login from './pages/LoginPage';
 
 
 function App() {
