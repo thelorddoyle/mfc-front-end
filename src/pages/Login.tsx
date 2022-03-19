@@ -3,12 +3,22 @@ import { useMutation } from '@apollo/client'
 import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 import { LOGIN_USER } from "../graphql/user"
 import { ErrorSetter } from '../interfaces/index';
-import {  } from 'react-redux';
+import {LoginComponent} from  '../components/LoginComponent';
+
+
 
 const Login: React.FC = () => {
 
-    const data = useSelector((state:  RootStateOrAny) => state.data)
+    //const data = useSelector((state:  RootStateOrAny) => state.data)
     const [errors, setError]  = useState<ErrorSetter | null>(null)
+    const [username, setUsername] = useState<string | ''> ('')
+    const [password, setPassword] = useState<string | ''> ('')
+
+    
+    const handleSubmit = (values: object) => {
+
+    }
+
     const dispatch = useDispatch();
 
     const [loginUser, {loading}] = useMutation(LOGIN_USER, {
@@ -25,9 +35,11 @@ const Login: React.FC = () => {
    })
 
     return (
+
         <div>
-            {data.username}
+            <LoginComponent handleEvent={handleSubmit}/>
         </div>
+
     )
 }
 
