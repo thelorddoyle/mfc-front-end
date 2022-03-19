@@ -14,11 +14,10 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState<string | ''> ('')
     const [password, setPassword] = useState<string | ''> ('')
 
-    
-    const handleSubmit = (values: object) => {
-
+    const handleSubmit = (values: object):void => {
+      
     }
-
+    
     const dispatch = useDispatch();
 
     const [loginUser, {loading}] = useMutation(LOGIN_USER, {
@@ -34,10 +33,12 @@ const Login: React.FC = () => {
        }
    })
 
-    return (
 
+    return (
         <div>
-            <LoginComponent handleEvent={handleSubmit}/>
+            <LoginComponent 
+                handleEvent={handleSubmit} 
+            />
         </div>
 
     )
