@@ -11,6 +11,8 @@ if(localStorage.getItem('token')){
     //We decode token to get expiration date
     const token = localStorage.getItem('token')
     const decodeToken:any = jwtDecode(token || '{}')
+    console.log(decodeToken);
+    
     //If expired we remove token 
     if(Date.now() >= (decodeToken.exp * 1000)){
         localStorage.removeItem('token')

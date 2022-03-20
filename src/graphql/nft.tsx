@@ -26,6 +26,18 @@ export const GET_USER_NFTS = gql`
       gloves
       bruisingOrBlood
       image
+      fights {
+        id
+        fightIndex
+        tier
+        winnerId
+        loserId
+        fightReplay {
+        attackerId
+        defenderId
+        body
+      }
+      }
     }
 }
 
