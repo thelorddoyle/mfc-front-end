@@ -38,15 +38,30 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
     return (
         <>
         {
-        isForm === 'register' && 
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Username" name="username" onChange={onChange} />
-                <input type="text" placeholder="Email" name="email" onChange={onChange} />  
-                <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
-                <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={onChange} />
-                <button type="submit">Register</button> 
-                <h4 onClick={()=> whichForm()} >Already have account? Login</h4>           
-            </form>
+        isForm === 'register' &&
+            <div className="glass-card">
+                <h1 className="form-title"> SIGN UP </h1>
+                <form onSubmit={handleSubmit} autoComplete="off">
+                <div>
+                    <input type="text" placeholder="Username" name="username" onChange={onChange} />
+                </div>
+                <div>
+                    <input type="text" placeholder="Email" name="email" onChange={onChange} />  
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
+                </div>
+                <div>   
+                    <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={onChange} />
+                </div>
+                <div>
+                    <button type="submit" className="main-button">Register</button> 
+                </div>
+                <div>
+                     <h4 onClick={()=> whichForm()} >Already have account? Login</h4>           
+                </div>
+                </form>
+            </div>
          }
         </>
     )

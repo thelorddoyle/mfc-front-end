@@ -42,15 +42,27 @@ export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
    })
 
     return (
+        
         <>
-        {isForm === 'login' && 
-         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Username" name="username" onChange={onChange} />  
-            <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
-            <button type="submit">Login</button>    
-            <h4 onClick={whichForm} >Don't have account ? Sign up</h4>      
-         </form>
-        }
+          {isForm === 'login' && 
+            <div className="glass-card">
+                <h1 className="form-title"> LOGIN </h1>
+                <form onSubmit={handleSubmit} autoComplete="off" >
+                    <div> 
+                        <input type="text"  placeholder="Username" name="username" onChange={onChange}  autoComplete="off" />   
+                    </div>
+                    <div> 
+                        <input type="password" placeholder="Password" name="password" onChange={onChange} autoComplete="off"/> 
+                    </div>
+                    <div>
+                        <button type="submit" className="main-button" >Login</button>    
+                    </div>
+                    <div>
+                        <h4 onClick={whichForm} >Don't have account ? Sign up</h4>      
+                    </div>
+                </form>
+            </div>
+         }
         </>
     )
 }
