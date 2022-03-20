@@ -29,7 +29,7 @@ export const REGISTER_USER = gql`
                     email: $email,
                     }
         ){
-            id username email
+            id email username token amountInWallet
         }
     }
 `

@@ -9,7 +9,7 @@ const Mint: React.FC = () => {
 
     const [round, setRound] = useState<number | null>(1)
     const [errors, setErrors] = useState<ApolloError | undefined>()
-    const user = useSelector((state:  RootStateOrAny) => state.data)
+    const user = useSelector((state: RootStateOrAny) => state.data)
 
     //Getting Current Round of the tournament
     const {loading, error} = useQuery( GET_ROUND, {

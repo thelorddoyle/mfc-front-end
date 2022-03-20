@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ErrorSetter } from "../interfaces/index"
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from '../graphql/user'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 declare const window: any;
 
@@ -17,21 +19,28 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
 
     const [values, setValues] = useState<any | ''> ({});
     const [errors, setError] = useState<ErrorSetter | null>(null)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleSubmit = (ev: React.FormEvent) => {
         ev.preventDefault();
-        registerUser()
+        try {
+            registerUser();
+        } catch (err: any) {
+            setError(err)
+        }
     }
 
     const onChange = (ev: React.ChangeEvent<HTMLInputElement>)=> {
         setValues({...values, [ev.target.name]: ev.target.value})
-        console.log(values)
     }
 
     const [registerUser, {loading, data, error}] = useMutation(REGISTER_USER, {
 
         update(_, {data: {register: registerData}}) {
             console.log(registerData)
+            dispatch({type: 'loginUser', payload: registerData})
+            navigate('/profile');
         },
         onError(err){
             setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)

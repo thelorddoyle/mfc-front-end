@@ -46,6 +46,7 @@ const ProfileHomePage: React.FC = () => {
 
         <>  
             <Link to="/profile/fighters" >Fighters</Link>  
+            <Link to="/profile/fight" >Fight</Link>  
             {
                 user
                 ?

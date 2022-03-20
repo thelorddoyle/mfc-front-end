@@ -13,6 +13,7 @@ import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import MintPage from './pages/MintPage';
 import FightersPage from './pages/FightersPage';
+import Fight from './pages/FightPage'
 
 
 function App() {
@@ -32,6 +33,11 @@ function App() {
           <Route path="/mint" element={<AuthRoute />} >
               <Route path="/mint" element={<MintPage />} />
           </Route>
+
+          <Route path="/profile/fight/:id" element={<AuthRoute />} >
+              <Route path="/profile/fight/:id" element={<Fight />} />
+          </Route>
+          
         </Routes>
     </Router>
   </Provider>
