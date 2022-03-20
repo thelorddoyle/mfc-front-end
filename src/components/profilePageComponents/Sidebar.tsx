@@ -1,14 +1,15 @@
 import React from "react"
-import '../../styles/Temp.css'
+import '../../styles/sidebar.scss'
+
 
 const Sidebar: React.FC = () => {
 
     return (
-        <>
+        <div className="sidebar card-navbar">
         
-            <img src="logo" alt="" />
+            <h1>asdasda</h1>
 
-        </>
+        </div>
 
     )
 }
