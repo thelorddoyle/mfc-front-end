@@ -17,13 +17,14 @@ import Fight from './pages/FightPage'
 
 
 function App() {
-  const location:string = window.location.pathname;
+  const location = window.location.pathname;
+  console.log(location);
   
   return (
   <div className="container">
   <Provider store={ store }>
     <Router>
-        {location !== '/profile'&&  <Navbar/> }
+        {location !== '/profile' && <Navbar/> }
         <Routes>
           <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
