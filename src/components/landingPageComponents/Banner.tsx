@@ -5,9 +5,8 @@ const Banner: React.FC = () => {
 
     return (
         <div className="hero-banner">
-        
             <h1>Metaverse Fighting Championship</h1>
-            <h2>Own. Fight. Win</h2>
+            <h2>OWN. FIGHT. WIN</h2>
 
             {/* TODO: CHANGE TO MINT PAGE */}
             <Link to="/mint">
@@ -15,10 +14,11 @@ const Banner: React.FC = () => {
                     Mint
                 </button>
             </Link>
-
-            <h2>MFC is a blockchain game that allows participation through ownership of NFT's</h2>
-            <p>Each token represents a fighter who will participate in tournaments - giving you the chance to win Ethereum prizes.</p>
-
+            <div className="sub-banner"> 
+                <h3>MFC is a blockchain game that allows </h3>
+                <h3>participation through ownership of NFT's</h3>
+                <p>Each token represents a fighter who will participate in tournaments - giving you the chance to win Ethereum prizes.</p>
+            </div>
         </div>
 
     )

@@ -33,13 +33,24 @@
         margin-top: 15px;
     }
     button{
-        margin-top: 10ppx;
+        margin-top: 10px;
     }
 
     .form-title{
         font-size: 3rem;
         font-weight: 600;
         padding: 10px 0px;
+    }
+
+    .btn-container{
+        button{
+            all:unset;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 300;
+            padding: 10px 0px;
+        }
     }
     
 }
