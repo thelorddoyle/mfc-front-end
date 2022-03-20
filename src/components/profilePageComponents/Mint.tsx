@@ -39,7 +39,6 @@ const Mint: React.FC = () => {
     const handleEvent = () => mintNft();
 
     return (
-        
        
         <div className="flex">
         {
@@ -53,7 +52,6 @@ const Mint: React.FC = () => {
             </div>
 
         }
-            
         </div>
 
     )
