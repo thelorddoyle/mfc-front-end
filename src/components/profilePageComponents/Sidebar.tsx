@@ -2,29 +2,34 @@ import React from "react"
 import {  faUserGroup, faSackDollar, faHandBackFist, faRankingStar, faCog, faClone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-const Sidebar: React.FC = () => {
+
+interface Props{
+    onClick(component: string): void
+}
+
+const Sidebar: React.FC<Props> = (props) => {
 
     return (
         <div className="sidebar card-navbar">
             <div className="nav-logo">
-                <h1>MFC</h1>
+            <Link to="/" ><h1>MFC</h1></Link>  
             </div>
             <div className="navigation">
-                <div className="nav-menu">
+                <div className="nav-menu" onClick={()=>props.onClick('default')}>
                     <FontAwesomeIcon icon={faClone} />
                         <span>Dashboard</span>
                 </div>    
-                <div className="nav-menu">   
+                <div className="nav-menu" onClick={()=>props.onClick('fighters')}>   
                     <FontAwesomeIcon icon={faUserGroup} />
-                    <Link to="/profile/fighters" >Fighters</Link> 
+                     Fighters 
                 </div>
                 <div className="nav-menu">
                     <FontAwesomeIcon  icon={faSackDollar}/> 
                     <span>Tournaments</span>
                 </div> 
-                <div className="nav-menu">
+                <div className="nav-menu" onClick={()=>props.onClick('fight')}>
                     <FontAwesomeIcon  icon={faHandBackFist}/> 
-                    <Link to="/profile/fight" >Fight</Link>  
+                    Fight 
                 </div>   
                 <div className="nav-menu">
                     <FontAwesomeIcon  icon={faRankingStar}/>               
