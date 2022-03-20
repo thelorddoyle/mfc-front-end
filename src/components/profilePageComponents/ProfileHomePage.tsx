@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
+import { Link } from 'react-router-dom'
 import { useState } from "react";
 import { ApolloError, useQuery } from "@apollo/client";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
@@ -17,6 +18,7 @@ const ProfileHomePage: React.FC = () => {
     //Getting all tournaments that users NFT's are taking part in
     const tournaments = useQuery( GET_MY_TOURNAMENTS, {
         onCompleted(data){
+            console.log(data);
             setNumberOfTournaments(data.getAllMyTournaments.length)
         },
         onError(error){
@@ -42,7 +44,8 @@ const ProfileHomePage: React.FC = () => {
 
     return (
 
-        <>
+        <>  
+            <Link to="/profile/fighters" >Fighters</Link>  
             {
                 user
                 ?
