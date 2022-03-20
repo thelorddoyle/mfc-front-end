@@ -46,6 +46,11 @@ const reducer = ( state: object = initialState, action: any  ) => {
             ...state,
             data: undefined
         }
+        case "userNfts":
+        return {
+            ...state,
+            nfts: action.payload,
+        }
         default:
             return state
     }

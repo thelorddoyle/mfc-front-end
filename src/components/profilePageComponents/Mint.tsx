@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useSelector, RootStateOrAny } from "react-redux";
 import {  ApolloError, useQuery, useMutation } from "@apollo/client";
 import { GET_ROUND } from "../../graphql/tournament"
-import { MINT_NFT } from "../../graphql/ntf";
+import { MINT_NFT } from "../../graphql/nft";
 
 const Mint: React.FC = () => {
 

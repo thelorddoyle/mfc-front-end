@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 * body{
     box-sizing: border-box;
-    background-image: radial-gradient(circle, #5e0000, #4a040c, #35080f, #20070c, #000000) !important;    
+    background-image: linear-gradient(to bottom, #000000, #120105, #1e0207, #260307, #2e0305, #2e0305, #2e0305, #2e0305, #260307, #1e0207, #120105, #000000);   
 }
 
 $max-width: 1200px;
