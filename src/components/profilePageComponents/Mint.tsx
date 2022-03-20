@@ -3,6 +3,7 @@ import { useSelector, RootStateOrAny } from "react-redux";
 import {  ApolloError, useQuery, useMutation } from "@apollo/client";
 import { GET_ROUND } from "../../graphql/tournament"
 import { MINT_NFT } from "../../graphql/nft";
+import '../../styles/mintNft.scss'
 
 const Mint: React.FC = () => {
 
@@ -40,21 +41,20 @@ const Mint: React.FC = () => {
     return (
         
        
-        <>
+        <div className="flex">
         {
             loading ? "Loading..." :
-            <>
+            <div className="mint-nft">
                 <h1>Mint Your fighter</h1>
                 <h2>Round { round }</h2>
                 <p>Prize Money 10ETH </p>
                 <p>Fighters Left 200</p>
-                <button onClick={handleEvent} > MINT ME PAPI CHULO </button>
-            </>
+                <button onClick={handleEvent} className="main-button" > MINT </button>
+            </div>
 
         }
-
             
-        </>
+        </div>
 
     )
 }
