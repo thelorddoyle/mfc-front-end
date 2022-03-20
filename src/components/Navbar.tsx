@@ -21,6 +21,7 @@ const Navbar: React.FC = () =>{
             <div className="nav-menu"> 
              <Link to="/"> Home</Link>
              <Link to="/mint" >Mint</Link>   
+             <Link to="/mytournaments" >My Tournaments</Link>   
             { 
                 user === undefined 
                 ?

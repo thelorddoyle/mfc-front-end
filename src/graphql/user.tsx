@@ -36,7 +36,15 @@ export const REGISTER_USER = gql`
 export const GET_MY_TOURNAMENTS = gql`
     query getTournamentsForUser {
         getAllMyTournaments {
-            id
+                id
+                status
+                round
+                startDate
+                fights {
+                nfts {
+                    id
+                }
+            }
         }
     }
 `

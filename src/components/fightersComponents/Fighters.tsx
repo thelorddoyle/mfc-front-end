@@ -39,7 +39,7 @@ const Fighters: React.FC = () => {
                 getUserNfts.loading ? "loading your nfts":
                 nfts?.map((el: any) => (
                     <div key={el.id} onClick={()=> setInfoNft(el) }>
-                      {el.image}
+                      <img src={el.image} alt="" style={{"width": "200px"}}/>
                     </div>
                 ))
             }
