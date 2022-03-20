@@ -14,11 +14,10 @@ import ProfilePage from './pages/ProfilePage';
 import MintPage from './pages/MintPage';
 import FightersPage from './pages/FightersPage';
 import Fight from './pages/FightPage'
-import MyTournaments from './components/profilePageComponents/MyTournaments';
+
 
 function App() {
-  const location = window.location.pathname;
-  console.log(location);
+  const location:string = window.location.pathname;
   
   return (
   <div className="container">
@@ -35,9 +34,6 @@ function App() {
           </Route>
           <Route path="/mint" element={<AuthRoute />} >
               <Route path="/mint" element={<MintPage />} />
-          </Route>
-          <Route path="/mytournaments" element={<AuthRoute />} >
-              <Route path="/mytournaments" element={<MyTournaments />} />
           </Route>
 
           <Route path="/profile/fight/:id" element={<AuthRoute />} >

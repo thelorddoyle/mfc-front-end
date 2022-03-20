@@ -1,8 +1,7 @@
 import React from "react"
-import '../../styles/sidebar.scss'
-import { faHome, faUserGroup, faSackDollar, faHandBackFist, faRankingStar, faCog, faClone, faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+import {  faUserGroup, faSackDollar, faHandBackFist, faRankingStar, faCog, faClone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { Link } from "react-router-dom";
 const Sidebar: React.FC = () => {
 
     return (
@@ -17,7 +16,7 @@ const Sidebar: React.FC = () => {
                 </div>    
                 <div className="nav-menu">   
                     <FontAwesomeIcon icon={faUserGroup} />
-                    <span>Fighters</span>
+                    <Link to="/profile/fighters" >Fighters</Link> 
                 </div>
                 <div className="nav-menu">
                     <FontAwesomeIcon  icon={faSackDollar}/> 
@@ -25,7 +24,7 @@ const Sidebar: React.FC = () => {
                 </div> 
                 <div className="nav-menu">
                     <FontAwesomeIcon  icon={faHandBackFist}/> 
-                    <span> Fight</span>
+                    <Link to="/profile/fight" >Fight</Link>  
                 </div>   
                 <div className="nav-menu">
                     <FontAwesomeIcon  icon={faRankingStar}/>               
@@ -38,12 +37,11 @@ const Sidebar: React.FC = () => {
             </div> 
             <div className="bottom-nav">
                 <div className="mint-img-bottom">
-                    <div>Mint another nft  </div>
+                    <div> <Link to='/mint'> Mint another nft </Link> </div>
                     <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647771047/banner-fighter2_wt8tpy.png" alt="" />
                 </div>   
             </div>
         </div>
-        
 
     )
 }

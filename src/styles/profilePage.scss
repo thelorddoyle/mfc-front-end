@@ -1,0 +1,104 @@
+
+.profile-page{
+    height: 80vh;
+    width: 100%;
+    
+}
+
+
+ 
+.display-info{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    margin-top: 20px;
+    padding: 20px;
+    h1{ 
+        font-size:2rem;
+        font-weight: 500;
+    }
+    p{  
+        padding: 10px 0px;
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+    svg{
+        
+        font-size:2rem;
+        font-weight: 700;
+        float: right;
+    }
+}
+
+ 
+.display-stats{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+    .tournaments{
+        display: flex;  
+        justify-content: center;
+        align-items: center;   
+        width: 100%;
+        gap: 20px;
+        min-height: 50px;
+        border-radius: 20px;
+        background: rgb(248,0,36);
+        background: linear-gradient(90deg, rgba(248,0,36,1) 0%, rgb(239, 62, 46) 100%);
+       
+        svg{
+            font-size: 1rem;
+        }
+        svg:first-child{
+            font-size: 2rem;
+            color: yellow;
+        }
+        h2{
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: 300;
+        }
+        .rotate-icon {
+            transform: rotate(0deg);
+            transition: 0.8s;
+           
+        }
+
+        &:hover{
+            cursor: pointer;
+            .rotate-icon{
+                transform: rotate(35deg);
+            }
+        }
+    }
+    .show-eth{
+        display: flex;  
+        justify-content:center;
+        align-items: center;     
+        gap: 10px; 
+        width: 100%;
+        min-height: 100px;
+        border-radius: 10px;
+        background: rgba(45, 45, 45, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.7px);
+        -webkit-backdrop-filter: blur(9.7px);
+        svg{
+            font-size: 2rem;
+        }
+        div{
+            h2{
+                text-align: center;
+                font-size: 1.3rem;
+                font-weight: 300;
+            }
+
+            p{
+                text-align: center;
+               font-weight: 100; 
+            }
+        }
+    }
+   
+}
