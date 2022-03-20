@@ -1,13 +1,13 @@
 .fillerImage {
-    max-width: 400px;
+    max-width: 100%;
 }
 
-.two-column-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 
 .grid-column {
     display: grid;
     padding: 30px;
+}
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

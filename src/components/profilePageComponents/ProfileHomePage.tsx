@@ -44,7 +44,7 @@ const ProfileHomePage: React.FC = () => {
 
     return (
 
-        <>  
+        <div>
             <Link to="/profile/fighters" >Fighters</Link>  
             <Link to="/profile/fight" >Fight</Link>  
             {
@@ -58,7 +58,7 @@ const ProfileHomePage: React.FC = () => {
                 :
                 <h1>HELLOOO</h1>
             }
-        </>
+        </div> 
 
     )
 }

@@ -6,41 +6,14 @@
 }
 
 body {
-    box-sizing: border-box !important;
+    box-sizing: border-box !important; 
     background-image: linear-gradient(to bottom, #000000, #120105, #1e0207, #260307, #2e0305, #2e0305, #2e0305, #2e0305, #260307, #1e0207, #120105, #000000);   
     font-family: "Roboto", sans-serif;
    
 }
 
-
 $max-width: 1200px;
 
-$screen-xm: 468px;
-$screen-sm: 768px;
-$screen-md: 1024px;
-$screen-lg: 1200px;
-$screen-xl: 1600px;
-
-
-html{
-
-    @media screen and (min-width:$screen-sm){
-        font-size:12px;
-    }
-
-    @media screen and (min-width:$screen-sm){
-        font-size:14px;
-    }
-
-    @media screen and (min-width:$screen-lg){
-        font-size:16px;
-    }
-
-    @media screen and (min-width:$screen-xl){
-        font-size:16px;
-    }
-
-}
     a{
     text-decoration: none;
     color: #fff;
@@ -51,6 +24,8 @@ html{
     max-width: $max-width;
     margin: 20px auto;
     color: white;
+    
+   
 }
 
 .flex{
@@ -72,7 +47,6 @@ html{
     cursor: pointer;
     font-size: 1.2rem;
 }
-
 
 
 .glass-card{
