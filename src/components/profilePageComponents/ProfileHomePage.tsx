@@ -44,7 +44,7 @@ const ProfileHomePage: React.FC = () => {
 
     return (
 
-        <div>
+        <div className="profile-page">
             <Link to="/profile/fighters" >Fighters</Link>  
             <Link to="/profile/fight" >Fight</Link>  
             {

@@ -5,28 +5,72 @@
     height: 100%;
     align-items: center;
     grid-template-columns: auto 1fr;
+    
 
-   
 }
+
 
 .sidebar{
-    min-height: 700px;
+    height: 80vh;
     transition: .5s .5s;
-    width: 200px!important;
-    z-index: 31;
+    width: 300px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
+    .nav-logo{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        h1{
+            padding: 20px 0px;
+            font-size:3rem;
+            font-weight: 700;
+        }
+    }
+    .navigation{
+        .nav-menu{
+            font-size: 1.5rem;
+            padding: 20px 20px;
+            font-weight: 200;
+            border-radius: 20px;
+            
+            svg{
+                font-size:1.5rem;
+                margin-right:20px;
+            }
+    
+            &:hover{
+                background: rgb(248,0,36);
+                background: linear-gradient(90deg, rgba(248,0,36,1) 0%, rgb(239, 62, 46) 100%);
+                cursor:pointer;
+            }
+        }
+    }
+
+    .mint-img-bottom{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        img{
+            max-width: 150px;
+        }
+    }
 }
 
 
+.profile-page{
+    height: 80vh;
+    width: 100%;
+}
+
 .card-navbar{
-    width: 50%;
-    background: rgba(255, 255, 255, 0.16);
-    border-radius: 16px;
+    background: rgba(45, 45, 45, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.7px);
     -webkit-backdrop-filter: blur(9.7px);
-    text-align: center;
-    padding: 60px;
-
    
 }
