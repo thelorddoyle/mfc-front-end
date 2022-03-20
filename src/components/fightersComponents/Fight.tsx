@@ -34,27 +34,44 @@ const Fight: React.FC = () => {
         player1Id = fight.nfts[0].id
         player1UserName = fight.nfts[0].user.username
         player2UserName = fight.nfts[1].user.username
+        console.log("img", fight.nfts[0].image);
     }
 
+
+    //TODO: make the two images of the NFTs 
+    //TODO: make a highlighted message of the who has won 
     return (
         <>
-            {
-                fight
-                ?
-                fight.fightReplay.map(function(move:any, index:number) {
-                    return (
-                    <div key={index}>
-                        <h1>
-                            {move.attackerId === player1Id ? player1UserName : player2UserName} {move.body}
-                        </h1>
-                    </div>    
-                    )  
-                })
-                :
-                <h1>Loading</h1>
-            }
-        </>
+            <div>
+                {
+                    fight
+                    ?
+                    <div>
+                        <img src={fight.nfts[0].image} alt="" style={{"width": "200px"}}/>
+                        <img src={fight.nfts[1].image} alt="" style={{"width": "200px"}}/>
+                        {
+                            fight.fightReplay.map(function(move:any, index:number) {
+                                return (
+                                <div key={index}>
+                                    <h1>
+                                        {move.attackerId === player1Id ? player1UserName : player2UserName} {move.body}
+                                    </h1>
+                                </div>    
+                                )  
+                            })
+                        }
+                        
+                        {
+                            fight.winnerId === player1Id ? `${player1UserName} has won` : `${player2UserName} has won`
+                        }
+                        
+                    </div>
+                    :
+                    <h1>Loading</h1>
+                }
 
+            </div>
+        </>
     )
 }
 

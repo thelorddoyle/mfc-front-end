@@ -44,15 +44,20 @@ const reducer = ( state: object = initialState, action: any  ) => {
             }
         case "logoutUser":
         localStorage.removeItem('token')
-        return {
-            ...state,
-            data: undefined
-        }
+            return {
+                ...state,
+                data: undefined
+            }
         case "userNfts":
-        return {
-            ...state,
-            nfts: action.payload,
-        }
+            return {
+                ...state,
+                nfts: action.payload,
+            }
+        case "myTournaments":
+            return {
+                ...state,
+                myTournaments: action.payload, 
+            }
         default:
             return state
     }

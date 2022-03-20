@@ -14,7 +14,7 @@ export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [values,setValues] = useState<object | ''> ({})
+    const [values, setValues] = useState<object | ''> ({})
     const [errors, setError]  = useState<ErrorSetter | null>(null)
 
     const handleSubmit = (ev: React.FormEvent) => {

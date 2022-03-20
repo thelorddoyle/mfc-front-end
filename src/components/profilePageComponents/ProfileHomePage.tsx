@@ -20,6 +20,7 @@ const ProfileHomePage: React.FC = () => {
         onCompleted(data){
             console.log(data);
             setNumberOfTournaments(data.getAllMyTournaments.length)
+            dispatch({type: 'myTournaments', payload : data.getAllMyTournaments})
         },
         onError(error){
             setErrors(error)

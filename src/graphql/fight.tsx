@@ -15,6 +15,7 @@ query Query($fightId: ID!) {
     }
     nfts {
       id
+      image
       user {
         username
       }
