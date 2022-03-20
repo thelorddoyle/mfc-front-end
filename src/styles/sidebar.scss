@@ -50,13 +50,33 @@
         }
     }
 
-    .mint-img-bottom{
+    .bottom-nav{
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
         left: 50%;
         transform: translate(-50%, 0);
-        img{
-            max-width: 150px;
+        width: 90%;
+        .mint-img-bottom{
+            border-radius: 20px;
+            background: rgb(248,0,36);
+            background: linear-gradient(90deg, rgba(248,0,36,1) 0%, rgb(239, 62, 46) 100%);
+            cursor: pointer;
+            div{
+                display: flex;
+                flex-direction: column-reverse;
+                padding: 10px;
+                width: 150px;
+                height: 100px;
+                font-size: 1.3rem;
+                font-weight: 200;
+            }
+            img{
+                position: absolute;
+                max-height: 180px;
+                max-width: 150px;
+                bottom: 0px;
+                left: 50%;
+            }
         }
     }
 }

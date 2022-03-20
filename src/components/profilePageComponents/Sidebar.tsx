@@ -1,6 +1,6 @@
 import React from "react"
 import '../../styles/sidebar.scss'
-import { faHome, faUserGroup, faSackDollar, faHandBackFist, faRankingStar, faCog, faClone } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUserGroup, faSackDollar, faHandBackFist, faRankingStar, faCog, faClone, faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sidebar: React.FC = () => {
@@ -36,9 +36,12 @@ const Sidebar: React.FC = () => {
                     <span>Account</span>
                 </div>   
             </div> 
-            <div className="mint-img-bottom">
-                <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647771047/banner-fighter2_wt8tpy.png" alt="" />
-            </div>     
+            <div className="bottom-nav">
+                <div className="mint-img-bottom">
+                    <div>Mint another nft  </div>
+                    <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647771047/banner-fighter2_wt8tpy.png" alt="" />
+                </div>   
+            </div>
         </div>
         
 
