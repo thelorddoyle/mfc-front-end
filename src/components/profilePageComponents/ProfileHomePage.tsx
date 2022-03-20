@@ -53,7 +53,7 @@ const ProfileHomePage: React.FC = () => {
             <Link to="/profile/fight" >Fight</Link>   */}
             {
                 user
-                ?
+                &&
                 <>
                     <div className="display-info">
                         <div>
@@ -80,9 +80,22 @@ const ProfileHomePage: React.FC = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div className="extra-info">
+                        <div className="grid-4-info">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                        </div>
+                        <div className="overall-stats">
+                            <div>
+                                <h1>Overall Stats</h1>
+                            </div>
+                        </div>
+                    </div>
                 </>
-                :
-                <h1>HELLOOO</h1>
+               
             }
         </div> 
 
