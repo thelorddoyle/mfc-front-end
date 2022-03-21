@@ -60,7 +60,7 @@ const Fight: React.FC = () => {
                         fight
                         ?
                             <div className="fight-display">
-                                    <h1 className="results">Results</h1>
+                                    <h1 className="results" style={{fontFamily: 'VIC-Light'}}>Results</h1>
                                     {
                                         fight.fightReplay.map(function(move:any, index:number) {
                                             
