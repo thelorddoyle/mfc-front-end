@@ -68,10 +68,14 @@
 body {
     box-sizing: border-box !important; 
     background-image: linear-gradient(to bottom, #000000, #120105, #1e0207, #260307, #2e0305, #2e0305, #2e0305, #2e0305, #260307, #1e0207, #120105, #000000);   
+    //font-family: "Roboto", sans-serif;
+    // background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822524/Background%20Images/Background_anrgpu.png");
+    // background-position: center; /* Center the image */
+    // background-repeat: no-repeat; /* Do not repeat the image */
+    // background-size: cover; /* Resize the background image to cover the entire container */
     font-family: "VIC-Regular", sans-serif;
    
 }
-
 $max-width: 1200px;
 
     a{

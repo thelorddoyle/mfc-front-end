@@ -101,25 +101,46 @@ const Fighters: React.FC = () => {
                 </>
             }
         </div>
-            {
-                infoNft.fights 
-                ?
-                infoNft.fights?.map(function(fight: any): JSX.Element | undefined {
-                    
-                    // if the fight has been resolved
-                    if (fight.winnerId) {
-                        return (<div key={fight.id}>
-                        <h2>Match {fight.id}</h2>
-                        <h2>User ID: {infoNft.id === fight.winnerId ? 'You' : 'They'} won!</h2>
-                        <h2>Winner: {fight.winnerId}</h2> 
-                        <h2>Loser: {fight.loserId}</h2>
-                        <Link to={`/profile/fight/${fight.id}`}>View Fight</Link>
-                    </div>)
+            <div className="past-fights">
+                <h1>Past Fights</h1> 
+                    {
+                        infoNft.fights 
+                        ?
+                        
+                        infoNft.fights?.map(function(fight: any): JSX.Element | undefined {
+                            // if the fight has been resolved
+                            if (fight.winnerId) {
+                               return (
+                                    <div className={infoNft.id === fight.winnerId ? 'fight-details fight-won' : 'fight-details fight-lost'} key={fight.id}>
+                                        <div>
+                                            <h1>Match</h1>
+                                            <span>#{truncate(fight.id)}</span>
+                                        </div>
+                                        <div>
+                                            <h1>User</h1>
+                                            <span>{infoNft.id === fight.winnerId ? 'You' : 'They'} won!</span>
+                                        </div>
+                                        <div>
+                                            <h1>Winner: </h1>
+                                            <span>#{truncate(fight.winnerId)}</span>
+                                        </div>
+                                        <div>
+                                            <h1>Loser: </h1>
+                                            <span>
+                                                #{truncate(fight.loserId)}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <Link to={`/profile/fight/${fight.id}`}>View Fight</Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        })
+                        :
+                        null
                     }
-                })
-                :
-                null
-            }
+            </div>
         </>
     )
 }
