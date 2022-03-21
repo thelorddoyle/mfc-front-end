@@ -1,5 +1,6 @@
 import React from "react"
 import '../../styles/sidebar.scss'
+import { Link } from "react-router-dom";
 import { useSelector, RootStateOrAny} from "react-redux";
 
 
@@ -60,6 +61,7 @@ const MyTournaments: React.FC = () => {
                     return (
                         <div key={tournament.id} >
                             {`${tournament.id}: ${tournament.status}, count: ${tournament.count}/32`}
+                            <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>
                     )
                 })
@@ -75,6 +77,7 @@ const MyTournaments: React.FC = () => {
                     return (
                         <div>
                             {`${tournament.id}: ${tournament.status}, count: 32/32`}
+                            <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>
                     )
                 })
