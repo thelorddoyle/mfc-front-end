@@ -13,10 +13,10 @@ import MyTournaments from "../components/profilePageComponents/MyTournaments"
 
 const ProfilePage: React.FC = () => {
 
-    const [component,setComponet] = useState<string | null>('default')
+    const [component, setComponent] = useState<string | null>('default')
     const user = useSelector((state: RootStateOrAny) => state.data)
     const changeComponent = (component: string = "default") => {
-       setComponet(component);
+        setComponent(component);
     }
 
   
