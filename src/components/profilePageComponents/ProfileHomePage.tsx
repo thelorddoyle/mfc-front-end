@@ -73,10 +73,26 @@ const ProfileHomePage: React.FC = () => {
 
                     <div className="extra-info">
                         <div className="grid-4-info">
-                            <div>1</div>
-                            <div>2</div>
-                            <div>3</div>
-                            <div>4</div>
+                            <div>
+                                <div className="grid-nfts my-fighters" ></div>
+                                <h1>My Fighters</h1>
+                                <h2>View your roster of fighters <FontAwesomeIcon  icon={faArrowRight}/> </h2>
+                            </div>
+                            <div>
+                                <div className="grid-nfts lets-fight"></div>
+                                <h1>Let's fight</h1>
+                                <h2>Fight to win money <FontAwesomeIcon  icon={faArrowRight}/> </h2>
+                            </div>
+                            <div>
+                                <div className="grid-nfts join-discussion"></div>
+                                <h1>Join the discussion</h1>
+                                <h2>Join into our Discord <FontAwesomeIcon  icon={faArrowRight}/> </h2>
+                             </div>
+                            <div>
+                                <div className="grid-nfts mfc-media"></div>
+                                <h1>MFC Media</h1>
+                                <h2>Stay up to date with MFC <FontAwesomeIcon  icon={faArrowRight}/> </h2>
+                            </div>
                         </div>
                         <div className="overall-stats">
                             <div>

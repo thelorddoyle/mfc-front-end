@@ -99,7 +99,17 @@
         }
     }
 }
-
+.grid-nfts{
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    min-height: 150px;
+    max-height: 150px;
+    background-size: cover;
+    border-radius: 16px;
+    cursor: pointer;
+    position: relative;
+}
 
 .extra-info{
     display: flex;  
@@ -114,12 +124,27 @@
         min-height: 400px;
         gap: 20px; 
         padding: 0px 20px;;
-        div{
-            border-radius: 10px;
-            background: rgba(45, 45, 45, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(9.7px);
-            -webkit-backdrop-filter: blur(9.7px);
+        .my-fighters{
+            background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822860/Background%20Images/My_fighters_r0nfug.png");
+        }
+        .lets-fight{
+            background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822897/Background%20Images/Octagon_Background_drsy9i.png");
+        }
+        .join-discussion{
+            background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822751/Background%20Images/Join_the_discussion_itgusd.png");
+        }
+        .mfc-media{
+            background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822824/Background%20Images/MFC_Media_zmjxvw.png");
+        }
+        h1{
+            font-size: 1.2rem;
+            margin-top: 10px;
+            padding: 0px 5px;
+        }
+        h2{
+            font-size: 1rem;
+            padding: 5px 5px;
+            font-weight: 100;
         }
     }
 

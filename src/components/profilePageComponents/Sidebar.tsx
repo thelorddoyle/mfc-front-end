@@ -43,7 +43,7 @@ const Sidebar: React.FC<Props> = (props) => {
             <div className="bottom-nav">
                 <div className="mint-img-bottom">
                     <div> <Link to='/mint'> Mint another nft </Link> </div>
-                    <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647771047/banner-fighter2_wt8tpy.png" alt="" />
+                    <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647771046/NFTs/banner2_rruhkv.png" alt="" />
                 </div>   
             </div>
         </div>
