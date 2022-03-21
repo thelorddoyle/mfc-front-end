@@ -1,13 +1,5 @@
 import { gql } from "graphql-tag"
 
-export const MINT_NFT = gql `
-   mutation Mutation {
-    mintNft {
-      id
-    }
-  }
-`
-
 export const GET_USER_NFTS = gql`
   query GetUserNfts {
     getMyNfts {
@@ -33,17 +25,22 @@ export const GET_USER_NFTS = gql`
         winnerId
         loserId
         fightReplay {
-        attackerId
-        defenderId
-        body
-      }
+          attackerId
+          defenderId
+          body
+        }
       }
     }
-}
-
+  }
 `
 
-
+export const MINT_NFT = gql `
+   mutation Mutation {
+    mintNft {
+      id
+    }
+  }
+`
 //   context: {
 //         headers: {
 //             "Content-Type": "application/json"

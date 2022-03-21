@@ -23,7 +23,7 @@ const Fighters: React.FC = () => {
    //Getting all NFTS by user
    const getUserNfts = useQuery( GET_USER_NFTS, {
         onCompleted(data){
-        dispatch({type: 'userNfts', payload : data.getMyNfts})
+            dispatch({type: 'userNfts', payload : data.getMyNfts})
         },
         onError(error){
             setErrors(error)
@@ -38,21 +38,20 @@ const Fighters: React.FC = () => {
         <>
         <Link to="/mint"> 
             <div className="display-stats"> 
-                    <div className="fighters"> 
-                        <FontAwesomeIcon className="rotate-icon"  icon={faHandBackFist}/>
-                        <h2>Buy more fighters for a chance to win more money</h2>
-                        <FontAwesomeIcon  icon={faArrowRight}/>
+                <div className="fighters"> 
+                    <FontAwesomeIcon className="rotate-icon"  icon={faHandBackFist}/>
+                    <h2>Buy more fighters for a chance to win more money</h2>
+                    <FontAwesomeIcon  icon={faArrowRight}/>
+                </div>
+                <div className="show-eth"> 
+                    <FontAwesomeIcon  icon={faSackDollar}/> 
+                    <div>
+                        <h2>Available funds</h2>
+                        <p>
+                            Eth: {roundTo(user.amountInWallet, 2)}
+                        </p>
                     </div>
-                    <div className="show-eth"> 
-                        <FontAwesomeIcon  icon={faSackDollar}/> 
-                        <div>
-                            <h2>Available funds</h2>
-                            <p>
-                                Eth: {roundTo(user.amountInWallet, 2)}
-                            </p>
-                        </div>
-                    </div>
-                
+                </div>
             </div>
         </Link>         
         <div className="show-nfts">

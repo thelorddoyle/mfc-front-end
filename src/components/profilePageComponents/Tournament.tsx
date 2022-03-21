@@ -15,13 +15,9 @@ const Tournament: React.FC = () => {
 
     const tournament = useQuery( GET_TOURNAMENT, {
         onCompleted(data){
-            console.log('ON COMPLETED TRIGGERED. ')
-            
             const fights  = data.getTournament.fights
 
-            // TODO: make the tournament work with state. 
-            // make an array where each index is the fights belonging to each round. 
-            
+            //separate the fights into their respective tiers. 
             let tiers = [];
             for (let i = 1; i <= 5; i++){
                 // console.log(fights)
@@ -41,9 +37,9 @@ const Tournament: React.FC = () => {
     }) 
 
 
-
-    const renderSwitch = (i: number) => {
-        switch(i){
+    // Switch Case that renders the appropriate heading depending on tierIndex 
+    const renderSwitch = (tierI: number) => {
+        switch(tierI){
             case 0: 
                 return 'ROUND 1'
             case 1:
@@ -54,11 +50,14 @@ const Tournament: React.FC = () => {
                 return 'SEMI FINALS'
             case 4:
                 return 'GRAND FINALS'
+            default: 
+                return 'ERROR UNHANDLED ROUND'
         }
     }
 
     return (
         <div className="myTournaments card-navbar">
+            <p>errors</p>
             {
                 tieredFights.map((tier: any, i: number) => {
                     return <div key={i}>
@@ -72,7 +71,7 @@ const Tournament: React.FC = () => {
                         {
                             tier.map((fight: any) => {
                                 return <div>
-                                    <p>{`Tournament ID: ${fight.id}, ${fight.nfts[0]} ${fight.winnerId ? `Winner: ${fight.winnerId}` : 'Pending Completion'}`} </p>
+                                    <p>{`Tournament ID: ${fight.id}, ${fight.winnerId ? `  Winner: ${fight.winnerId}` : ' Upcoming!'}`} </p>
                                     {
                                         fight.nfts[0] 
                                         ?

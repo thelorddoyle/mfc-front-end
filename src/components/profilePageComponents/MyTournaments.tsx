@@ -12,9 +12,6 @@ const MyTournaments: React.FC = () => {
     let completedTournaments;
     
     if(myTournaments) {
-        
-        console.log('tournaments', myTournaments);
-
         try {
             pendingTournaments = myTournaments.filter((tournament: any) => {
                 return tournament.status === "pending" || tournament.status === "ready"

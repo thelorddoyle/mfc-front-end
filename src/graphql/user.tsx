@@ -1,5 +1,21 @@
 import { gql } from "graphql-tag"
 
+export const GET_MY_TOURNAMENTS = gql`
+    query getTournamentsForUser {
+        getAllMyTournaments {
+                id
+                status
+                round
+                startDate
+                fights {
+                nfts {
+                    id
+                }
+            }
+        }
+    }
+`
+
 export const LOGIN_USER = gql `
     mutation login(
         $username: String!
@@ -30,21 +46,6 @@ export const REGISTER_USER = gql`
                     }
         ){
             id email username token amountInWallet
-        }
-    }
-`
-export const GET_MY_TOURNAMENTS = gql`
-    query getTournamentsForUser {
-        getAllMyTournaments {
-                id
-                status
-                round
-                startDate
-                fights {
-                nfts {
-                    id
-                }
-            }
         }
     }
 `
