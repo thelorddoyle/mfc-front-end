@@ -86,6 +86,7 @@ $max-width: 1200px;
     width: 100vw;
     height: 100vh;
     max-width: $max-width;
+    max-height: 100vh;
     margin: 20px auto;
     color: white;
     
@@ -145,10 +146,3 @@ $max-width: 1200px;
     color: #fff;
     font-size: 1rem;
 }
-
-.truncate {
-    display:inline-block; 
-   text-overflow:ellipsis;
-   overflow:hidden; 
-   width:50px;
-  }

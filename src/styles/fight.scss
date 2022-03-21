@@ -1,0 +1,45 @@
+.fight-container{
+    width: 100%;
+    height: 100%;
+    justify-content: space-center;
+    align-content: center;
+    padding: 20px;
+
+    .fight-grid{
+        display: grid;
+        align-content: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 70%;
+        .nft-arts{
+            position: fixed;
+            text-align: center;
+            div{
+                padding: 20px;
+            }
+        }
+     
+    }
+
+    .fight-secuence{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+      .secuence{
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.7px);
+        -webkit-backdrop-filter: blur(9.7px);
+        padding: 20px;
+        margin: 20px 0px;
+        font-family: 'VIC-Light';
+        font-size: 1.3rem;
+        h1{
+            padding: 20px 0px;
+        }
+      }
+    }
+}
