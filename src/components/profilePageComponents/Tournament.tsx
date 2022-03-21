@@ -9,33 +9,28 @@ import { useParams } from "react-router-dom";
 
 const Tournament: React.FC = () => {
     const [errors, setErrors] = useState<ApolloError | undefined>()
-    const [fights, setFights] = useState<any | null> ([]);
+    // const [fights, setFights] = useState<any | null> ([]);
     const [tieredFights, setTieredFights] = useState<any | null> ([]);
     const {id: tournamentId} = useParams()
 
     const tournament = useQuery( GET_TOURNAMENT, {
         onCompleted(data){
-            setFights(data.getTournament.fights);
+            console.log('ON COMPLETED TRIGGERED. ')
             
+            const fights  = data.getTournament.fights
+
             // TODO: make the tournament work with state. 
             // make an array where each index is the fights belonging to each round. 
             
-            let tiers = []
+            let tiers = [];
             for (let i = 1; i <= 5; i++){
-                console.log(fights)
-                const roundOfFights = fights.filter((fight: any)=> fight.tier === i)
+                // console.log(fights)
+                const roundOfFights = fights.filter((fight: any)=> fight.tier === i);
                 
                 tiers.push(roundOfFights);
-            }
+            }  
 
-            // console.log('tiers: counts', tiers.length)
             setTieredFights(tiers);
-
-            tieredFights.forEach((tier: any, i:number) => {
-                console.log(i + 1, tier)
-            })
-
-
         },
         onError(error){
             setErrors(error)
@@ -44,12 +39,8 @@ const Tournament: React.FC = () => {
             tournamentId
         },
     }) 
-    
 
-    // const myTournaments = useSelector((state: RootStateOrAny) => state.myTournaments) //TODO: remember what to do for the useSelector. 
-    // if(myTournaments){
-    //     console.log('tournament', myTournaments);
-    // }
+
 
     const renderSwitch = (i: number) => {
         switch(i){
@@ -69,10 +60,9 @@ const Tournament: React.FC = () => {
     //TODO: discuss the use of TIER VS ROUND
     return (
         <div className="myTournaments card-navbar">
-
             {
                 tieredFights.map((tier: any, i: number) => {
-                    return <div>
+                    return <div key={i}>
                         <h1>
                             {
                                 renderSwitch(i)
