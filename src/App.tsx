@@ -19,37 +19,37 @@ import Tournament from './components/profilePageComponents/Tournament';
 
 
 function App() {
-  return (
-  <div className="container">
-  <Provider store={ store }>
-    <Router>
-        <Navbar/>
-        <Routes>
-          <Route path="/" element={ <LandingPage/> } />
-          <Route path="/login"  element = { <Login/> } />
-          <Route path="/connect"  element = { <ConnectPage/> } />
-          <Route path="/profile" element={<AuthRoute />} >
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/profile/fighters" element={<FightersPage />} />
-          </Route>
-          <Route path="/mint" element={<AuthRoute />} >
-              <Route path="/mint" element={<MintPage />} />
-          </Route>
-          <Route path="/mytournaments" element={<AuthRoute />} >
-              <Route path="/mytournaments" element={<MyTournaments />} />
-          </Route>
-          <Route path="/tournament/:id" element={<AuthRoute />} >
-              <Route path="/tournament/:id" element={<Tournament />} />
-          </Route>
-          <Route path="/profile/fight/:id" element={<AuthRoute />} >
-              <Route path="/profile/fight/:id" element={<Fight />} />
-          </Route>
-          
-        </Routes>
-    </Router>
-  </Provider>
-  </div>
-  );
+    return (
+    <div className="container">
+    <Provider store={ store }>
+        <Router>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={ <LandingPage/> } />
+                <Route path="/login"  element = { <Login/> } />
+                <Route path="/connect"  element = { <ConnectPage/> } />
+                <Route path="/profile" element={<AuthRoute />} >
+                    <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/profile/fighters" element={<FightersPage />} />
+                </Route>
+                <Route path="/mint" element={<AuthRoute />} >
+                    <Route path="/mint" element={<MintPage />} />
+                </Route>
+                <Route path="/mytournaments" element={<AuthRoute />} >
+                    <Route path="/mytournaments" element={<MyTournaments />} />
+                </Route>
+                <Route path="/tournament/:id" element={<AuthRoute />} >
+                    <Route path="/tournament/:id" element={<Tournament />} />
+                </Route>
+                <Route path="/profile/fight/:id" element={<AuthRoute />} >
+                    <Route path="/profile/fight/:id" element={<Fight />} />
+                </Route>
+                
+            </Routes>
+        </Router>
+    </Provider>
+    </div>
+    );
 }
 
 export default App;

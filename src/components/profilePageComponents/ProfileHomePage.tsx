@@ -15,6 +15,7 @@ const ProfileHomePage: React.FC = () => {
     const [errors, setErrors] = useState<ApolloError | undefined>();
     const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1);
     const [fightsWon, setFightsWon] = useState<number | null>();
+    const [fightsLost, setFightsLost] = useState<number | null>();
 
     //Getting all tournaments that users NFT's are taking part in
     const tournaments = useQuery( GET_MY_TOURNAMENTS, {
@@ -42,8 +43,6 @@ const ProfileHomePage: React.FC = () => {
 
             // Get a value for fights won, fights lost upcoming.
             data.getMyNfts.forEach((nft: any) => {
-                console.log(nft)
-                const nftWinCount = nft.fights.filter((fight: any) => fight.winnerId === nft.id ).length;
                 totalWins += nft.fights.filter((fight: any) => fight.winnerId === nft.id ).length;
                 totalLosses += nft.fights.filter((fight: any) => fight.loserId === nft.id ).length;
             })
@@ -52,6 +51,7 @@ const ProfileHomePage: React.FC = () => {
             console.log('totalLosses count:', totalLosses)
 
             setFightsWon(totalWins);
+            setFightsLost(totalLosses)
         },
         onError(error){
             setErrors(error)
@@ -112,7 +112,8 @@ const ProfileHomePage: React.FC = () => {
                         </div>
                         <div className="overall-stats">
                             <div>
-                                <h1>Overall Stats</h1>
+                                <h1>Total Wins: {fightsWon}</h1>
+                                <h1>Total Losses: {fightsLost}</h1>
                             </div>
                         </div>
                     </div>

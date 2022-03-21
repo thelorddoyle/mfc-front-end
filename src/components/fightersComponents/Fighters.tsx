@@ -18,7 +18,7 @@ const Fighters: React.FC = () => {
     const dispatch = useDispatch();
     const [infoNft, setInfoNft] = useState<any | null> ({})
 
-    console.log(infoNft);
+    console.log('infoNft:', infoNft);
     
    //Getting all NFTS by user
    const getUserNfts = useQuery( GET_USER_NFTS, {
@@ -85,7 +85,13 @@ const Fighters: React.FC = () => {
                                 Stats
                             </h1>
                             <h2>
-                                Total Fights: #<span>{infoNft?.fights?.length} </span>
+                                <p>Total Fights: {infoNft?.fights?.length}</p>
+                                <p>Total Wins: {
+                                    infoNft?.fights?.filter((fight: any) => fight.winnerId === infoNft.id).length
+                                }</p>
+                                <p>Total Losses: {
+                                    infoNft?.fights?.filter((fight: any) => fight.loserId === infoNft.id).length
+                                }</p>
                             </h2>
                         </div>
                         
@@ -106,6 +112,8 @@ const Fighters: React.FC = () => {
 
                         infoNft.fights?.map(function(fight: any): JSX.Element | undefined {
                             // if the fight has been resolved
+                            console.log('fights:', infoNft.fights)
+                            
                             if (fight.winnerId) {
                                return (
                                     <div className={infoNft.id === fight.winnerId ? 'fight-details fight-won' : 'fight-details fight-lost'} key={fight.id}>
@@ -115,7 +123,7 @@ const Fighters: React.FC = () => {
                                         </div>
                                         <div>
                                             <h1>User</h1>
-                                            <span>{infoNft.id === fight.winnerId ? 'You' : 'They'} won!</span>
+                                            <span>You{infoNft.id === fight.winnerId ? ' Won!' : ' Lost!'}</span>
                                         </div>
                                         <div>
                                             <h1>Winner: </h1>
@@ -129,6 +137,32 @@ const Fighters: React.FC = () => {
                                         </div>
                                         <div>
                                             <Link to={`/profile/fight/${fight.id}`}>View Fight</Link>
+                                        </div>
+                                    </div>
+                                )
+                            } else{
+                                return (
+                                    <div className={infoNft.id === fight.winnerId ? 'fight-details fight-won' : 'fight-details fight-lost'} key={fight.id}>
+                                        <div>
+                                            <h1>Match</h1>
+                                            <span>#{truncate(fight.id)}</span>
+                                        </div>
+                                        <div>
+                                            <h1>User</h1>
+                                            <span>Upcoming</span>
+                                        </div>
+                                        <div>
+                                            <h1>Winner: </h1>
+                                            <span>#{truncate(fight.winnerId)}</span>
+                                        </div>
+                                        <div>
+                                            <h1>Loser: </h1>
+                                            <span>
+                                                #{truncate(fight.loserId)}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <Link to={`/profile/fight/${fight.id}`}>BUTTON BROKEN</Link>
                                         </div>
                                     </div>
                                 )
