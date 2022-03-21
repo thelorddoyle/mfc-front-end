@@ -33,7 +33,6 @@ const Fighters: React.FC = () => {
         }
     })
 
-    
     return (
         <>
         <Link to="/mint"> 

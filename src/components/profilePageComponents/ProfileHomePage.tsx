@@ -121,7 +121,6 @@ const ProfileHomePage: React.FC = () => {
                
             }
         </> 
-
     )
 }
 
