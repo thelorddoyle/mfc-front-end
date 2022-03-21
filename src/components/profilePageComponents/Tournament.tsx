@@ -31,10 +31,9 @@ const Tournament: React.FC = () => {
             // console.log('tiers: counts', tiers.length)
             setTieredFights(tiers);
 
-
-            // tieredFights.forEach((tier: any, i:number) => {
-            //     console.log(i + 1, tier)
-            // })
+            tieredFights.forEach((tier: any, i:number) => {
+                console.log(i + 1, tier)
+            })
 
 
         },

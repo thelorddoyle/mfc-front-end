@@ -38,6 +38,9 @@ function App() {
           <Route path="/mytournaments" element={<AuthRoute />} >
               <Route path="/mytournaments" element={<MyTournaments />} />
           </Route>
+          <Route path="/tournament/:id" element={<AuthRoute />} >
+              <Route path="/tournament/:id" element={<Tournament />} />
+          </Route>
           <Route path="/profile/fight/:id" element={<AuthRoute />} >
               <Route path="/profile/fight/:id" element={<Fight />} />
           </Route>
