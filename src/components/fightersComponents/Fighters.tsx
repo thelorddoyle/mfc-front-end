@@ -17,6 +17,8 @@ const Fighters: React.FC = () => {
     const navigate = useNavigate();
     const [infoNft, setInfoNft] = useState<any | null> ({})
 
+    console.log(infoNft);
+    
    //Getting all NFTS by user
    const getUserNfts = useQuery( GET_USER_NFTS, {
         onCompleted(data){
@@ -54,15 +56,16 @@ const Fighters: React.FC = () => {
             </div>
         </Link>         
         <div className="show-nfts">
-            {
-                getUserNfts.loading ? "loading your nfts":
-                nfts?.map((el: any) => (
-                    <div key={el.id} onClick={()=> setInfoNft(el) }>
-                      <img src={el.image} alt="" style={{"maxWidth": "200px"}}/>
-                    </div>
-                ))
-            }
-          
+            <div className="scroll-bar">
+                {
+                    getUserNfts.loading ? "loading your nfts":
+                    nfts?.map((el: any) => (
+                        <div key={el.id} className="nft-container" onClick={()=> setInfoNft(el) }>
+                            <img src={el.image} alt=""/>
+                        </div>
+                    ))
+                }
+          </div>
         </div>
         <div>
             <h1>

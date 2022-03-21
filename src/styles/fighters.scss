@@ -40,8 +40,46 @@
 .show-nfts{
     display: flex;  
     max-width: 100%;
-    overflow-x: auto;
+    overflow: hidden;
     padding: 20px;
+    .scroll-bar{
+        display: flex;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 7px;
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: rgb(248,0,36);
+            background: linear-gradient(90deg, rgba(248,0,36,1) 0%, rgb(239, 62, 46) 100%);
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: rgb(179, 179, 179);
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgb(38, 38, 38);
+        }
+    }
+    .nft-container{
+        
+        img{
+        max-width: 180px;
+        padding: 5px 0px;
+        margin-right: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        &:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+
+    }
    
 }
 
