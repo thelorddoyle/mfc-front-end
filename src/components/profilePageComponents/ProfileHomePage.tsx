@@ -9,12 +9,13 @@ import {roundTo} from 'round-to';
  
 const ProfileHomePage: React.FC = () => {
 
-    const user = useSelector((state: RootStateOrAny) => state.data)
-    const userNfts = useSelector((state: RootStateOrAny) => state.nfts)
+    const user = useSelector((state: RootStateOrAny) => state.data);
+    const userNfts = useSelector((state: RootStateOrAny) => state.nfts);
     const dispatch = useDispatch();
-    const [errors, setErrors] = useState<ApolloError | undefined>()
-    const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1)
-    
+    const [errors, setErrors] = useState<ApolloError | undefined>();
+    const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1);
+    const [fightsWon, setFightsWon] = useState<number | null>();
+    const [fightsLost, setFightsLost] = useState<number | null>();
 
     //Getting all tournaments that users NFT's are taking part in
     const tournaments = useQuery( GET_MY_TOURNAMENTS, {
@@ -34,7 +35,23 @@ const ProfileHomePage: React.FC = () => {
     //Getting all NFTS by user
     const nfts = useQuery( GET_USER_NFTS, {
         onCompleted(data){
-        dispatch({type: 'userNfts', payload : data.getMyNfts})
+            dispatch({type: 'userNfts', payload : data.getMyNfts})
+            console.log('nfts:', data.getMyNfts)
+
+            let totalWins = 0;
+            let totalLosses = 0;
+
+            // Get a value for fights won, fights lost upcoming.
+            data.getMyNfts.forEach((nft: any) => {
+                totalWins += nft.fights.filter((fight: any) => fight.winnerId === nft.id ).length;
+                totalLosses += nft.fights.filter((fight: any) => fight.loserId === nft.id ).length;
+            })
+
+            console.log('totalWins count:', totalWins)
+            console.log('totalLosses count:', totalLosses)
+
+            setFightsWon(totalWins);
+            setFightsLost(totalLosses)
         },
         onError(error){
             setErrors(error)
@@ -45,7 +62,6 @@ const ProfileHomePage: React.FC = () => {
     })  
 
     return (
-
         <>
             {/* <Link to="/profile/fighters" >Fighters</Link>  
             <Link to="/profile/fight" >Fight</Link>   */}
@@ -96,7 +112,8 @@ const ProfileHomePage: React.FC = () => {
                         </div>
                         <div className="overall-stats">
                             <div>
-                                <h1>Overall Stats</h1>
+                                <h1>Total Wins: {fightsWon}</h1>
+                                <h1>Total Losses: {fightsLost}</h1>
                             </div>
                         </div>
                     </div>
