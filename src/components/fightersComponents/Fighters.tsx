@@ -57,7 +57,7 @@ const Fighters: React.FC = () => {
         <div className="show-nfts">
             <div className="scroll-bar">
                 {
-                    getUserNfts.loading ? "loading your nfts":
+                    getUserNfts.loading ? "loading your nfts" :
                     nfts?.map((el: any) => (
                         <div key={el.id} className="nft-container" onClick={()=> setInfoNft(el) }>
                             <img src={el.image} alt=""/>
