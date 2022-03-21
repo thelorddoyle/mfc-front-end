@@ -14,11 +14,11 @@ const LandingPage: React.FC = () => {
         <>
             
             <Banner />
-            {/* <HowItWorks1 />
+            <HowItWorks1 />
             <HowItWorks2 />
             <HowItWorks3 />
             <Roadmap />
-            <EarlyAccessNft /> */}
+            <EarlyAccessNft />
 
         </>
 

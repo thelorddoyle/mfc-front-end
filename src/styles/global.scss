@@ -1,5 +1,65 @@
 @import 'reset-css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: 'VIC-Bold';
+    src: local('VIC-Bold'), url('../fonts/VIC-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-BoldItalic';
+    src: local('VIC-BoldItalic'), url('../fonts/VIC-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-ExtraLight';
+    src: local('VIC-ExtraLight'), url('../fonts/VIC-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-ExtraLightItalic';
+    src: local('VIC-ExtraLightItalic'), url('../fonts/VIC-ExtraLightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-Italic';
+    src: local('VIC-Italic'), url('../fonts/VIC-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-Light';
+    src: local('VIC-Light'), url('../fonts/VIC-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-LightItalic';
+    src: local('VIC-LightItalic'), url('../fonts/VIC-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-Medium';
+    src: local('VIC-Medium'), url('../fonts/VIC-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-MediumItalic';
+    src: local('VIC-MediumItalic'), url('../fonts/VIC-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-Regular';
+    src: local('VIC-Regular'), url('../fonts/VIC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-SemiBold';
+    src: local('VIC-SemiBold'), url('../fonts/VIC-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VIC-SemiBoldItalic';
+    src: local('VIC-SemiBoldItalic'), url('../fonts/VIC-SemiBoldItalic.ttf') format('truetype');
+}
 
 * , html {
     font-size: 16px;
@@ -8,11 +68,13 @@
 body {
     box-sizing: border-box !important; 
     background-image: linear-gradient(to bottom, #000000, #120105, #1e0207, #260307, #2e0305, #2e0305, #2e0305, #2e0305, #260307, #1e0207, #120105, #000000);   
-    font-family: "Roboto", sans-serif;
+    //font-family: "Roboto", sans-serif;
     // background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822524/Background%20Images/Background_anrgpu.png");
     // background-position: center; /* Center the image */
     // background-repeat: no-repeat; /* Do not repeat the image */
     // background-size: cover; /* Resize the background image to cover the entire container */
+    font-family: "VIC-Regular", sans-serif;
+   
 }
 $max-width: 1200px;
 
