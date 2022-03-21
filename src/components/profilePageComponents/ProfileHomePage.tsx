@@ -62,7 +62,6 @@ const ProfileHomePage: React.FC = () => {
     })  
 
     return (
-
         <>
             {/* <Link to="/profile/fighters" >Fighters</Link>  
             <Link to="/profile/fight" >Fight</Link>   */}
@@ -121,7 +120,6 @@ const ProfileHomePage: React.FC = () => {
                
             }
         </> 
-
     )
 }
 

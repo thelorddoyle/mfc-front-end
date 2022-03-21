@@ -5,10 +5,9 @@ const Banner: React.FC = () => {
 
     return (
         <div className="hero-banner">
-            <h1>Metaverse Fighting Championship</h1>
+            <h1>METAVERSE FIGHTING CHAMPIONSHIP</h1>
             <h2>OWN. FIGHT. WIN</h2>
 
-            {/* TODO: CHANGE TO MINT PAGE */}
             <Link to="/mint">
                 <button type="button" className="main-button">
                     Mint
