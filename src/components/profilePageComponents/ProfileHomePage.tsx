@@ -119,7 +119,6 @@ const ProfileHomePage: React.FC = () => {
                         </div>
                     </div>
                 </>
-               
             }
         </> 
     )
