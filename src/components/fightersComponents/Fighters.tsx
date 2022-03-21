@@ -107,9 +107,8 @@ const Fighters: React.FC = () => {
             }
         </div>
             <div className="past-fights">
-                <h1>Past Fights</h1> 
+                <h1>All Fights</h1> 
                     {
-
                         infoNft.fights?.map(function(fight: any): JSX.Element | undefined {
                             // if the fight has been resolved
                             console.log('fights:', infoNft.fights)

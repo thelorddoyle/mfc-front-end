@@ -2,6 +2,9 @@ import React from "react"
 import '../../styles/sidebar.scss'
 import { Link } from "react-router-dom";
 import { useSelector, RootStateOrAny} from "react-redux";
+import { truncate } from "../../helpers/utils";
+import '../../styles/mytournaments.scss'
+
 
 
 const MyTournaments: React.FC = () => {
@@ -41,7 +44,6 @@ const MyTournaments: React.FC = () => {
         } catch (err) {
             console.log(err)
         }
-        
     }
     
     //TODO: list out all the contestants (get them from the fights of the tournament);
@@ -49,15 +51,28 @@ const MyTournaments: React.FC = () => {
     
     return (
         <div className="myTournaments card-navbar">
-            <h1>UPCOMING TOURNAMENTS</h1>
-            <br />
+
+            <div className="past-fights">
+                <h1>UPCOMING TOURNAMENTS</h1>
+                <br />
             {
                 myTournaments
                 ?
                 pendingTournaments.map((tournament: any) => {
                     return (
-                        <div key={tournament.id} >
-                            {`${tournament.id}: ${tournament.status}, count: ${tournament.count}/32`}
+                        <div key={tournament.id} className='fight-details fight-won' >
+                            <div>
+                                <h1>Tournament</h1>
+                                <span>#{truncate(tournament.id)}</span>
+                            </div>
+                            <div>
+                                <h1>Round</h1>
+                                <span>{tournament.round}</span>
+                            </div>
+                            <div>
+                                <h1>Fight Slots Occupied</h1>
+                                <span>{`${tournament.count}/32`}</span>
+                            </div>
                             <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>
                     )
@@ -72,8 +87,19 @@ const MyTournaments: React.FC = () => {
                 ?
                 completedTournaments.map((tournament: any) => {
                     return (
-                        <div>
-                            {`${tournament.id}: ${tournament.status}, count: 32/32`}
+                        <div className="fight-details fight-lost">
+                            <div>
+                                <h1>Tournament</h1>
+                                <span>#{truncate(tournament.id)}</span>
+                            </div>
+                            <div>
+                                <h1>Round</h1>
+                                <span>{tournament.round}</span>
+                            </div>
+                            <div>
+                                <h1>Fight Slots Bought</h1>
+                                <span>32/32</span>
+                            </div>
                             <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>
                     )
@@ -81,6 +107,8 @@ const MyTournaments: React.FC = () => {
                 :
                 null
             }
+            </div>
+            
         </div>
 
     )
