@@ -34,24 +34,26 @@ const ProfilePage: React.FC = () => {
     }
   
     return (
-        <div className="profile-container">
-            <Sidebar onClick={changeComponent}/>
-            {user &&
-                <div className="profile-page">
-                    <div className="display-info">
-                        <div>
-                            <h1>Hello, {user.username}</h1>
-                            <p>Let's Fight!</p>
+        <div className="container">
+            <div className="profile-container">
+                <Sidebar onClick={changeComponent}/>
+                {user &&
+                    <div className="profile-page">
+                        <div className="display-info">
+                            <div>
+                                <h1>Hello, {user.username}</h1>
+                                <p>Let's Fight!</p>
+                            </div>
+                            <div>
+                                <FontAwesomeIcon  icon={faUser}/> 
+                            </div>
                         </div>
-                        <div>
-                            <FontAwesomeIcon  icon={faUser}/> 
-                        </div>
+                        {
+                            switchPage(component)
+                        }
                     </div>
-                    {
-                        switchPage(component)
-                    }
-                </div>
-            }
+                }
+            </div>
         </div>
     )
 }

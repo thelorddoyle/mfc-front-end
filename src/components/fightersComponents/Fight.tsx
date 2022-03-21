@@ -46,7 +46,7 @@ const Fight: React.FC = () => {
     //TODO: make a highlighted message of the who has won 
     return (
 
-            <>
+            <div className="container">
                 {
                     !preparingFight ? 
 
@@ -60,7 +60,7 @@ const Fight: React.FC = () => {
                         fight
                         ?
                             <div className="fight-display">
-                                    <h1 className="results" style={{fontFamily: 'VIC-Light'}}>Results</h1>
+                                    <h1 className="results" >Results</h1>
                                     {
                                         fight.fightReplay.map(function(move:any, index:number) {
                                             
@@ -98,11 +98,14 @@ const Fight: React.FC = () => {
                                                 )  
                                         })
                                     }
-                                    <div className="winner">
-                                        {
-                                            fight.winnerId === player1Id ? `${player1UserName} has won` : `${player2UserName} has won`
-                                        }
+                                    <div className="winner-result">
+                                        <div className="winner">
+                                            {
+                                                fight.winnerId === player1Id ? `${player1UserName} has won` : `${player2UserName} has won`
+                                            }
+                                        </div>
                                     </div>
+                                        
                                 </div>
                         :
                         <h1>Loading</h1>
@@ -111,7 +114,7 @@ const Fight: React.FC = () => {
                 </>
             }
             
-         </>
+         </div>
     )
 }
 

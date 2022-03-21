@@ -4,9 +4,9 @@ import Mint from "../components/profilePageComponents/Mint"
 const MintPage: React.FC = () => {
 
     return (
-        <>
+        <div className="container">
             <Mint/>
-        </>
+        </div>
 
     )
 }

@@ -20,7 +20,6 @@ import Tournament from './components/profilePageComponents/Tournament';
 
 function App() {
     return (
-    <div className="container">
     <Provider store={ store }>
         <Router>
             <Navbar/>
@@ -48,7 +47,6 @@ function App() {
             </Routes>
         </Router>
     </Provider>
-    </div>
     );
 }
 
