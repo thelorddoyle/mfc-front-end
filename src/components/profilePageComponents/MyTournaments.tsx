@@ -1,5 +1,6 @@
 import React from "react"
 import '../../styles/sidebar.scss'
+import { Link } from "react-router-dom";
 import { useSelector, RootStateOrAny} from "react-redux";
 
 
@@ -8,7 +9,6 @@ const MyTournaments: React.FC = () => {
 
     const myTournaments = useSelector((state: RootStateOrAny) => state.myTournaments)
     //Add the 
-    let tournamentsWithCount = myTournaments
     let pendingTournaments = myTournaments.filter((tournament: any) => {
         return tournament.status === "pending" || tournament.status === "ready"
     }).map((tournament: any)=> {
@@ -22,6 +22,7 @@ const MyTournaments: React.FC = () => {
         return tournament;
         
     })
+    
     const completedTournaments = myTournaments.filter((tournament: any) => tournament.status === "completed" );
     
     
@@ -43,6 +44,7 @@ const MyTournaments: React.FC = () => {
                     return (
                         <div>
                             {`${tournament.id}: ${tournament.status}, count: ${tournament.count}/32`}
+                            <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>
                     )
                 })
@@ -58,6 +60,7 @@ const MyTournaments: React.FC = () => {
                     return (
                         <div>
                             {`${tournament.id}: ${tournament.status}, count: 32/32`}
+                            <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>
                     )
                 })
