@@ -57,7 +57,6 @@ const Tournament: React.FC = () => {
         }
     }
 
-    //TODO: discuss the use of TIER VS ROUND
     return (
         <div className="myTournaments card-navbar">
             {
@@ -99,10 +98,7 @@ const Tournament: React.FC = () => {
                     </div>
                 })
             }
-
-
         </div>
-
     )
 }
 
