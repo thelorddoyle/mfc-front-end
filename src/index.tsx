@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloProvider from "./config/ApolloProvider"
 
+import './styles/global.scss'
+
 
 ReactDOM.render(
 <React.StrictMode>
