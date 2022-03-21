@@ -19,35 +19,40 @@ const ProfilePage: React.FC = () => {
         setComponent(component);
     }
 
+    // switchPage expression used to load components conditionally
+    const switchPage = (componentName: any) => {
+        switch (componentName) {
+            case 'default':
+                return <ProfileHomePage/>
+            case 'fighters':
+                return <FightersPage/>
+            case 'tournaments':
+                return <MyTournaments/> 
+            default:
+                return <ProfileHomePage/>
+        }
+    }
   
     return (
         <div className="profile-container">
-                <Sidebar onClick={changeComponent}/>
-                {
-                     user
-                     &&
-                        <div className="profile-page">
-                            <div className="display-info">
-                                    <div>
-                                        <h1>Hello, {user.username}</h1>
-                                        <p>Let's Fight!</p>
-                                    </div>
-                                    <div>
-                                        <FontAwesomeIcon  icon={faUser}/> 
-                                    </div>
-                            </div>
-                            {
-                                component === "default" ? <ProfileHomePage/> 
-                                : 
-                                component === "fighters" ? <FightersPage/>
-                                :
-                                component === "tournaments" && <MyTournaments/>
-                                
-                            }
+            <Sidebar onClick={changeComponent}/>
+            {user &&
+                <div className="profile-page">
+                    <div className="display-info">
+                        <div>
+                            <h1>Hello, {user.username}</h1>
+                            <p>Let's Fight!</p>
                         </div>
-                }
+                        <div>
+                            <FontAwesomeIcon  icon={faUser}/> 
+                        </div>
+                    </div>
+                    {
+                        switchPage(component)
+                    }
+                </div>
+            }
         </div>
-
     )
 }
 
