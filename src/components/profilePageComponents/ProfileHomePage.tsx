@@ -1,12 +1,10 @@
-import React from "react"
-import { Link } from 'react-router-dom'
 import { useState } from "react";
 import { ApolloError, useQuery } from "@apollo/client";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import { GET_MY_TOURNAMENTS } from "../../graphql/user";
 import { GET_USER_NFTS } from "../../graphql/nft"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faSackDollar, faTrophy, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {  faSackDollar, faTrophy, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {roundTo} from 'round-to';
  
 const ProfileHomePage: React.FC = () => {
@@ -48,22 +46,14 @@ const ProfileHomePage: React.FC = () => {
 
     return (
 
-        <div className="profile-page">
+        <>
             {/* <Link to="/profile/fighters" >Fighters</Link>  
             <Link to="/profile/fight" >Fight</Link>   */}
             {
                 user
                 &&
                 <>
-                    <div className="display-info">
-                        <div>
-                            <h1>Hello, {user.username}</h1>
-                            <p>Let's Fight!</p>
-                        </div>
-                        <div>
-                            <FontAwesomeIcon  icon={faUser}/> 
-                        </div>
-                    </div>
+                  
                     <div className="display-stats"> 
                         <div className="tournaments"> 
                             <FontAwesomeIcon className="rotate-icon"  icon={faTrophy}/>
@@ -97,7 +87,7 @@ const ProfileHomePage: React.FC = () => {
                 </>
                
             }
-        </div> 
+        </> 
 
     )
 }

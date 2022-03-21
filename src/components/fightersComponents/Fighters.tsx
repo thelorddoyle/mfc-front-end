@@ -4,8 +4,9 @@ import { useQuery, ApolloError } from "@apollo/client";
 import { useSelector, useDispatch, RootStateOrAny} from "react-redux";
 import { GET_USER_NFTS } from "../../graphql/nft";
 import { useNavigate } from "react-router-dom";
-import HowItWorks1 from "../landingPageComponents/HowItWorks1";
-import Fight from "./Fight";
+import { roundTo } from "round-to";
+import {  faArrowRight, faHandBackFist, faSackDollar} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Fighters: React.FC = () => {
 
@@ -32,14 +33,32 @@ const Fighters: React.FC = () => {
     
     return (
         <>
-        <Link to="/mint" > Mint More </Link> 
-        <h3>Availabe Funds: {user?.amountInWallet} </h3>
-        <div>
+        <Link to="/mint"> 
+            <div className="display-stats"> 
+                
+                    <div className="fighters"> 
+                        <FontAwesomeIcon className="rotate-icon"  icon={faHandBackFist}/>
+                        <h2>Buy more fighters for a chance to win more money</h2>
+                        <FontAwesomeIcon  icon={faArrowRight}/>
+                    </div>
+                    <div className="show-eth"> 
+                        <FontAwesomeIcon  icon={faSackDollar}/> 
+                        <div>
+                            <h2>Available funds</h2>
+                            <p>
+                                Eth: {roundTo(user.amountInWallet, 2)}
+                            </p>
+                        </div>
+                    </div>
+                
+            </div>
+        </Link>         
+        <div className="show-nfts">
             {
                 getUserNfts.loading ? "loading your nfts":
                 nfts?.map((el: any) => (
                     <div key={el.id} onClick={()=> setInfoNft(el) }>
-                      <img src={el.image} alt="" style={{"width": "200px"}}/>
+                      <img src={el.image} alt="" style={{"maxWidth": "200px"}}/>
                     </div>
                 ))
             }

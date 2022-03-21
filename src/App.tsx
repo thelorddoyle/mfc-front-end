@@ -18,14 +18,11 @@ import MyTournaments from './components/profilePageComponents/MyTournaments';
 
 
 function App() {
-  const location = window.location.pathname;
-  console.log(location);
-  
   return (
   <div className="container">
   <Provider store={ store }>
     <Router>
-        {location !== '/profile' && <Navbar/> }
+        <Navbar/>
         <Routes>
           <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
@@ -37,11 +34,9 @@ function App() {
           <Route path="/mint" element={<AuthRoute />} >
               <Route path="/mint" element={<MintPage />} />
           </Route>
-          
           <Route path="/mytournaments" element={<AuthRoute />} >
               <Route path="/mytournaments" element={<MyTournaments />} />
           </Route>
-
           <Route path="/profile/fight/:id" element={<AuthRoute />} >
               <Route path="/profile/fight/:id" element={<Fight />} />
           </Route>
