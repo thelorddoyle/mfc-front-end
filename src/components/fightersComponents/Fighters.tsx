@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { roundTo } from "round-to";
 import {  faArrowRight, faHandBackFist, faSackDollar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { truncate } from "../../helpers/utils";
+
 
 const Fighters: React.FC = () => {
 
@@ -14,7 +16,6 @@ const Fighters: React.FC = () => {
     const nfts = useSelector((state: RootStateOrAny) => state.nfts)
     const [errors, setErrors] = useState<ApolloError | undefined>()
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [infoNft, setInfoNft] = useState<any | null> ({})
 
     console.log(infoNft);
@@ -37,7 +38,6 @@ const Fighters: React.FC = () => {
         <>
         <Link to="/mint"> 
             <div className="display-stats"> 
-                
                     <div className="fighters"> 
                         <FontAwesomeIcon className="rotate-icon"  icon={faHandBackFist}/>
                         <h2>Buy more fighters for a chance to win more money</h2>
@@ -67,14 +67,40 @@ const Fighters: React.FC = () => {
                 }
           </div>
         </div>
-        <div>
-            <h1>
-                Info Nft
-                {infoNft.id}
-            </h1>
-        </div>
-        <div>
-            <h1>Past Results</h1>
+        <div className="show-nft-info">
+            { Object.keys(infoNft).length !== 0 && 
+                <>
+                    <div className="glass-card-nft">
+                        <h1> 
+                            Fighter #<span >{truncate(infoNft?.id)}</span>
+                        </h1>
+                        <h2>
+                            User: #<span>{truncate(user?.id)} </span>
+                        </h2>
+                        <h2>
+                            Mint Season: Genesis <span> 1 </span>
+                        </h2>
+                    </div>
+                    <div className="glass-card-nft">
+                        <div>
+                            <h1> 
+                                Stats
+                            </h1>
+                            <h2>
+                                Total Fights: #<span>{infoNft?.fights?.length} </span>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                    <div className="img-card-nft">
+                        <div className="hero-text">
+                            <h1>
+                                Let's fight
+                            </h1>   
+                        </div>
+                    </div>
+                </>
+            }
         </div>
             {
                 infoNft.fights 

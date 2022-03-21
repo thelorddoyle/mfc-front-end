@@ -80,6 +80,60 @@
         }
 
     }
-   
+    
 }
 
+
+.show-nft-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+    .glass-card-nft{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 100px;
+        max-height: 100px;
+        max-width: 300px;
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.7px);
+        -webkit-backdrop-filter: blur(9.7px);
+        padding: 20px;
+        justify-content: center;
+        h1{
+            font-size: 1.3rem;
+            padding: 2px 0px;
+        }
+        h2{
+            font-size: 1.1rem;
+            padding: 2px 0px;
+            font-weight: 300;
+        }
+    }
+
+    .img-card-nft{
+        background-image: url("https://res.cloudinary.com/metaverse-fc/image/upload/v1647822897/Background%20Images/Octagon_Background_drsy9i.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 300px;
+        background-size: cover;
+        border-radius: 16px;
+        cursor: pointer;
+        position: relative;
+        .hero-text{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h1{
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+   
+}   
