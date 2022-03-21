@@ -10,6 +10,7 @@ const Mint: React.FC = () => {
     const [round, setRound] = useState<number | null>(1)
     const [errors, setErrors] = useState<ApolloError | undefined>()
     const user = useSelector((state: RootStateOrAny) => state.data)
+    const [message,setMessage] = useState<string | null>('')
 
     //Getting Current Round of the tournament
     const {loading, error} = useQuery( GET_ROUND, {
@@ -23,10 +24,10 @@ const Mint: React.FC = () => {
 
     const [mintNft] = useMutation(MINT_NFT, {
         update(_, {data}){
-           console.log(data); 
+           setMessage('Your nft has been minted');
         },
         onError(err){
-            console.log(err);
+            setErrors(err)
         },
         context:{
             headers:{
@@ -36,7 +37,10 @@ const Mint: React.FC = () => {
         
     })
 
-    const handleEvent = () => mintNft();
+    const handleEvent = () => {
+        setMessage('');
+        mintNft()
+    };
 
     return (
        
@@ -48,7 +52,10 @@ const Mint: React.FC = () => {
                 <h2>Round { round }</h2>
                 <p>Prize Money 10ETH </p>
                 <p>Fighters Left 200</p>
-                <button onClick={handleEvent} className="main-button" > MINT </button>
+                <button onClick={handleEvent} className="main-button"  > MINT </button>
+                <p>
+                    {message}
+                </p>
             </div>
 
         }
