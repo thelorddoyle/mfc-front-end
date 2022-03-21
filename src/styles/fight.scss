@@ -49,14 +49,21 @@
         height: 100%;
         flex-direction: column;
         font-family: 'VIC-Light';
+        margin-top: 100px;
+        .results{
+          text-align: center;
+          font-size: 4.5rem;
+          padding: 0px 0px 20px 0px;
+          margin-bottom: 20px;
+        }
         img{
-            max-width: 100px;
+            max-width: 80px;
             border-radius: 5px;
         }
 
     .fight-sequence{
         position: relative;
-        padding: 5px 50px;
+        padding: 10px 50px;
         div{
             float: left;
         }
@@ -67,7 +74,7 @@
     }
     .fight-sequence-2{
         position: relative;
-        padding: 5px 50px;
+        padding: 10px 50px;
         -webkit-animation: opacity 5s forwards;
         -moz-animation: opacity 5s forwards;
         animation: opacity 5s forwards;
@@ -84,7 +91,7 @@
         backdrop-filter: blur(9.7px);
         -webkit-backdrop-filter: blur(9.7px);
         padding: 20px;
-        margin: 20px 0px;
+        margin: 5px 10px;
         font-size: 1.5rem;
        
         h1{
