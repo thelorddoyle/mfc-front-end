@@ -162,7 +162,7 @@ const Fighters: React.FC = () => {
                                             </span>
                                         </div>
                                         <div>
-                                            <Link to={`/profile/fight/${fight.id}`}>BUTTON BROKEN</Link>
+                                            <Link to={`/profile/fight/${fight.id}`}>View Fight</Link>
                                         </div>
                                     </div>
                                 )

@@ -112,13 +112,13 @@ const ProfileHomePage: React.FC = () => {
                         </div>
                         <div className="overall-stats">
                             <div>
+                                <h1>Overall Stats</h1>
                                 <h1>Total Wins: {fightsWon}</h1>
                                 <h1>Total Losses: {fightsLost}</h1>
                             </div>
                         </div>
                     </div>
                 </>
-               
             }
         </> 
     )
