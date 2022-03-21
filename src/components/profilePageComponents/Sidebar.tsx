@@ -23,7 +23,7 @@ const Sidebar: React.FC<Props> = (props) => {
                     <FontAwesomeIcon icon={faUserGroup} />
                      Fighters 
                 </div>
-                <div className="nav-menu">
+                <div className="nav-menu" onClick={()=>props.onClick('tournaments')}>
                     <FontAwesomeIcon  icon={faSackDollar}/> 
                     <span>Tournaments</span>
                 </div> 

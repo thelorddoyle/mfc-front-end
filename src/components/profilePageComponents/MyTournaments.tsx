@@ -8,26 +8,43 @@ const MyTournaments: React.FC = () => {
     // we are using the getMyTournaments endpoint to get the arr of tournaments that my nfts are participating in.
 
     const myTournaments = useSelector((state: RootStateOrAny) => state.myTournaments)
-    //Add the 
-    let pendingTournaments = myTournaments.filter((tournament: any) => {
-        return tournament.status === "pending" || tournament.status === "ready"
-    }).map((tournament: any)=> {
-        // for each tournament, add a field called count, then increment said field whiles looking in each fight. 
-        tournament.count = 0;
+    let pendingTournaments;
+    let completedTournaments;
+    
+    if(myTournaments) {
         
-        tournament.fights.forEach( (fight: any) => {
-            tournament.count += fight.nfts.length;
-        })
+        console.log('tournaments', myTournaments);
 
-        return tournament;
+        try {
+            pendingTournaments = myTournaments.filter((tournament: any) => {
+                return tournament.status === "pending" || tournament.status === "ready"
+            })
+
+            if (pendingTournaments.length !== 0) {
+
+                pendingTournaments = pendingTournaments.map((tournament: any)=> {
+                    // for each tournament, add a field called count, then increment said field whiles looking in each fight. 
+                    tournament.count = 0;
+                    
+                    tournament.fights.forEach( (fight: any) => {
+                        tournament.count += fight.nfts.length;
+                    })
+            
+                    return tournament;
+                    
+                })
+            }
+            
+        } catch (err) {
+            console.log(err)
+        }
+
+        try {
+            completedTournaments = myTournaments.filter((tournament: any) => tournament.status === "completed" );
+        } catch (err) {
+            console.log(err)
+        }
         
-    })
-    
-    const completedTournaments = myTournaments.filter((tournament: any) => tournament.status === "completed" );
-    
-    
-    if(pendingTournaments) {
-        console.log('tournaments', pendingTournaments);
     }
     
     //TODO: list out all the contestants (get them from the fights of the tournament);
@@ -42,7 +59,7 @@ const MyTournaments: React.FC = () => {
                 ?
                 pendingTournaments.map((tournament: any) => {
                     return (
-                        <div>
+                        <div key={tournament.id} >
                             {`${tournament.id}: ${tournament.status}, count: ${tournament.count}/32`}
                             <Link to={`/tournament/${tournament.id}`}>View Tournament</Link>
                         </div>

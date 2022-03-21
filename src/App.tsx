@@ -19,13 +19,11 @@ import Tournament from './components/profilePageComponents/Tournament';
 
 
 function App() {
-  const location:string = window.location.pathname;
-  
   return (
   <div className="container">
   <Provider store={ store }>
     <Router>
-        {location !== '/profile'&&  <Navbar/> }
+        <Navbar/>
         <Routes>
           <Route path="/" element={ <LandingPage/> } />
           <Route path="/login"  element = { <Login/> } />
@@ -37,15 +35,9 @@ function App() {
           <Route path="/mint" element={<AuthRoute />} >
               <Route path="/mint" element={<MintPage />} />
           </Route>
-          
           <Route path="/mytournaments" element={<AuthRoute />} >
               <Route path="/mytournaments" element={<MyTournaments />} />
           </Route>
-          
-          <Route path="/tournament/:id" element={<AuthRoute />} >
-              <Route path="/tournament/:id" element={<Tournament />} />
-          </Route>
-          
           <Route path="/profile/fight/:id" element={<AuthRoute />} >
               <Route path="/profile/fight/:id" element={<Fight />} />
           </Route>
