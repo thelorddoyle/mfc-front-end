@@ -4,16 +4,16 @@ import '../../styles/Temp.css'
 const HowItWorks1: React.FC = () => {
 
     return (
-        <>
+        <div className="howItWorks1">
         
-            <h3>HOW IT WORKS</h3>
+            <button className="main-button landing-page-button">HOW IT WORKS</button>
 
-            <h2>Collect fighters and build your roster</h2>
+            <h3>Collect fighters and build your roster</h3>
             <p>Participate in the Metaverse Fighting Championship by recruiting fighters and building your roster. The 16,384 Genesis fighters will be the only ones ever minted in the game.</p>
 
-            <img src="https://cdn.akamai.steamstatic.com/steam/apps/1510210/ss_0604356df2093165201021d594b1e0acad6123f4.1920x1080.jpg?t=1636411283" alt="filler" className="fillerImage" />
+            <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647822860/Background%20Images/My_fighters_r0nfug.png" alt="filler" className="howItWorksImage" />
 
-        </>
+        </div>
 
     )
 }

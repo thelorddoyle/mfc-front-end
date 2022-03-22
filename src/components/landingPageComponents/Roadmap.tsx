@@ -4,15 +4,15 @@ import '../../styles/Temp.css'
 const Roadmap: React.FC = () => {
 
     return (
-        <>
+        <div className="roadmap">
         
-            <h3>Roadmap</h3>
+            <button className="main-button landing-page-button">Roadmap</button>
             <h2>An outlook into the future of the promotion</h2>
 
             {/* Roadmap two columns */}
-            <div className="two-column-grid">
+            <div className="two-column-roadmap-grid">
 
-                <div className="grid-column" >
+                <div className="roadmap-grid-column">
 
                     <h4>Season 1: Genesis</h4>
                         <p>Over 1,000 Eth to be distributed in prizes, fighters will participate in up to 10 tournaments with a max prize of 0.75 Eth per tournament</p>
@@ -25,7 +25,7 @@ const Roadmap: React.FC = () => {
 
                 </div>
 
-                <div className="grid-column" >
+                <div className="roadmap-grid-column" >
 
                     <h4>Season 1: Exhibition</h4>
                         <p>At the end of Season 1 we will host a 20 Eth prize tournament for all holders. We will offer a further 50 Eth through exhibition tournaments.</p>
@@ -40,7 +40,7 @@ const Roadmap: React.FC = () => {
 
             </div>
 
-        </>
+        </div>
 
     )
 }

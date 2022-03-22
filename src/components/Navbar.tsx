@@ -19,17 +19,16 @@ const Navbar: React.FC = () =>{
                     </Link> 
             </div>
             <div className="nav-menu"> 
-             <Link to="/"> Home</Link>
-             <Link to="/mint" >Mint</Link>   
-             <Link to="/mytournaments" >My Tournaments</Link>   
+             <Link to="/"> HOME</Link>
+             <Link to="/mint" >MINT</Link>   
             { 
                 user === undefined 
                 ?
-                    <Link className="main-button" to="/connect">Connect</Link>
+                    <Link className="main-button" to="/connect">CONNECT</Link>
                 :
                 <>
-                    <Link to="/profile" >Profile</Link>
-                    <Link to="" onClick={()=> dispatch({type: 'logoutUser'})} >Logout</Link>
+                    <Link to="/profile" >PROFILE</Link>
+                    <Link to="" onClick={()=> dispatch({type: 'logoutUser'})} >LOGOUT</Link>
                 </>
             }
            </div>

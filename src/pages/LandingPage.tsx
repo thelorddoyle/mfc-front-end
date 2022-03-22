@@ -12,14 +12,16 @@ const LandingPage: React.FC = () => {
 
     return (
         <>
-            
-            <Banner />
-            <HowItWorks1 />
-            <HowItWorks2 />
-            <HowItWorks3 />
-            <Roadmap />
-            <EarlyAccessNft />
-
+            <div className="landingPage">
+                <Banner />
+            <div className="howItWorks">
+                <HowItWorks1 />
+                <HowItWorks2 />
+                <HowItWorks3 />
+            </div>
+                <Roadmap />
+                <EarlyAccessNft />
+            </div>
         </>
 
     )

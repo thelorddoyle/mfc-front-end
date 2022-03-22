@@ -11,9 +11,9 @@ const Sidebar: React.FC<Props> = (props) => {
 
     return (
         <div className="sidebar card-navbar">
-            <div className="nav-logo">
-            <Link to="/" ><h1>MFC</h1></Link>  
-            </div>
+            <Link to="/" >
+                <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647822121/Logos%20And%20Icons/MFC_White_diwtbf.png" alt="mfc_logo" className="sidebar-logo-mfc" />
+                </Link> 
             <div className="navigation">
                 <div className="nav-menu" onClick={()=>props.onClick('default')}>
                     <FontAwesomeIcon icon={faClone} />

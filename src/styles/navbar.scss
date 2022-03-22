@@ -1,13 +1,19 @@
 
 .navbar {
+    font-family: 'VIC-SemiBold', sans-serif;
     display: flex;
     width: 100%;
     justify-content:space-between;
     align-items: center;
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: transparent;
 
     .logo-mfc{
         font-size: 2.5rem;
         font-weight: 900;
+        margin-left: 5%;
 
         img {
             max-width: 150px;
@@ -21,6 +27,7 @@
 
     .nav-menu{
         font-size: 1.2rem;
+        margin-right: 5%;
        
     }
 

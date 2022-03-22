@@ -18,18 +18,16 @@
     align-items: center;
     border-radius: 5px;
     
-    .nav-logo{
+    .sidebar-logo-mfc{
+        margin-top: 20px;
+        width: 150px;
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translate(-50%, 0);
-        h1{
-            padding: 20px 0px;
-            font-size:3rem;
-            font-weight: 700;
-        }
     }
     .navigation{
+        
         .nav-menu{
             font-size: 1.5rem;
             padding: 20px 20px;
@@ -51,7 +49,7 @@
 
     .bottom-nav{
         position: absolute;
-        bottom: 10px;
+        bottom: -50px;
         left: 50%;
         transform: translate(-50%, 0);
         width: 90%;
