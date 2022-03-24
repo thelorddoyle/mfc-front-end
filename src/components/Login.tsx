@@ -33,7 +33,7 @@ export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
             dispatch({type: 'loginUser', payload: userData})
             navigate('/');
         },
-        onError(err){
+        onError(err) {
             console.log(err)
             // setError(err.graphQLErrors[0].extensions.errors as ErrorSetter)
         },

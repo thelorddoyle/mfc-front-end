@@ -14,11 +14,11 @@ const LandingPage: React.FC = () => {
         <>
             <div className="landingPage">
                 <Banner />
-            <div className="howItWorks">
-                <HowItWorks1 />
-                <HowItWorks2 />
-                <HowItWorks3 />
-            </div>
+                <div className="howItWorks">
+                    <HowItWorks1 />
+                    <HowItWorks2 />
+                    <HowItWorks3 />
+                </div>
                 <Roadmap />
                 <EarlyAccessNft />
             </div>
