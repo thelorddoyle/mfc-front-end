@@ -14,17 +14,13 @@
     width: 300px!important;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border-radius: 5px;
     
     .sidebar-logo-mfc{
         margin-top: 20px;
-        width: 150px;
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
+        max-width: 150px;
     }
     .navigation{
         
@@ -48,11 +44,9 @@
     }
 
     .bottom-nav{
-        position: absolute;
-        bottom: -50px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        width: 90%;
+        min-width: 280px;
+        max-width: 300px;
+        position: relative;
         .mint-img-bottom{
             border-radius: 20px;
             background: rgb(248,0,36);
