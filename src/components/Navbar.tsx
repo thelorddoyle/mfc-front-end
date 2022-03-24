@@ -19,8 +19,8 @@ const Navbar: React.FC = () =>{
                     </Link> 
             </div>
             <div className="nav-menu"> 
-             <Link to="/"> HOME</Link>
-             <Link to="/mint" >MINT</Link>   
+             <Link to="/" className="nav-menu-link"> HOME</Link>
+             <Link to="/mint" className="nav-menu-link">MINT</Link>   
             { 
                 user === undefined 
                 ?

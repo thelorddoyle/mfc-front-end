@@ -54,9 +54,17 @@
         margin-bottom: 30px;
     }
 
+    .landing-page-button:hover {
+        background-image: linear-gradient(to right, #d01634 0%, #ef563d 100%);;
+    }
+    
     .mint-button {
         margin-bottom: 0px;
         margin-top: 30px;
+    }
+    
+    .mint-button:hover {
+        background-image: linear-gradient(to right, rgb(208, 22, 22) 0%, #ef563d 100%);;
     }
 
     .hero-banner{

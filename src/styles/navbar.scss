@@ -28,7 +28,16 @@
     .nav-menu{
         font-size: 1.2rem;
         margin-right: 5%;
-       
+
+        .nav-menu-link:hover {
+            background-color: #d01634;
+            background-image: linear-gradient(90deg, #d01634, #ef563d);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-text-fill-color: transparent;
+        }
     }
 
     a{

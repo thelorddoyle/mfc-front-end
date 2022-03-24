@@ -113,6 +113,10 @@ $max-width: 1200px;
     font-size: 1.2rem;
 }
 
+.main-button:hover {
+    background-image: linear-gradient(to right, rgb(208, 22, 22) 0%, #ef563d 100%);;
+}
+
 
 .glass-card{
     width: 50%;
