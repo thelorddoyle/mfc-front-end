@@ -25,12 +25,21 @@ The Metaverse Fighting Championship (MFC) is a blockchain game that allows parti
 
 MFC will utilise the ownership of digital assets to participate in off-chain simulated MMA tournaments. Prize money will be rewarded to winners and runners up in the form of Ethereum airdrops on Polygon.
 
+To visit the app, please [click here.](https://metaverse-fc.netlify.app/)
+
 To learn more, see the below <a href="#wiki">Wiki</a> section.
+
+*Important note: This GitHub repo only represents the app's client side. You can view the [back-end repository here.](https://github.com/thelorddoyle/mfc-back-end)*
 
 ## Installation
 Want to get a taste of being a part of the MFC? Here are some simple instructions on how to log in, mint a fighter register for your first tournament and view your past fights.
 
 1. ### Log In / Register
+
+To log in you will need to 'Connect Your Wallet'. You can do this by clicking on the 'Connect' button on the [homepage](https://metaverse-fc.netlify.app/).
+
+![connect button](drawing.jpg)
+
 2. ### Mint Your First NFT
 3. ### View Your Tournaments
 4. ### Watch a Fight
@@ -53,6 +62,8 @@ MFC is an open-source project and we welcome & encourage community contributions
 ## Credits
 
 The three primary contributors are [thelorddoyle](https://github.com/thelorddoyle/), [Jesus-fhz](https://github.com/Jesus-fhz) and [impetusdev](https://github.com/impetusdev).
+
+The total gallery of contributors can be seen below:
 
 <img src="https://contrib.rocks/image?repo=thelorddoyle/mfc-front-end" style="width:150px"/>
 
