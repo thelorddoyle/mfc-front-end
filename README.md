@@ -38,9 +38,27 @@ Want to get a taste of being a part of the MFC? Here are some simple instruction
 
 To log in you will need to 'Connect Your Wallet'. You can do this by clicking on the 'Connect' button on the [homepage](https://metaverse-fc.netlify.app/).
 
-![connect button](drawing.jpg)
+<img src="./src/images/connect-button.png" alt="drawing" width="200"/>
+
+Once there you can use our purpose-built test account.
+
+| Username    | Password    |
+| ----------- | ----------- |
+| test        | password    |
+
+Alternatively, feel free to register for your own account. 
+
 
 2. ### Mint Your First NFT
+
+Minting generally means something is produced for the first time or made official, like minting a coin. In the crypto world, it has a similar meaning, but the process is a little different. 
+
+Minting, in regards to NFTs, is the process of taking a digital asset and converting the digital file into a digital asset stored on the blockchain. Making it officially a commodity that can be bought and sold.
+
+We use the word 'minting' because we are emulating this process in this build. It just means, 'purchase a character on the MFC game that is unique and belongs to you'.
+
+You can click on [Mint](https://metaverse-fc.netlify.app/mint) in the header or on the homepage.
+
 3. ### View Your Tournaments
 4. ### Watch a Fight
 5. ### Edit Your Account
