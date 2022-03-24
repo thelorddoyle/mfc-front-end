@@ -1,9 +1,10 @@
-<p align="center"><img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647822121/Logos%20And%20Icons/MFC_White_diwtbf.png" alt="mfc_logo" style="max-width:200px"/></p>
+<p align="center"><img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647822121/Logos%20And%20Icons/MFC_White_diwtbf.png" alt="mfc_logo" style="width:200px"/></p>
 <p align="center">
 <img src="https://img.shields.io/badge/version-1.0-success" />
 <img src="https://img.shields.io/github/issues/thelorddoyle/mfc-front-end" />
 <img src="https://img.shields.io/github/languages/count/thelorddoyle/mfc-front-end"/>
 <img src="https://img.shields.io/github/languages/top/thelorddoyle/mfc-front-end"/>
+<img src="https://img.shields.io/github/commit-activity/m/thelorddoyle/mfc-front-end"/>
 </p>
 
 <h1 align="center">Metaverse Fighting Championship</h1>
