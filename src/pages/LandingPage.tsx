@@ -5,6 +5,7 @@ import HowItWorks2 from "../components/landingPageComponents/HowItWorks2"
 import HowItWorks3 from "../components/landingPageComponents/HowItWorks3"
 import Roadmap from "../components/landingPageComponents/Roadmap"
 import EarlyAccessNft from "../components/landingPageComponents/EarlyAccessNft"
+import Footer from "../components/Footer"
 import '../styles/landingpage.scss'
 
 
@@ -21,6 +22,7 @@ const LandingPage: React.FC = () => {
                 </div>
                 <Roadmap />
                 <EarlyAccessNft />
+                <Footer />
             </div>
         </>
 

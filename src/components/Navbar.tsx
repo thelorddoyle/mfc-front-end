@@ -27,8 +27,8 @@ const Navbar: React.FC = () =>{
                     <Link className="main-button" to="/connect">CONNECT</Link>
                 :
                 <>
-                    <Link to="/profile" >PROFILE</Link>
-                    <Link to="" onClick={()=> dispatch({type: 'logoutUser'})} >LOGOUT</Link>
+                    <Link to="/profile" className="nav-menu-link" >PROFILE</Link>
+                    <Link to="" onClick={()=> dispatch({type: 'logoutUser'})} className="nav-menu-link" >LOGOUT</Link>
                 </>
             }
            </div>

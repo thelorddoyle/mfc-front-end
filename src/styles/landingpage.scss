@@ -251,5 +251,77 @@
         }
     }
 
+    .footer {
+
+        p {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            text-align: left;
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        background-color: black;
+        height: 250px;
+        padding-top: 75px;
+        padding-right: 10%;
+        padding-left: 15%;
+
+        .logo-mfc {
+            width: 120px;
+        }
+
+        .footer-grid {
+            display: grid; 
+            grid-template-columns: 2fr 1fr; 
+            grid-template-rows: 1fr; 
+            gap: 0px 0px; 
+            grid-template-areas: 
+              "grid-column-left grid-column-right"; 
+            width: 100%; 
+            height: 80%; 
+          }
+    
+        .footer-grid-column-left {
+            grid-area: grid-column-left;
+        }
+
+        .footer-grid-column-right {
+            grid-area: grid-column-right; 
+
+
+            .footer-social-grid {
+
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+                .footer-social-grid-left-column {
+                    padding: 10px;
+                    justify-self: right;
+
+                    .footer-social-logo {
+                        width: 25px;
+                    }
+                }
+
+                .footer-social-grid-right-column {
+
+                    padding: 10px;
+
+                }
+
+            }
+
+        }
+
+        .footer-details {
+
+            p {
+                text-align: center;
+            }
+
+        }
+    }
 
 }
