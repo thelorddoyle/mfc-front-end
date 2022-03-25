@@ -46,10 +46,6 @@ const ProfileHomePage: React.FC = () => {
                 totalWins += nft.fights.filter((fight: any) => fight.winnerId === nft.id ).length;
                 totalLosses += nft.fights.filter((fight: any) => fight.loserId === nft.id ).length;
             })
-
-            console.log('totalWins count:', totalWins)
-            console.log('totalLosses count:', totalLosses)
-
             setFightsWon(totalWins);
             setFightsLost(totalLosses)
         },
