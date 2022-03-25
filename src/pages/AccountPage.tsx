@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { roundTo } from "round-to";
 import { useSelector, RootStateOrAny } from "react-redux";
 import UpdateInfo from "../components/profilePageComponents/UpdateInfo";
+import '../styles/account.scss'
 
 const AccountPage: React.FC = () => {
     const user = useSelector((state: RootStateOrAny) => state.data)

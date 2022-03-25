@@ -1,0 +1,30 @@
+.account{
+    display: flex;  
+    justify-content:center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+
+    .info-user{
+        width: 100%;
+        display:grid;
+        grid-template-columns: 70% 30%;
+        min-height: 400px;
+        gap: 20px; 
+        padding-left: 10px;
+       
+        &>div:first-child{
+            width: 75%;
+            margin: 0px auto;
+        }
+        
+       
+    }
+
+    .input-fields{
+     width: 100%;
+     button{
+         margin: 10px 1px;
+     }
+    }
+}
