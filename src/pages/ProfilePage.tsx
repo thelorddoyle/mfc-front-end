@@ -9,6 +9,7 @@ import '../styles/sidebar.scss'
 import '../styles/profilePage.scss'
 import '../styles/fighters.scss'
 import MyTournaments from "../components/profilePageComponents/MyTournaments"
+import AccountPage from "./AccountPage"
 
 
 const ProfilePage: React.FC = () => {
@@ -28,6 +29,8 @@ const ProfilePage: React.FC = () => {
                 return <FightersPage/>
             case 'tournaments':
                 return <MyTournaments/> 
+            case 'account':
+                return <AccountPage/>
             default:
                 return <ProfileHomePage/>
         }

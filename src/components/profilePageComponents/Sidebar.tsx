@@ -35,7 +35,7 @@ const Sidebar: React.FC<Props> = (props) => {
                     <FontAwesomeIcon  icon={faRankingStar}/>               
                      <span>Rankings</span>
                 </div>   
-                <div className="nav-menu">
+                <div className="nav-menu" onClick={()=>props.onClick('account')}>
                     <FontAwesomeIcon  icon={faCog}/> 
                     <span>Account</span>
                 </div>   
