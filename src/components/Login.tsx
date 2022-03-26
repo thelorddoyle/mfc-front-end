@@ -17,10 +17,10 @@ export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
     const [values, setValues] = useState<object | ''> ({})
     const [errors, setError]  = useState<ErrorSetter | null>(null)
 
-    const handleSubmit = (ev: React.FormEvent) => {
-        ev.preventDefault()
-        loginUser();
-    }
+const handleSubmit = (ev: React.FormEvent) => {
+    ev.preventDefault()
+    loginUser();
+}
 
     const onChange = (ev:  React.ChangeEvent<HTMLInputElement>)=>{
        setValues({...values, [ev.target.name]: ev.target.value })
@@ -29,7 +29,6 @@ export const Login: React.FC<Props>  =  ({whichForm, isForm}) => {
     const [loginUser, {loading, error}] = useMutation(LOGIN_USER, {
 
         update(_, {data: {login: userData}}){
-            console.log(userData)
             dispatch({type: 'loginUser', payload: userData})
             navigate('/');
         },

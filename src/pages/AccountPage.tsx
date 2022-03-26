@@ -1,20 +1,20 @@
+//Modules/Packages
 import React, {useState} from "react";
-import {  faArrowRight, faTrophy, faSackDollar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { roundTo } from "round-to";
 import { useSelector, RootStateOrAny } from "react-redux";
+
+//Components
 import UpdateInfo from "../components/profilePageComponents/UpdateInfo";
 import UpdatePassword from "../components/profilePageComponents/UpdatePassword";
 
+//Resources
+import {  faArrowRight, faTrophy, faSackDollar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '../styles/account.scss'
 
 
-
 const AccountPage: React.FC = () => {
-    // switchPage expression used to load components conditionally
-    
     const [component, setComponent] = useState<string | "">('default')
-
     const changeForm = (component: string = "default") => {
         setComponent(component);
     }

@@ -50,14 +50,16 @@ export const REGISTER_USER = gql`
 `
 export const UPDATE_USER_INFO = gql `
     mutation updateUser(
-        $username: String!
-        $email: String!
+        $username: String
+        $email: String
     ){
-        updateUser( 
-            username: $username,
-            password: $password,
+        updateUser(
+            user:{
+                username: $username,
+                email: $email,   
+            }
         ){
-            email username
+            id email username token amountInWallet
         }
     }
 `
