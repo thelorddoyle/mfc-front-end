@@ -15,7 +15,6 @@ export const GET_MY_TOURNAMENTS = gql`
         }
     }
 `
-
 export const LOGIN_USER = gql `
     mutation login(
         $username: String!
@@ -46,6 +45,19 @@ export const REGISTER_USER = gql`
                     }
         ){
             id email username token amountInWallet
+        }
+    }
+`
+export const UPDATE_USER_INFO = gql `
+    mutation updateUser(
+        $username: String!
+        $email: String!
+    ){
+        updateUser( 
+            username: $username,
+            password: $password,
+        ){
+            email username
         }
     }
 `
