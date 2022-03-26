@@ -63,3 +63,21 @@ export const UPDATE_USER_INFO = gql `
         }
     }
 `
+
+export const UPDATE_USER_PASSWORD = gql `
+    mutation updatePassword(
+        $currentPassword: String
+        $password: String
+        $confirmPassword: String
+    ){
+        updatePassword(
+            user:{
+                currentPassword: $currentPassword,
+                password: $password,   
+                confirmPassword: $confirmPassword,   
+            }
+        ){
+            username
+        }
+    }
+`
