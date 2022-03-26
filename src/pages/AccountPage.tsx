@@ -1,12 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import {  faArrowRight, faTrophy, faSackDollar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { roundTo } from "round-to";
 import { useSelector, RootStateOrAny } from "react-redux";
 import UpdateInfo from "../components/profilePageComponents/UpdateInfo";
+import UpdatePassword from "../components/profilePageComponents/UpdatePassword";
+
 import '../styles/account.scss'
 
+
+
 const AccountPage: React.FC = () => {
+    // switchPage expression used to load components conditionally
+    
+    const [component, setComponent] = useState<string | "">('default')
+
+    const changeForm = (component: string = "default") => {
+        setComponent(component);
+    }
+
+    console.log(component);
+    
+    const switchForm = (componentName: string) => {
+        switch (componentName) {
+            case 'default':
+                return <UpdateInfo changeForm={changeForm}/>
+            case 'password':
+                return <UpdatePassword changeForm={changeForm}/>
+            default:
+                return <UpdateInfo changeForm={changeForm}/>
+        }
+    }
+
     const user = useSelector((state: RootStateOrAny) => state.data)
     return(
         <>
@@ -27,7 +52,9 @@ const AccountPage: React.FC = () => {
                 </div>
             </div>
             <div className="account">
-                <UpdateInfo/>
+               {
+                   switchForm(component)
+               }
             </div>
         </>
 

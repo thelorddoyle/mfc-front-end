@@ -4,7 +4,7 @@
     width: 100%;
     gap: 10px;
     margin-top: 20px;
-
+    padding-left:10px;
     .info-user{
         width: 100%;
         display:grid;
@@ -12,19 +12,29 @@
         min-height: 400px;
         gap: 20px; 
         padding-left: 10px;
+        justify-content: center;
+        justify-content: center;
+        align-items: center;;
        
         &>div:first-child{
-            width: 75%;
+            width: 80%;
             margin: 0px auto;
         }
         
        
     }
 
-    .input-fields{
-     width: 100%;
-     button{
-         margin: 10px 1px;
-     }
+    .input-fields {
+     width: 100%
+    
+    }
+
+    .input-buttons{
+        text-align: center;
+        button{
+            margin: 10px 10px;
+            text-align: center;
+           
+        }
     }
 }

@@ -1,6 +1,10 @@
 import React from "react";
 
-const UpdateInfo: React.FC = () => {
+interface Props{
+    changeForm(component: string): void
+}
+
+const UpdateInfo: React.FC<Props> = ({changeForm}) => {
 
     return(
         <div className="info-user">
@@ -13,8 +17,9 @@ const UpdateInfo: React.FC = () => {
                     <label htmlFor="usernaemailme">Email</label>
                     <input type="text" name="email" />
                 </div>
-                <div className="input-fields"> 
+                <div className="input-fields input-buttons"> 
                    <button className="secondary-button">Submit</button>
+                   <button className="secondary-button" onClick={()=>changeForm('password')}>Password</button>
                 </div>
             </div>
             <div className="overall-stats">
