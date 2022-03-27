@@ -8,6 +8,7 @@ import { roundTo } from "round-to";
 import {  faArrowRight, faHandBackFist, faSackDollar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { truncate } from "../../helpers/utils";
+import AvailableEth from "../profilePageComponents/AvailabeEth";
 
 
 const Fighters: React.FC = () => {
@@ -18,7 +19,6 @@ const Fighters: React.FC = () => {
     const dispatch = useDispatch();
     const [infoNft, setInfoNft] = useState<any | null> ({})
 
-    console.log('infoNft:', infoNft);
     
    //Getting all NFTS by user
    const getUserNfts = useQuery( GET_USER_NFTS, {
@@ -42,15 +42,7 @@ const Fighters: React.FC = () => {
                     <h2>Buy more fighters for a chance to win more money</h2>
                     <FontAwesomeIcon  icon={faArrowRight}/>
                 </div>
-                <div className="show-eth"> 
-                    <FontAwesomeIcon  icon={faSackDollar}/> 
-                    <div>
-                        <h2>Available funds</h2>
-                        <p>
-                            Eth: {roundTo(user.amountInWallet, 2)}
-                        </p>
-                    </div>
-                </div>
+                <AvailableEth/>
             </div>
         </Link>         
         <div className="show-nfts">

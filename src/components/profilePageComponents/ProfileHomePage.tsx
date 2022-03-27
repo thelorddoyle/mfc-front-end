@@ -1,10 +1,4 @@
-import { useState } from "react";
-
-import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
-
-import { ApolloError, useQuery } from "@apollo/client";
-import { GET_MY_TOURNAMENTS } from "../../graphql/user";
-
+import { useSelector, RootStateOrAny,  } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy, faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -13,39 +7,21 @@ import  OverallStats  from "./OverallStats";
 import AvailableEth from "./AvailabeEth";
 
  
-const ProfileHomePage: React.FC = () => {
+interface Props{
+    numberOfTournaments: number | null,
+    user: object,
+}
 
-    const user = useSelector((state: RootStateOrAny) => state.data);
+const ProfileHomePage: React.FC<Props> = ({numberOfTournaments, user}) => {
+
     const userNfts = useSelector((state: RootStateOrAny) => state.nfts);
-    const dispatch = useDispatch();
-    const [errors, setErrors] = useState<ApolloError | undefined>();
-    const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1);
-
-    //Getting all tournaments that users NFT's are taking part in
-    const tournaments = useQuery( GET_MY_TOURNAMENTS, {
-        onCompleted(data){
-            setNumberOfTournaments(data.getAllMyTournaments.length)
-            dispatch({type: 'myTournaments', payload : data.getAllMyTournaments})
-        },
-        onError(error){
-            setErrors(error)
-        },
-        context: {
-            headers: { Authorization: `Bearer ${user.token}` }
-        }
-    })
-
     
-
     return (
         <>
-            {/* <Link to="/profile/fighters" >Fighters</Link>  
-            <Link to="/profile/fight" >Fight</Link>   */}
             {
                 user
                 &&
                 <>
-                  
                     <div className="display-stats"> 
                         <div className="tournaments"> 
                             <FontAwesomeIcon className="rotate-icon"  icon={faTrophy}/>
