@@ -1,14 +1,15 @@
-import React from 'react'
+import { ApolloError } from '@apollo/client/';
+import React, {useState} from 'react'
 import { useSelector, RootStateOrAny} from "react-redux";
-
 
 import MyTournaments from '../components/profilePageComponents/MyTournaments'
 import '../styles/mytournaments.scss'
 
-
-
 const TournamentsPage: React.FC = () => {
+
 const myTournaments = useSelector((state: RootStateOrAny) => state.myTournaments)
+const [errors, setErrors] = useState<ApolloError | undefined>()
+
 let pendingTournaments;
 let completedTournaments;
 
@@ -30,23 +31,32 @@ if(myTournaments) {
         }
         
     } catch (err) {
-        console.log(err)
+        setErrors(err as ApolloError);
     }
 
     try {
         completedTournaments = myTournaments.filter((tournament: any) => tournament.status === "completed" );
     } catch (err) {
-        console.log(err)
+        setErrors(err as ApolloError);
     }
 }
 
     return(
         <>  
-            <MyTournaments 
-             myTournaments={myTournaments}  
-             pendingTournaments={pendingTournaments}
-             completedTournaments={completedTournaments}
-            />
+
+            {
+                !errors
+                
+                ?
+                    <MyTournaments 
+                        myTournaments={myTournaments}  
+                        pendingTournaments={pendingTournaments}
+                        completedTournaments={completedTournaments}
+                    />
+                :
+                    <h1>There has been an error</h1>                
+            }
+            
         </>
     )
 }

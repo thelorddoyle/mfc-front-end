@@ -1,10 +1,8 @@
 import React, { useState } from "react" 
 
-
 import { RootStateOrAny } from "react-redux"
 
 import { QueryResult } from "@apollo/client";
-
 
 import ShowNfts from "./ShowNfts";
 import ShowInfoNft from "./ShowInfoNft";
