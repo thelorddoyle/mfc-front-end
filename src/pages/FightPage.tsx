@@ -5,7 +5,7 @@ const FightPage: React.FC = () => {
 
     return (
         <>
-            <Fight />
+            {/* <Fight /> */}
         </>
 
     )

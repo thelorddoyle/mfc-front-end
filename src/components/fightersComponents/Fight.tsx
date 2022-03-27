@@ -5,18 +5,26 @@ import { useQuery } from "@apollo/client"
 import { GET_FIGHT } from "../../graphql/fight"
 import { useState } from "react"
 import "../../styles/fight.scss"
+import {useScrollToTop} from '../../helpers/utils'
 
-const Fight: React.FC = () => {
-    
+interface Props{
+    fightId: any,
+    settingFightId: any
+}
+
+const Fight: React.FC<Props> = (fightId, settingFightId) => {
+        
     const nfts = useSelector((state: RootStateOrAny) => state.nfts)
-    const {id} = useParams()
+    const id = fightId.fightId
     const [fightObject, setFightObject] = useState<any | null> ({})
     const fight = fightObject.getFight
     const [preparingFight, setPreparingFight] = useState<boolean | null> (false)
     let player1Id:string = '';
     let player1UserName:string = '';
     let player2UserName:string = '';
-    
+
+    useScrollToTop()
+
     const fightQuery = useQuery( GET_FIGHT, {
         variables: {
             fightId: id
@@ -35,32 +43,16 @@ const Fight: React.FC = () => {
         player2UserName = fight.nfts[1].user.username
     }
 
-    useEffect(()=>{
-        window.setTimeout(()=>{
-            setPreparingFight(true);    
-        },6000)
-    },[])
-
-
     //TODO: make the two images of the NFTs 
     //TODO: make a highlighted message of the who has won 
     return (
 
             <div className="container">
-                {
-                    !preparingFight ? 
-
-                    <h1 className="octagon-cage"> 
-                        The Octagon is getting bloody
-                    </h1>
-                    
-                    :
-                <>
+                <div className="fight-container">
                     {
                         fight
                         ?
                             <div className="fight-display">
-                                    <h1 className="results" >Results</h1>
                                     {
                                         fight.fightReplay.map(function(move:any, index:number) {
                                             
@@ -108,12 +100,20 @@ const Fight: React.FC = () => {
                                         
                                 </div>
                         :
-                        <h1>Loading</h1>
+                        <h1 className="octagon-cage">Loading fight...</h1>
                     }
-
-                </>
-            }
-            
+                    {
+                        fight
+                        ?
+                        <div className="fighter-details">
+                            <img src={fight.nfts[0].image} className="fighter-details-images" alt="fighter1" />
+                            <h3 className="versus">versus</h3>
+                            <img src={fight.nfts[1].image} className="fighter-details-images" alt="fighter2" />
+                        </div>
+                        :
+                        null
+                    }
+                </div> 
          </div>
     )
 }

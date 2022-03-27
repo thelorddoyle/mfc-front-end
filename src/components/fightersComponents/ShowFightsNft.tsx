@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 
 interface Props{
     infoNft: any
+    settingFightId: any
 }
 
-const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
+const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
 
         return(
             <div className="past-fights">
@@ -38,8 +39,8 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                                                 #{truncate(fight.loserId)}
                                             </span>
                                         </div>
-                                        <div>
-                                            <Link to={`/profile/fight/${fight.id}`}>View Fight</Link>
+                                        <div key={fight.id} onClick={()=> settingFightId(fight.id) }>
+                                            <button>View Fight</button>
                                         </div>
                                     </div>
                                 )
@@ -64,8 +65,8 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                                                 #{truncate(fight.loserId)}
                                             </span>
                                         </div>
-                                        <div>
-                                            <Link to={`/profile/fight/${fight.id}`}>View Fight</Link>
+                                        <div key={fight.id} onClick={()=> settingFightId(fight.id) }>
+                                            <button>View Fight</button>
                                         </div>
                                     </div>
                                 )

@@ -37,9 +37,9 @@ function App() {
                 <Route path="/tournament/:id" element={<AuthRoute />} >
                     <Route path="/tournament/:id" element={<Tournament />} />
                 </Route>
-                <Route path="/profile/fight/:id" element={<AuthRoute />} >
+                {/* <Route path="/profile/fight/:id" element={<AuthRoute />} >
                     <Route path="/profile/fight/:id" element={<Fight />} />
-                </Route>
+                </Route> */}
                 
             </Routes>
 
