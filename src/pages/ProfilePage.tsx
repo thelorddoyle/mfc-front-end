@@ -7,7 +7,7 @@ import { ApolloError, useQuery } from "@apollo/client";
 import { GET_MY_TOURNAMENTS } from "../graphql/user";
 
 //Components
-import MyTournaments from "../components/profilePageComponents/MyTournaments"
+import TournamentsPage from "./TournamentsPage"
 import ProfileHomePage from "../components/profilePageComponents/ProfileHomePage"
 import Sidebar from "../components/profilePageComponents/Sidebar"
 import AccountPage from "./AccountPage"
@@ -59,7 +59,7 @@ const ProfilePage: React.FC = () => {
             case 'fighters':
                 return <FightersPage/>
             case 'tournaments':
-                return <MyTournaments/> 
+                return <TournamentsPage/> 
             case 'account':
                 return <AccountPage/>
             default:

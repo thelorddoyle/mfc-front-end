@@ -21,7 +21,6 @@ const AccountPage: React.FC = () => {
         setComponent(component);
     }
 
-    console.log(component);
     
     const switchForm = (componentName: string) => {
         switch (componentName) {
