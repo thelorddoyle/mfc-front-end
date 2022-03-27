@@ -1,54 +1,16 @@
 import React from "react"
-import '../../styles/sidebar.scss'
 import { Link } from "react-router-dom";
-import { useSelector, RootStateOrAny} from "react-redux";
 import { truncate } from "../../helpers/utils";
-import '../../styles/mytournaments.scss'
 
+interface Props{
+    myTournaments: object,
+    pendingTournaments: [],
+    completedTournaments: []
+}
 
-
-const MyTournaments: React.FC = () => {
-    // we are using the getMyTournaments endpoint to get the arr of tournaments that my nfts are participating in.
-
-    const myTournaments = useSelector((state: RootStateOrAny) => state.myTournaments)
-    let pendingTournaments;
-    let completedTournaments;
-    
-    if(myTournaments) {
-        try {
-            pendingTournaments = myTournaments.filter((tournament: any) => {
-                return tournament.status === "pending" || tournament.status === "ready"
-            })
-
-            if (pendingTournaments.length !== 0) {
-
-                pendingTournaments = pendingTournaments.map((tournament: any)=> {
-                    // for each tournament, add a field called count, then increment said field whiles looking in each fight. 
-                    tournament.count = 0;
-                    
-                    tournament.fights.forEach( (fight: any) => {
-                        tournament.count += fight.nfts.length;
-                    })
-            
-                    return tournament;
-                    
-                })
-            }
-            
-        } catch (err) {
-            console.log(err)
-        }
-
-        try {
-            completedTournaments = myTournaments.filter((tournament: any) => tournament.status === "completed" );
-        } catch (err) {
-            console.log(err)
-        }
-    }
-    
+const MyTournaments: React.FC<Props> = ({myTournaments, pendingTournaments, completedTournaments}) => {
     //TODO: list out all the contestants (get them from the fights of the tournament);
     //TODO: make a button that routes to the specific tournament (LATER). 
-    
     return (
         <div className="myTournaments card-navbar">
 
@@ -108,9 +70,7 @@ const MyTournaments: React.FC = () => {
                 null
             }
             </div>
-            
         </div>
-
     )
 }
 

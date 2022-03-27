@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
-import '../../styles/sidebar.scss'
+import React from "react"
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ApolloError, useQuery } from "@apollo/client";
-import { useSelector, RootStateOrAny} from "react-redux";
-import { GET_TOURNAMENT } from "../../graphql/tournament"
 import { useParams } from "react-router-dom";
+
+import { ApolloError, useQuery } from "@apollo/client";
+import { GET_TOURNAMENT } from "../../graphql/tournament"
+
+import '../../styles/sidebar.scss'
 
 const Tournament: React.FC = () => {
     const [errors, setErrors] = useState<ApolloError | undefined>()

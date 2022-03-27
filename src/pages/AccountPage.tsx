@@ -6,6 +6,8 @@ import { useSelector, RootStateOrAny } from "react-redux";
 //Components
 import UpdateInfo from "../components/profilePageComponents/UpdateInfo";
 import UpdatePassword from "../components/profilePageComponents/UpdatePassword";
+import OverallStats from "../components/profilePageComponents/OverallStats";
+
 
 //Resources
 import {  faArrowRight, faTrophy, faSackDollar } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +21,6 @@ const AccountPage: React.FC = () => {
         setComponent(component);
     }
 
-    console.log(component);
     
     const switchForm = (componentName: string) => {
         switch (componentName) {
@@ -52,10 +53,15 @@ const AccountPage: React.FC = () => {
                 </div>
             </div>
             <div className="account">
-               {
-                   switchForm(component)
-               }
+                <div className="info-user">
+                    {
+                        switchForm(component)
+                        
+                    }
+                    <OverallStats/>
+                </div>
             </div>
+
         </>
 
     )
