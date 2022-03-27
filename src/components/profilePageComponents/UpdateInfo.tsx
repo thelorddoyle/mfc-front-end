@@ -43,26 +43,21 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
         }
     })
     return(
-        <div className="info-user">
-            <div> 
-                <form onSubmit={handleSubmit}>
-                    <div className="input-fields">
-                        <label htmlFor="username">Username</label>
-                        <input type="text" name="username" onChange={onChange} />
-                    </div>
-                    <div className="input-fields"> 
-                        <label htmlFor="usernaemailme" >Email</label>
-                        <input type="text" name="email" onChange={onChange} />
-                    </div>
-                    <div className="input-fields input-buttons"> 
-                    <button type="submit" className="secondary-button">Submit</button>
-                    <button className="secondary-button" onClick={()=>changeForm('password')}>Password</button>
-                    </div>
-                </form>
-            </div>
-            <div className="overall-stats">
-                overall stats
-            </div>
+        <div> 
+            <form onSubmit={handleSubmit}>
+                <div className="input-fields">
+                    <label htmlFor="username">Username</label>
+                    <input type="text" name="username" onChange={onChange} />
+                </div>
+                <div className="input-fields"> 
+                    <label htmlFor="usernaemailme" >Email</label>
+                    <input type="text" name="email" onChange={onChange} />
+                </div>
+                <div className="input-fields input-buttons"> 
+                <button type="submit" className="secondary-button">Submit</button>
+                <button className="secondary-button" onClick={()=>changeForm('password')}>Password</button>
+                </div>
+            </form>
         </div>
     )
 }

@@ -39,30 +39,26 @@ const UpdatePassword: React.FC<Props> = ({changeForm}) => {
     })
     
     return(
-        <div className="info-user">
-            <div>
-                <form action="" onSubmit={handleSubmit}>
-                    <div className="input-fields">
-                        <label htmlFor="currentPassword">Current Password</label>
-                        <input type="password" name="currentPassword" onChange={onChange} />
-                    </div>
-                    <div className="input-fields">
-                        <label htmlFor="password">New Password</label>
-                        <input type="password" name="password"onChange={onChange}/>
-                    </div>
-                    <div className="input-fields"> 
-                        <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input type="password" name="confirmPassword" onChange={onChange} />
-                    </div>
-                    <div className="input-fields input-buttons"> 
-                    <button type="submit" className="secondary-button">Submit</button>
-                    <button className="secondary-button" onClick={()=>changeForm('default')}>Username/Email</button>
-                    </div>
-                </form>
-            </div>
-            <div className="overall-stats">
-                overall stats
-            </div>
+       
+        <div>
+            <form action="" onSubmit={handleSubmit}>
+                <div className="input-fields">
+                    <label htmlFor="currentPassword">Current Password</label>
+                    <input type="password" name="currentPassword" onChange={onChange} />
+                </div>
+                <div className="input-fields">
+                    <label htmlFor="password">New Password</label>
+                    <input type="password" name="password"onChange={onChange}/>
+                </div>
+                <div className="input-fields"> 
+                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" onChange={onChange} />
+                </div>
+                <div className="input-fields input-buttons"> 
+                <button type="submit" className="secondary-button">Submit</button>
+                <button className="secondary-button" onClick={()=>changeForm('default')}>Username/Email</button>
+                </div>
+            </form>
         </div>
     )
 }
