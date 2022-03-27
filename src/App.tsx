@@ -1,5 +1,4 @@
 //MODULES//HELPERS
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { store } from './config/store'
@@ -17,12 +16,14 @@ import Fight from './pages/FightPage'
 import MyTournaments from './components/profilePageComponents/MyTournaments';
 import Tournament from './components/profilePageComponents/Tournament';
 
-
 function App() {
+
     return (
     <Provider store={ store }>
         <Router>
+
             <Navbar/>
+
             <Routes>
                 <Route path="/" element={ <LandingPage/> } />
                 <Route path="/login"  element = { <Login/> } />
@@ -45,6 +46,7 @@ function App() {
                 </Route>
                 
             </Routes>
+
         </Router>
     </Provider>
     );
