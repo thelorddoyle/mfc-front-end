@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { ApolloError, useQuery } from "@apollo/client";
+
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
+
+import { ApolloError, useQuery } from "@apollo/client";
 import { GET_MY_TOURNAMENTS } from "../../graphql/user";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faSackDollar, faTrophy, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import {roundTo} from 'round-to';
+import { faTrophy, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import  OverallStats  from "./OverallStats";
+import AvailableEth from "./AvailabeEth";
 
  
 const ProfileHomePage: React.FC = () => {
@@ -47,15 +52,7 @@ const ProfileHomePage: React.FC = () => {
                             <h2>You have { userNfts?.length } fighters taking part in {numberOfTournaments} tournaments.</h2>
                             <FontAwesomeIcon  icon={faArrowRight}/>
                         </div>
-                        <div className="show-eth"> 
-                            <FontAwesomeIcon  icon={faSackDollar}/> 
-                            <div>
-                                <h2>Available funds</h2>
-                                <p>
-                                    Eth: {roundTo(user.amountInWallet, 2)}
-                                </p>
-                            </div>
-                        </div>
+                        <AvailableEth/>
                     </div>
 
                     <div className="extra-info">
