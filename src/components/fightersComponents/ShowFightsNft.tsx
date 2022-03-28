@@ -2,12 +2,12 @@ import React from 'react'
 
 import { truncate } from "../../helpers/utils";
 
-import { Link } from "react-router-dom";
 
 
 interface Props{
     infoNft: any
     settingFightId: any
+    
 }
 
 const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
@@ -39,7 +39,7 @@ const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
                                                 #{truncate(fight.loserId)}
                                             </span>
                                         </div>
-                                        <div key={fight.id} onClick={()=> settingFightId(fight.id) }>
+                                        <div key={fight.id} onClick={()=> settingFightId(fight.id)}>
                                             <button>View Fight</button>
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@ const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
                                                 #{truncate(fight.loserId)}
                                             </span>
                                         </div>
-                                        <div key={fight.id} onClick={()=> settingFightId(fight.id) }>
+                                        <div key={fight.id} onClick={()=> settingFightId(fight.id) } >
                                             <button>View Fight</button>
                                         </div>
                                     </div>

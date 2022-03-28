@@ -12,23 +12,20 @@ import Fight from './Fight'
 interface Props{
     user: RootStateOrAny,
     nfts: Array<[]>,
-    getUserNfts: QueryResult
+    getUserNfts: QueryResult,
+    settingFightId:(id: string)=> void,
+    fightId: string,
 }
 
-const Fighters: React.FC<Props> = ({user, nfts, getUserNfts}) => {
+const Fighters: React.FC<Props> = ({user, nfts, getUserNfts, settingFightId, fightId}) => {
    
     const [infoNft, setInfoNft] = useState<any | null> ({})
-    const [fightId, setFightId] = useState<any | null> ()
 
     const settingInfoNfts = (data: object) => {
         setInfoNft(data);
     }
 
-    const settingFightId = (id: any) => {
-        setFightId(id)
-        console.log('Setting fight id: ', id)
-    }
-
+    
     return (
         <>
             {
