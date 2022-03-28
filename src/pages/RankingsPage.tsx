@@ -6,6 +6,7 @@ import { useSelector, RootStateOrAny} from "react-redux";
 import { GET_RANKINGS } from "../graphql/nft";
 import MyTournaments from '../components/profilePageComponents/MyTournaments';
 import { truncate } from '../helpers/utils';
+import '../styles/rankings.scss'
 
 
 const RankingsPage: React.FC = () => {
@@ -22,7 +23,6 @@ const RankingsPage: React.FC = () => {
             setNfts(data.findWins);
         },
         onError(){
-            console.log('error', error)
             setErrors(error)
         }
     } )
@@ -30,12 +30,14 @@ const RankingsPage: React.FC = () => {
     //TODO: make an apollo query to get the findWins
     return(
         <>  
+            <div className="nfts">
+
             {
                 !errors
                 ?
                     nfts?.map(function(nft: any, i: number): JSX.Element | undefined {
                         return (
-                            <div className='fight-details fight-won' key={nft.id}>
+                            <div className='fight-details nft' key={nft.id}>
                                 <div>
                                     <img src={nft.image} alt="" style={{"width": "100px"}}/>
                                 </div>
@@ -68,6 +70,7 @@ const RankingsPage: React.FC = () => {
                 :
                     <h1>There has been an error</h1>  
             }
+            </div>
         </>
     )
 }
