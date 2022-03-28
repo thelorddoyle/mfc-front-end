@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { truncate } from "../../helpers/utils";
 
-
 interface Props{
     infoNft: any
     settingFightId: any

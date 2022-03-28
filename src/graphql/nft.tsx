@@ -34,6 +34,19 @@ export const GET_USER_NFTS = gql`
   }
 `
 
+export const GET_RANKINGS = gql`
+  query {
+    findWins {
+      id
+      image
+      wins
+      user {
+        id
+      }
+    }
+  }
+`
+
 export const MINT_NFT = gql `
    mutation Mutation {
     mintNft {
