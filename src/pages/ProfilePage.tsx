@@ -81,11 +81,11 @@ const ProfilePage: React.FC = () => {
                 {user &&
                     <div className="profile-page">
                         <div className="display-info">
-                            <div>
+                            <div className="lets-fight">
                                 <h1>Hello, {user.username}</h1>
                                 <p>Let's Fight!</p>
                             </div>
-                            <div>
+                            <div className="icon-box">
                                 <FontAwesomeIcon  icon={faUser}/> 
                             </div>
                         </div>
