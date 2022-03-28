@@ -62,7 +62,7 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                                             fight.nfts[0].id === move.attackerId
                                                             ?
                                                             <div className="fight-sequence">
-                                                                    <div>
+                                                                    <div className="fighter-image">
                                                                         <img src={fight.nfts[0].image} alt="" />
                                                                     </div>
                                                                 <div className="sequence">
@@ -73,7 +73,7 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                                             </div>
                                                             :
                                                             <div className="fight-sequence-2">
-                                                                    <div>
+                                                                    <div className="fighter-image">
                                                                         <img src={fight.nfts[1].image} alt=""/>
                                                                     </div>
                                                                     <div className="sequence" >
