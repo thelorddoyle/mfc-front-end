@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faArrowRight, faHandBackFist} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 
 import AvailableEth from "../profilePageComponents/AvailabeEth";
@@ -18,6 +19,12 @@ interface Props{
 
 
 const ShowNfts: React.FC<Props> = ({nfts, getUserNfts, settingInfoNfts}) => {
+
+    const [isActive, setActive] = useState(null)
+
+    const toggle = (i:any) => {
+        setActive(i);
+      };
 
     return(
         <>
@@ -36,8 +43,11 @@ const ShowNfts: React.FC<Props> = ({nfts, getUserNfts, settingInfoNfts}) => {
                     {
                         getUserNfts.loading ? "loading your nfts" :
                         nfts?.map((el: any) => (
-                            <div key={el.id} className="nft-container" onClick={()=> settingInfoNfts(el) }>
-                                <img src={el.image} alt=""/>
+                            <div key={el.id} className="nft-container" onClick={()=> settingInfoNfts(el) } >
+                                <div className="img-content">
+                                    <img src={el.image} className="square" alt=""  />
+                                    <div key={el.id} className={isActive === el.id ? 'portfolio-overlay-clicked': "portfolio-overlay"} onClick={() => toggle(el.id)}></div>
+                                </div>
                             </div>
                         ))
                     }

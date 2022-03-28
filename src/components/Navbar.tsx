@@ -6,6 +6,8 @@ import '../styles/navbar.scss'
 const Navbar: React.FC = () =>{
 
     const user = useSelector((state:  RootStateOrAny) => state.data)
+    console.log(user);
+    
     const dispatch = useDispatch();
     const {pathname} = useLocation()
 
@@ -24,7 +26,7 @@ const Navbar: React.FC = () =>{
                 <Link to="/" className="nav-menu-link">HOME</Link>
                 <Link to="/mint" className="nav-menu-link">MINT</Link>   
                 { 
-                    user === undefined 
+                    (user === undefined || Object.keys(user).length <= 0)   
                     ?
                         <Link className="main-button" to="/connect">CONNECT</Link>
                     :

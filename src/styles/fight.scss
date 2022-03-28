@@ -51,8 +51,10 @@
   }
 
   .fighter-details {
-      padding-left: 15%;
-      padding-right: 15%;
+      position: fixed;
+      width: 10%;
+      right: 0px;
+      padding-right: 5%;
       text-align: center;
   }
 
@@ -84,7 +86,7 @@
     .fight-sequence{
         position: relative;
         padding: 10px 50px;
-        div{
+        div {
             float: left;
         }
         -webkit-animation: opacity 5s forwards;
@@ -92,7 +94,7 @@
         animation: opacity 5s forwards;
        
     }
-    .fight-sequence-2{
+    .fight-sequence-2 {
         position: relative;
         padding: 10px 50px;
         -webkit-animation: opacity 5s forwards;
@@ -103,8 +105,14 @@
             float: right;
         }
     }
+
+    .fighter-image {
+        width: 10%;
+
+    }
     
     .sequence{
+        max-width: 80%;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -146,4 +154,4 @@
   padding: 20px;
   font-size: 5rem;
   text-align: center;
-}  
+}
