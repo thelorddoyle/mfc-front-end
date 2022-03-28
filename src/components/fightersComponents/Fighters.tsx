@@ -15,6 +15,7 @@ interface Props{
     getUserNfts: QueryResult
 }
 
+
 const Fighters: React.FC<Props> = ({user, nfts, getUserNfts}) => {
    
     const [infoNft, setInfoNft] = useState<any | null> ({})
