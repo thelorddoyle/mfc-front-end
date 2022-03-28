@@ -29,7 +29,7 @@ function App() {
                 <Route path="/connect"  element = { <ConnectPage/> } />
                 <Route path="/profile" element={<AuthRoute />} >
                     <Route path="/profile" element={<ProfilePage />} />
-                    <Route path="/profile/fighters" element={<FightersPage />} />
+                    {/* <Route path="/profile/fighters" element={<FightersPage />} /> */}
                 </Route>
                 <Route path="/mint" element={<AuthRoute />} >
                     <Route path="/mint" element={<MintPage />} />

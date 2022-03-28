@@ -20,6 +20,7 @@ import {  faUser } from "@fortawesome/free-solid-svg-icons";
 import '../styles/sidebar.scss'
 import '../styles/profilePage.scss'
 import '../styles/fighters.scss'
+import { cp } from "fs";
 
 
 const ProfilePage: React.FC = () => {
@@ -27,6 +28,7 @@ const ProfilePage: React.FC = () => {
     const [component, setComponent] = useState<string | null>('default')
     const user = useSelector((state: RootStateOrAny) => state.data)
     const dispatch = useDispatch();
+    const [fightId, setFightId] = useState<any | null>()
     const [errors, setErrors] = useState<ApolloError | undefined>();
     const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1);
 
@@ -46,10 +48,15 @@ const ProfilePage: React.FC = () => {
     })
 
     const changeComponent = (component: string = "default") => {
+        if(component === "fighters"){
+            setFightId(null)
+        }
         setComponent(component);
     }
-
-
+    
+    const settingFightId = (id: any) => {
+        setFightId(id)
+    }
 
     // switchPage expression used to load components conditionally
     const switchPage = (componentName: any) => {
@@ -57,7 +64,7 @@ const ProfilePage: React.FC = () => {
             case 'default':
                 return <ProfileHomePage numberOfTournaments={numberOfTournaments} user={user}/>
             case 'fighters':
-                return <FightersPage/>
+                return <FightersPage  settingFightId={settingFightId} fightId={fightId}/>
             case 'tournaments':
                 return <TournamentsPage/> 
             case 'account':

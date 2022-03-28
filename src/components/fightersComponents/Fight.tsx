@@ -1,11 +1,10 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useSelector, RootStateOrAny } from "react-redux"
-import { useParams } from "react-router-dom"
 import { useQuery } from "@apollo/client"
 import { GET_FIGHT } from "../../graphql/fight"
 import { useState } from "react"
 import "../../styles/fight.scss"
-import {useScrollToTop} from '../../helpers/utils'
+import {useScrollToTop}  from '../../helpers/utils'
 
 interface Props{
     fightId: any,
