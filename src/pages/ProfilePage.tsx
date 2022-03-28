@@ -8,6 +8,7 @@ import { GET_MY_TOURNAMENTS } from "../graphql/user";
 
 //Components
 import TournamentsPage from "./TournamentsPage"
+import RankingsPage from "./RankingsPage"
 import ProfileHomePage from "../components/profilePageComponents/ProfileHomePage"
 import Sidebar from "../components/profilePageComponents/Sidebar"
 import AccountPage from "./AccountPage"
@@ -69,6 +70,8 @@ const ProfilePage: React.FC = () => {
                 return <TournamentsPage/> 
             case 'account':
                 return <AccountPage/>
+            case 'rankings':
+                return <RankingsPage/>
             default:
                 return <ProfileHomePage numberOfTournaments={numberOfTournaments} user={user}/>
         }
