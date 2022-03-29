@@ -54,14 +54,16 @@ export const UPDATE_USER_INFO = gql `
     mutation updateUser(
         $username: String
         $email: String
+        $profileImage: String
     ){
         updateUser(
             user:{
                 username: $username,
                 email: $email,   
+                profileImage: $profileImage
             }
         ){
-            id email username token amountInWallet
+            id email username token amountInWallet profileImage
         }
     }
 `

@@ -25,7 +25,6 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
 
     const handleSubmit = (ev: React.FormEvent) => {
         ev.preventDefault();
-        console.log('I just submitted')
         try {
             registerUser();
         } catch (err: any) {
@@ -35,13 +34,11 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
 
     const onChange = (ev: React.ChangeEvent<HTMLInputElement>)=> {
         setValues({...values, [ev.target.name]: ev.target.value})
-        console.log(values)
     }
 
     const [registerUser, {loading, data, error}] = useMutation(REGISTER_USER, {
 
         update(_, {data: {register: registerData}}) {
-            console.log(registerData)
             dispatch({type: 'loginUser', payload: registerData})
             navigate('/profile');
         },
@@ -59,10 +56,7 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
         },
         (error: any, result: any) => {
           if (!error && result && result.event === "success") {
-            console.log("Done! Here is the image info: ", result.info);
-            console.log(`Your image URL is: ${result.info.secure_url}`)
             setValues({...values, profileImage: result.info.secure_url})
-            console.log(values)
           }
         }
       );
@@ -76,42 +70,46 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
           }
       }
 
-
     return (
         <>
         {
         isForm === 'register' &&
             <div className="glass-card">
+
                 <h1 className="form-title"> SIGN UP </h1>
+
                 <form onSubmit={handleSubmit} autoComplete="off">
 
-                <div>
-                    <input type="text" placeholder="Username" name="username" onChange={onChange} />
-                </div>
-                <div>
-                    <input type="text" placeholder="Email" name="email" onChange={onChange} />  
-                </div>
-                <div>
-                    <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
-                </div>
-                <div>   
-                    <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={onChange} />
-                </div>
+                    <div>
+                        <input type="text" placeholder="Username" name="username" onChange={onChange} />
+                    </div>
 
-                <div>
-                    {/* When PFP is added, connect this to user state */}
-                    <div className='img-container' >
-                    {/* holding image goes here */}
-                </div>
+                    <div>
+                        <input type="text" placeholder="Email" name="email" onChange={onChange} />  
+                    </div>
+
+                    <div>
+                        <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
+                    </div>
+                
+                    <div>   
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={onChange} />
+                    </div>
+
+                    <div>
+                        <div className='img-container' >
+                            <img src={values.profileImage !== undefined ? values.profileImage : null} alt="profile" style={values.profileImage !== undefined ? {'width':'100px'} : {'display':'none'}} />
+                        </div>
+
                         <button
                             type="button"
                             onClick={openWidget} 
                             id="upload_widget" 
                             className='cloudinary-button'>
-                            Upload Profile Image
+                            {values.profileImage === undefined ? 'Upload Profile Image' : 'Change Profile Image'}
                         </button>
-                </div>
-
+                    </div>
+                    
                     <div>
                         <button type="submit" className="main-button">Register</button> 
                     </div>
