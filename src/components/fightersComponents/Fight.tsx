@@ -9,7 +9,6 @@ interface Props{
     fightId: any,
     settingFightId: any
 }
-
 const Fight: React.FC<Props> = (fightId, settingFightId) => {
         
     const id = fightId.fightId
@@ -20,7 +19,7 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
     let player1UserName:string = '';
     let player2UserName:string = '';
 
-    useScrollToTop()
+    useScrollToTop();
 
     const fightQuery = useQuery( GET_FIGHT, {
         variables: {
@@ -60,11 +59,10 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                             
                                             return (
                                                     <>  
-                                                        
                                                         {
                                                             fight.nfts[0].id === move.attackerId
                                                             ?
-                                                            <div className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div  className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[0].image} alt="" />
                                                                     </div>
@@ -75,7 +73,7 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                                                 </div>
                                                             </div>
                                                             :
-                                                            <div className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div  className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[1].image} alt=""/>
                                                                     </div>
@@ -87,7 +85,6 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                                                 
                                                             </div>
                                                         }
-                                                        
                                                     </> 
                                                 )  
                                         })
@@ -99,7 +96,6 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                             }
                                         </div>
                                     </div>
-                                        
                                 </div>
                         :
                         <h1 className="octagon-cage">Loading fight...</h1>
