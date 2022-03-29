@@ -2,8 +2,14 @@
 .profile-page{
     max-height: 100%;
     max-width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
 }
+
  
 .display-info{
     display: grid;

@@ -24,6 +24,38 @@
     }
   }
 
+  /* CSS */
+
+
+
+@keyframes slide-in-left {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0%;
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0%;
+  }
+}
+
+
   
   
   @keyframes color-change {
@@ -47,16 +79,36 @@
 
   .fight-container {
       display: grid;
-      grid-template-columns: 80fr 20fr
+      grid-template-columns: 90%;
   }
 
   .fighter-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: fixed;
       width: 10%;
-      right: 0px;
-      padding-right: 5%;
+      right: 20px;
+      padding: 20px;
       text-align: center;
-  }
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(9.7px);
+      -webkit-backdrop-filter: blur(9.7px);
+      
+      .oponents{
+        padding: 10px 0px;
+        h1{
+          font-size: 2rem;
+        }
+        h2{
+          font-size: 1.2rem;
+          font-family: 'VIC-Light';
+        }
+      }
+      
+    }
 
   .fighter-details-images {
       max-width: 100%;
@@ -64,6 +116,7 @@
 
   .versus {
       padding: 10px 0;
+      font-size: 1.1rem;
   }
   
     .fight-display{
@@ -71,6 +124,7 @@
         width: 100%;
         height: 100%;
         flex-direction: column;
+
 
         .results{
           text-align: center;
@@ -86,20 +140,22 @@
     .fight-sequence{
         position: relative;
         padding: 10px 50px;
+        opacity: 0;
         div {
             float: left;
         }
-        -webkit-animation: opacity 5s forwards;
-        -moz-animation: opacity 5s forwards;
-        animation: opacity 5s forwards;
+        -webkit-animation: slide-in-left 1s , opacity 3s forwards;
+        -moz-animation: slide-in-left 1s , opacity 3s forwards;
+        animation: slide-in-left 1s , opacity 3s forwards;
        
     }
     .fight-sequence-2 {
         position: relative;
+        opacity: 0;
         padding: 10px 50px;
-        -webkit-animation: opacity 5s forwards;
-        -moz-animation: opacity 5s forwards;
-        animation: opacity 5s forwards;
+        -webkit-animation: slide-in-right 1s , opacity 3s forwards;
+        -moz-animation: slide-in-right 1s , opacity 3s forwards;
+        animation: slide-in-right 1s , opacity 3s forwards;
        
         div{
             float: right;
@@ -125,33 +181,24 @@
         h1{
             padding: 20px 0px;
         }
-    }
-
-  
+    }  
 }
      
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 
 
-.winner{
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.7px);
-  -webkit-backdrop-filter: blur(9.7px);
-  width:90%;
-  margin: 25px auto;
-  padding: 20px;
-  font-size: 5rem;
-  text-align: center;
+.winner-result{
+  position: relative;
+  opacity: 0;
+  -webkit-animation: slide-in-bottom 1s, opacity 3s forwards;
+  -moz-animation: slide-in-bottom 1s, opacity 3s forwards;
+  animation: slide-in-bottom 1s, opacity 3s forwards;
+    .winner{
+      background: linear-gradient(90deg, #f80024 0%, #eb4c3e 100%);
+      border-radius: 16px;
+      width:90%;
+      margin: 25px auto;
+      padding: 20px;
+      font-size: 5rem;
+      text-align: center;
+    }
 }
