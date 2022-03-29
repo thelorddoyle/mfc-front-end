@@ -37,9 +37,9 @@ const RankingsPage: React.FC = () => {
                 ?
                     nfts?.map(function(nft: any, i: number): JSX.Element | undefined {
                         return (
-                            <div className='fight-details nft' key={nft.id}>
+                            <div className={i % 2 === 0 ? 'fight-details nft' : 'fight-details nft2'} key={nft.id}>
                                 <div>
-                                    <img src={nft.image} alt="" style={{"width": "100px"}}/>
+                                    <img src={nft.image} alt="" style={{"width": "50px"}}/>
                                 </div>
                                 <div>
                                     <h1>Rank</h1>

@@ -27,8 +27,16 @@
     }
 
     .nft{
-        background: rgb(248,0,36);
         background: linear-gradient(90deg, rgba(248,0,36,1) 0%, rgb(239, 62, 46) 100%);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.7px);
+        -webkit-backdrop-filter: blur(9.7px);
+    }
+
+    .nft2{
+        // background: grey;
+        background: linear-gradient(90deg, rgba(248,0,36,0.1) 0%, rgb(239, 62, 46, 0.7) 100%);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(9.7px);
