@@ -24,18 +24,26 @@
         font-size: 1.5rem;
         font-weight: 100;
     }
-    svg{
-        
-        font-size:2rem;
-        font-weight: 700;
-        float: right;
+    .lets-fight {
+        width: 85%;
+    }
+    .icon-box {
+        display: grid;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        svg{
+            font-size:2rem;
+            font-weight: 700;
+        }
     }
 }
+
 
  
 .display-stats{
     display: grid;
-    width: 95%;
+    width: 92%;
     grid-template-columns: 70% 30%;
     margin-top: 20px;
     padding: 0px 0px 0px 30px;
@@ -118,7 +126,7 @@
 
 .extra-info{
     display: grid;  
-    width: 100%;
+    width: 95.5%;
     grid-template-columns: 70% 30%;
     gap: 13px;
     margin-top: 20px;

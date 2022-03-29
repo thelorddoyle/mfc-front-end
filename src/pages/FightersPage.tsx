@@ -31,8 +31,6 @@ const FightersPage: React.FC<Props> = ({settingFightId, fightId}) => {
         }
     })
 
-   
-
     return (
         <>  
             {

@@ -25,7 +25,6 @@ const Fighters: React.FC<Props> = ({user, nfts, getUserNfts, settingFightId, fig
         setInfoNft(data);
     }
 
-    
     return (
         <>
             {
