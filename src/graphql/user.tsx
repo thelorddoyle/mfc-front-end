@@ -35,6 +35,7 @@ export const REGISTER_USER = gql`
         $email: String!
         $password: String!
         $confirmPassword: String!
+        $profileImage: String
     ){
         register( 
             registerInput: {
@@ -42,9 +43,10 @@ export const REGISTER_USER = gql`
                     password: $password,
                     confirmPassword: $confirmPassword,
                     email: $email,
+                    profileImage: $profileImage
                     }
         ){
-            id email username token amountInWallet
+            id email username token amountInWallet profileImage
         }
     }
 `
