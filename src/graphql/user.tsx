@@ -24,7 +24,7 @@ export const LOGIN_USER = gql `
             username: $username
             password: $password
         ){
-            id email username token amountInWallet
+            id email username token amountInWallet profileImage
         }
     }
 `

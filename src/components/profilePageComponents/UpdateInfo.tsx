@@ -11,15 +11,17 @@ declare const window: any;
 
 const UpdateInfo: React.FC<Props> = ({changeForm}) => {
 
+    
     // used for cloudinary
     const cloudName = process.env.REACT_APP_CLOUD_NAME; // replace with your own cloud name
     const uploadPreset = process.env.REACT_APP_CLOUD_PRESET; // replace with your own upload preset
 
     //State for values
     const [values, setValues] = useState<any | ''> ({});
-
+    
     //Current user
     const user = useSelector((state:  RootStateOrAny) => state.data)
+    console.log(user.profileImage)
     const dispatch = useDispatch();
     //Getting new values 
     const onChange = (ev:  React.ChangeEvent<HTMLInputElement>)=>{
@@ -71,27 +73,38 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
     return(
         <div> 
             <form onSubmit={handleSubmit}>
-                <div className="input-fields">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name="username" onChange={onChange} />
-                </div>
-                <div className="input-fields"> 
-                    <label htmlFor="usernaemailme" >Email</label>
-                    <input type="text" name="email" onChange={onChange} />
-                </div>
-
-                <div>
-                        <div className='img-container' >
-                            <img src={values.profileImage !== undefined ? values.profileImage : null} alt="profile" style={values.profileImage !== undefined ? {'width':'100px'} : {'display':'none'}} />
+                <div className="split-account">
+                    <div>
+                        <div className="input-fields">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" name="username" onChange={onChange} />
                         </div>
+                        <div className="input-fields"> 
+                            <label htmlFor="usernaemailme" >Email</label>
+                            <input type="text" name="email" onChange={onChange} />
+                        </div>
+                    </div>
 
-                        <button
-                            type="button"
-                            onClick={openWidget} 
-                            id="upload_widget" 
-                            className='cloudinary-button'>
-                            {values.profileImage === undefined ? 'Upload Profile Image' : 'Change Profile Image'}
-                        </button>
+                    <div className="profileImageContainer">
+
+                            <div className='img-container' >
+                                {
+                                    values.profileImage !== undefined
+                                    ?
+                                    <img src={values.profileImage !== undefined ? values.profileImage : null} alt="profile" style={values.profileImage !== undefined ? {'width':'100px'} : {'display':'none'}} />
+                                    :
+                                    <img src={user.profileImage} alt="" style={{'width':'100px'}} />
+                                }
+                            </div>
+
+                            <button
+                                type="button"
+                                onClick={openWidget} 
+                                id="upload_widget" 
+                                className='cloudinary-button'>
+                                {values.profileImage === undefined ? 'Upload Profile Image' : 'Change Profile Image'}
+                            </button>
+                    </div>
                 </div>
 
                 <div className="input-fields input-buttons"> 

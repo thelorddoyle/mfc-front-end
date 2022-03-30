@@ -89,7 +89,13 @@ const ProfilePage: React.FC = () => {
                                 <p>Let's Fight!</p>
                             </div>
                             <div className="icon-box">
-                                <FontAwesomeIcon  icon={faUser}/> 
+                                {
+                                    user.profileImage !== undefined
+                                    ?
+                                    <img src={user.profileImage} alt="" style={{'width':'100px'}} />
+                                    :
+                                    <FontAwesomeIcon  icon={faUser}/> 
+                                }
                             </div>
                         </div>
                         {
