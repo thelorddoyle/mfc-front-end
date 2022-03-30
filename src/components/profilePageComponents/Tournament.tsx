@@ -47,49 +47,94 @@ const Tournament: React.FC = () => {
         <div className="myTournaments card-navbar">
             <div className="wrapper">
                 <div className="item">
-                    <div className="item">
-                        <div className="item-parent">
-                            <img src={nftss[0]?.image}/>
-                        </div>
-                        <div className="item-childrens">
-                                <div className="item-child">
-                                    <div className="item">
-                                        <div className="item-parent">
-                                            <p>Finalist #1</p>
-                                        </div>
-                                        <div className="item-childrens">
-                                            <div className="item-child">
-                                                <div className="item">
-                                                    <div className="item-parent">
-                                                        <p>Semi #1</p>
-                                                    </div>
-                                                    <div className="item-childrens">
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                <div className="item-childrens">
-                                                                    <div className="item-child">
+                    <div className="item-parent">
+                            <img src={nftss[10]?.image}/>
+                    </div>
+                    <div className="item-childrens">
+                        <div className="item-child">
+                            <div className="item">
+                                <div className="item-parent">
+                                    <img src={nftss[0]?.image}/>
+                                </div>
+                                <div className="item-childrens">
+                                    <div className="item-child">
+                                        <div className="item">
+                                            <div className="item-parent">
+                                                <img src={nftss[0]?.image}/>
+                                            </div>
+                                            <div className="item-childrens">
+                                                <div className="item-child">
+                                                    <div className="item">
+                                                        <div className="item-parent">
+                                                            <img src={nftss[0]?.image}/>
+                                                        </div>
+                                                        <div className="item-childrens">
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
                                                                         <img src={nftss[0]?.image}/>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[1]?.image}/>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[1]?.image}/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
+                                                                    </div>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[2]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[3]?.image}/>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[2]?.image}/>
+                                                    </div>
+                                                </div>
+                                                <div className="item-child">
+                                                    <div className="item">
+                                                        <div className="item-parent">
+                                                            <img src={nftss[0]?.image}/>
+                                                        </div>
+                                                        <div className="item-childrens">
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[3]?.image}/>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[4]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[5]?.image}/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
+                                                                    </div>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[6]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[7]?.image}/>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -97,127 +142,185 @@ const Tournament: React.FC = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="item-child">
-                                                <div className="item">
-                                                    <div className="item-parent">
-                                                        <p>Semi #2</p>
-                                                    </div>
-                                                    <div className="item-childrens">
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[4]?.image}/>
+                                        </div>
+                                    </div>
+                                    <div className="item-child">
+                                        <div className="item">
+                                            <div className="item-parentå">
+                                            <div className="item">
+                                                <div className="item-parent">
+                                                    <img src={nftss[0]?.image}/>
+                                                </div>
+                                                <div className="item-childrens">
+                                                    <div className="item-child">
+                                                        <div className="item">
+                                                            <div className="item-parent">
+                                                                <img src={nftss[0]?.image}/>
+                                                            </div>
+                                                            <div className="item-childrens">
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[8]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[9]?.image}/>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[5]?.image}/>
+                                                                </div>
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[10]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[11]?.image}/>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[6]?.image}/>
+                                                    </div>
+                                                    <div className="item-child">
+                                                        <div className="item">
+                                                            <div className="item-parent">
+                                                                <img src={nftss[0]?.image}/>
+                                                            </div>
+                                                            <div className="item-childrens">
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[12]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[13]?.image}/>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[7]?.image}/>
+                                                                </div>
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[14]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[15]?.image}/>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <div className="item-child">
-                                <div className="item">
-                                    <div className="item-parentå">
-                                    <div className="item">
-                                        <div className="item-parent">
-                                            <p>Finalist #2</p>
-                                        </div>
-                                        <div className="item-childrens">
-                                            <div className="item-child">
-                                                <div className="item">
-                                                    <div className="item-parent">
-                                                        <p>Semi #3</p>
-                                                    </div>
-                                                    <div className="item-childrens">
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[8]?.image}/>
+                            </div>
+                        </div><div className="item-child">
+                            <div className="item">
+                                <div className="item-parent">
+                                    <img src={nftss[0]?.image}/>
+                                </div>
+                                <div className="item-childrens">
+                                    <div className="item-child">
+                                        <div className="item">
+                                            <div className="item-parent">
+                                                <img src={nftss[0]?.image}/>
+                                            </div>
+                                            <div className="item-childrens">
+                                                <div className="item-child">
+                                                    <div className="item">
+                                                        <div className="item-parent">
+                                                            <img src={nftss[0]?.image}/>
+                                                        </div>
+                                                        <div className="item-childrens">
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[9]?.image}/>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[1]?.image}/>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[10]?.image}/>
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[11]?.image}/>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[2]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[3]?.image}/>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="item-child">
-                                                <div className="item">
-                                                    <div className="item-parent">
-                                                        <p>Semi #4</p>
-                                                    </div>
-                                                    <div className="item-childrens">
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                  <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[12]?.image}/>
+                                                <div className="item-child">
+                                                    <div className="item">
+                                                        <div className="item-parent">
+                                                            <img src={nftss[0]?.image}/>
+                                                        </div>
+                                                        <div className="item-childrens">
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[13]?.image}/>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[4]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[5]?.image}/>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="item-child">
-                                                            <div className="item">
-                                                                <div className="item-parent">
-                                                                    <p>Round 2</p>
-                                                                </div>
-                                                                  <div className="item-childrens">
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[14]?.image}/>
+                                                            <div className="item-child">
+                                                                <div className="item">
+                                                                    <div className="item-parent">
+                                                                        <img src={nftss[0]?.image}/>
                                                                     </div>
-                                                                    <div className="item-child">
-                                                                        <img src={nftss[15]?.image}/>
+                                                                    <div className="item-childrens">
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[6]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-child">
+                                                                            <img src={nftss[7]?.image}/>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -227,6 +330,96 @@ const Tournament: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="item-child">
+                                        <div className="item">
+                                            <div className="item-parentå">
+                                            <div className="item">
+                                                <div className="item-parent">
+                                                    <img src={nftss[0]?.image}/>
+                                                </div>
+                                                <div className="item-childrens">
+                                                    <div className="item-child">
+                                                        <div className="item">
+                                                            <div className="item-parent">
+                                                                <img src={nftss[0]?.image}/>
+                                                            </div>
+                                                            <div className="item-childrens">
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[8]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[9]?.image}/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[10]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[11]?.image}/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="item-child">
+                                                        <div className="item">
+                                                            <div className="item-parent">
+                                                                <img src={nftss[0]?.image}/>
+                                                            </div>
+                                                            <div className="item-childrens">
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[12]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[13]?.image}/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="item-child">
+                                                                    <div className="item">
+                                                                        <div className="item-parent">
+                                                                            <img src={nftss[0]?.image}/>
+                                                                        </div>
+                                                                        <div className="item-childrens">
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[14]?.image}/>
+                                                                            </div>
+                                                                            <div className="item-child">
+                                                                                <img src={nftss[15]?.image}/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
