@@ -92,7 +92,7 @@ const ProfilePage: React.FC = () => {
                                 {
                                     user.profileImage !== undefined
                                     ?
-                                    <img src={user.profileImage} alt="" style={{'width':'100px'}} />
+                                    <img src={user.profileImage} alt="" style={{height:'50px', width: '50px', border: '3px black solid', borderRadius: '10px'}} />
                                     :
                                     <FontAwesomeIcon  icon={faUser}/> 
                                 }
