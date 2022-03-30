@@ -125,7 +125,6 @@
         height: 100%;
         flex-direction: column;
 
-
         .results{
           text-align: center;
           font-size: 4.5rem;
@@ -144,18 +143,18 @@
         div {
             float: left;
         }
-        -webkit-animation: slide-in-left 1s , opacity 3s forwards;
-        -moz-animation: slide-in-left 1s , opacity 3s forwards;
-        animation: slide-in-left 1s , opacity 3s forwards;
+        -webkit-animation:  opacity 2s forwards;
+        -moz-animation:  opacity 2s forwards;
+        animation:  opacity 2s forwards;
        
     }
     .fight-sequence-2 {
         position: relative;
         opacity: 0;
         padding: 10px 50px;
-        -webkit-animation: slide-in-right 1s , opacity 3s forwards;
-        -moz-animation: slide-in-right 1s , opacity 3s forwards;
-        animation: slide-in-right 1s , opacity 3s forwards;
+        -webkit-animation:  opacity 2s forwards;
+        -moz-animation:  opacity 2s forwards;
+        animation:  opacity 2s forwards;
        
         div{
             float: right;

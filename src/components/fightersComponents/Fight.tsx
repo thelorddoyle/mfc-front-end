@@ -3,13 +3,13 @@ import { useQuery } from "@apollo/client"
 import { GET_FIGHT } from "../../graphql/fight"
 import { useState } from "react"
 import "../../styles/fight.scss"
-import {truncate, useScrollToTop}  from '../../helpers/utils'
+import {truncate, useScrollToTop, scrollFight}  from '../../helpers/utils'
 
 interface Props{
     fightId: any,
     settingFightId: any
 }
-const Fight: React.FC<Props> = (fightId, settingFightId) => {
+const Fight: React.FC<Props> = (fightId) => {
         
     const id = fightId.fightId
     const [fightObject, setFightObject] = useState<any | null> ({})
@@ -20,7 +20,7 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
     let player2UserName:string = '';
 
     useScrollToTop();
-
+    
     const fightQuery = useQuery( GET_FIGHT, {
         variables: {
             fightId: id
@@ -39,14 +39,20 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
         player1Id = fight.nfts[0].id;
         player1UserName = fight.nfts[0].user.username;
         player2UserName = fight.nfts[1].user.username;
+        //scrollFight();
     }
    
+    if(delayWinner){
+        for (let i = 0; i < delayWinner; i++) {
+            scrollFight(i,`fight-${i}`, delayWinner)
+            
+        }
+    }
 
     //TODO: make the two images of the NFTs 
     //TODO: make a highlighted message of the who has won 
     return (
 
-            <div className="container">
                 <div className="fight-container">
                     {
                         fight
@@ -58,11 +64,13 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                         fight.fightReplay.map(function(move:any, index:number) {
                                             
                                             return (
+                                                    
                                                     <>  
+                                                        
                                                         {
                                                             fight.nfts[0].id === move.attackerId
                                                             ?
-                                                            <div  className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div id={`fight-${index}`} className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[0].image} alt="" />
                                                                     </div>
@@ -73,7 +81,7 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                                                 </div>
                                                             </div>
                                                             :
-                                                            <div  className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div id={`fight-${index}`} className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[1].image} alt=""/>
                                                                     </div>
@@ -85,7 +93,8 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                                                                 
                                                             </div>
                                                         }
-                                                    </> 
+                                                </> 
+
                                                 )  
                                         })
                                     }
@@ -103,25 +112,26 @@ const Fight: React.FC<Props> = (fightId, settingFightId) => {
                     {
                         fight
                         ?
-                        <div className="fighter-details">
-                            {console.log(fight)}
-                            <img src={fight.nfts[0].image} className="fighter-details-images" alt="fighter1" />
-                            <div className="oponents">
-                                <h1>{fight.nfts[0].user.username}</h1>
-                                <h2> #{truncate(fight.nfts[0].id)} </h2>
+                       <>
+                        
+                            <div className="fighter-details">
+                                <img src={fight.nfts[0].image} className="fighter-details-images" alt="fighter1" />
+                                <div className="oponents">
+                                    <h1>{fight.nfts[0].user.username}</h1>
+                                    <h2> #{truncate(fight.nfts[0].id)} </h2>
+                                </div>
+                                <h3 className="versus">vs.</h3>
+                                <div className="oponents">
+                                    <h1>{fight.nfts[1].user.username}</h1>
+                                    <h2> #{truncate(fight.nfts[1].id)}  </h2>
+                                </div>
+                                <img src={fight.nfts[1].image} className="fighter-details-images" alt="fighter2" />
                             </div>
-                            <h3 className="versus">vs.</h3>
-                            <div className="oponents">
-                                <h1>{fight.nfts[1].user.username}</h1>
-                                <h2> #{truncate(fight.nfts[1].id)}  </h2>
-                            </div>
-                            <img src={fight.nfts[1].image} className="fighter-details-images" alt="fighter2" />
-                        </div>
+                        </>
                         :
                         null
                     }
                 </div> 
-         </div>
     )
 }
 
