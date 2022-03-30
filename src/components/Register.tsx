@@ -19,6 +19,7 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
 
     const [values, setValues] = useState<any | ''> ({});
     const [errors, setError] = useState<ErrorSetter | null>(null)
+    
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -38,7 +39,6 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
     const [registerUser, {loading, data, error}] = useMutation(REGISTER_USER, {
 
         update(_, {data: {register: registerData}}) {
-            console.log(registerData)
             dispatch({type: 'loginUser', payload: registerData})
             navigate('/profile');
         },
@@ -56,13 +56,18 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
         },
         (error: any, result: any) => {
           if (!error && result && result.event === "success") {
-            console.log("Done! Here is the image info: ", result.info);
+            setValues({...values, profileImage: result.info.secure_url})
           }
         }
       );
   
       function openWidget () {
-        myWidget.open()
+          console.log('Widget opening')
+          try {
+              myWidget.open()
+          } catch(err) {
+              console.log(err)
+          }
       }
 
     return (
@@ -70,41 +75,49 @@ export const Register : React.FC  <Props> = ({whichForm,isForm}) => {
         {
         isForm === 'register' &&
             <div className="glass-card">
-                <h1 className="form-title"> SIGN UP </h1>
-                <form onSubmit={handleSubmit} autoComplete="off">
-                <div>
-                    <input type="text" placeholder="Username" name="username" onChange={onChange} />
-                </div>
-                <div>
-                    <input type="text" placeholder="Email" name="email" onChange={onChange} />  
-                </div>
-                <div>
-                    <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
-                </div>
-                <div>   
-                    <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={onChange} />
-                </div>
-                <div>
-                     {/* When PFP is added, connect this to user state */}
-                     <div className='img-container' >
-                        {/* holding image goes here */}
-                    </div>
-                    <div className='btn-container' >
 
-                    <button 
-                        onClick={openWidget} 
-                        id="upload_widget" 
-                        className='cloudinary-button'>
-                        Upload Profile Image
-                    </button>
+                <h1 className="form-title"> SIGN UP </h1>
+
+                <form onSubmit={handleSubmit} autoComplete="off">
+
+                    <div>
+                        <input type="text" placeholder="Username" name="username" onChange={onChange} />
                     </div>
-                </div>
-                <div>
-                    <button type="submit" className="main-button">Register</button> 
-                </div>
-                <div>
-                     <h4 onClick={()=> whichForm()} >Already have account? Login</h4>           
-                </div>
+
+                    <div>
+                        <input type="text" placeholder="Email" name="email" onChange={onChange} />  
+                    </div>
+
+                    <div>
+                        <input type="password" placeholder="Password" name="password" onChange={onChange} /> 
+                    </div>
+                
+                    <div>   
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword" onChange={onChange} />
+                    </div>
+
+                    <div>
+                        <div className='img-container' >
+                            <img src={values.profileImage !== undefined ? values.profileImage : null} alt="profile" style={values.profileImage !== undefined ? {'width':'100px'} : {'display':'none'}} />
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={openWidget} 
+                            id="upload_widget" 
+                            className='cloudinary-button'>
+                            {values.profileImage === undefined ? 'Upload Profile Image' : 'Change Profile Image'}
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" className="main-button">Register</button> 
+                    </div>
+
+                    <div>
+                        <h4 onClick={()=> whichForm()} >Already have account? Login</h4>           
+                    </div>
+
                 </form>
                
             </div>
