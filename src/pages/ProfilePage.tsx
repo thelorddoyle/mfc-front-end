@@ -33,7 +33,6 @@ const ProfilePage: React.FC = () => {
     const [errors, setErrors] = useState<ApolloError | undefined>();
     const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1);
 
-
      //Getting all tournaments that users NFT's are taking part in
      const tournaments = useQuery( GET_MY_TOURNAMENTS, {
         onCompleted(data){

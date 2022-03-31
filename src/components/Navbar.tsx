@@ -5,9 +5,7 @@ import '../styles/navbar.scss'
 
 const Navbar: React.FC = () =>{
 
-    const user = useSelector((state:  RootStateOrAny) => state.data)
-    console.log(user);
-    
+    const user = useSelector((state:  RootStateOrAny) => state.data)    
     const dispatch = useDispatch();
     const {pathname} = useLocation()
 
