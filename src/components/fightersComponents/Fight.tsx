@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useQuery } from "@apollo/client"
 import { GET_FIGHT } from "../../graphql/fight"
 import { useState } from "react"
@@ -45,12 +45,9 @@ const Fight: React.FC<Props> = (fightId) => {
     if(delayWinner){
         for (let i = 0; i < delayWinner; i++) {
             scrollFight(i,`fight-${i}`)
-            
         }
     }
 
-    //TODO: make the two images of the NFTs 
-    //TODO: make a highlighted message of the who has won 
     return (
 
                 <div className="fight-container">
