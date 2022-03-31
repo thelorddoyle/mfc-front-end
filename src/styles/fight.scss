@@ -88,7 +88,8 @@
       justify-content: space-between;
       position: fixed;
       width: 10%;
-      right: 20px;
+      bottom: 50px;
+      right: 30px;
       padding: 20px;
       text-align: center;
       background: rgba(255, 255, 255, 0.16);
@@ -96,6 +97,7 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(9.7px);
       -webkit-backdrop-filter: blur(9.7px);
+      align-items: center;
       
       .oponents{
         padding: 10px 0px;
@@ -111,7 +113,7 @@
     }
 
   .fighter-details-images {
-      max-width: 100%;
+      max-width: 75%;
   }
 
   .versus {
@@ -121,7 +123,7 @@
   
     .fight-display{
         display: flex;
-        width: 100%;
+        width: 95%;
         height: 100%;
         flex-direction: column;
 
@@ -186,6 +188,7 @@
 
 
 .winner-result{
+  width: 97%;
   position: relative;
   opacity: 0;
   -webkit-animation: slide-in-bottom 1s, opacity 3s forwards;
