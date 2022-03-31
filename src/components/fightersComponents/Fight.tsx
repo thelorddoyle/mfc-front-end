@@ -44,7 +44,7 @@ const Fight: React.FC<Props> = (fightId) => {
    
     if(delayWinner){
         for (let i = 0; i < delayWinner; i++) {
-            scrollFight(i,`fight-${i}`, delayWinner)
+            scrollFight(i,`fight-${i}`)
             
         }
     }

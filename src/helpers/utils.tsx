@@ -65,7 +65,7 @@ export const useScrollToTop = () => {
 //     },2000)
 // }
 
-export const scrollFight = (time: number, idElement: string, last: number) => {
+export const scrollFight = (time: number, idElement: string) => {
     setTimeout(()=>{
         const scrollElement = document.querySelector<HTMLElement>(".profile-page");
         const fightToScroll = document.querySelector<HTMLElement>(`#${idElement}`);
@@ -74,8 +74,6 @@ export const scrollFight = (time: number, idElement: string, last: number) => {
             // scrollElement.scrollTop =  (position - 200);
             fightToScroll.scrollIntoView({behavior: "smooth", block: "center"});
             //console.log("scroll container", scrollElement.scrollTop,  'div to scroll to it', fightToScroll.offsetTop);
-            
-            
         }
-    },((time + 0.1) * 1000))
+    },((time) * 1000))
 };
