@@ -14,6 +14,7 @@ import MintPage from './pages/MintPage';
 import ProfileHomePage from './components/profilePageComponents/ProfileHomePage';
 import FightersPage from './pages/FightersPage';
 import Tournament from './components/profilePageComponents/Tournament';
+import Fight from './components/fightersComponents/Fight';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
                     <Route path="/profile" element={<ProfilePage />} >
                         <Route path="" element={<ProfileHomePage />} /> 
                         <Route path="fighters" element={<FightersPage /> } />
-                        <Route path="fighters/:id" element={<FightersPage /> } />
+                        <Route path="fighters/:id" element={<Fight /> } />
                     </Route>
                 </Route>
                 <Route path="/mint" element={<AuthRoute />} >
@@ -40,10 +41,6 @@ function App() {
                 <Route path="/tournament/:id" element={<AuthRoute />} >
                     <Route path="/tournament/:id" element={<Tournament />} />
                 </Route>
-                {/* <Route path="/profile/fight/:id" element={<AuthRoute />} >
-                    <Route path="/profile/fight/:id" element={<Fight />} />
-                </Route> */}
-                
             </Routes>
 
         </Router>

@@ -30,7 +30,6 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                     upcomingFights?.map(function(fight: any): JSX.Element | undefined {
                         // if the fight has been resolved
                         return (
-                            <>
                                 <div className={infoNft.id === fight.winnerId ? 'fight-details fight-won' : 'fight-details fight-lost'} key={fight.id}>
                                     <div>
                                         <h1>Match</h1>
@@ -50,11 +49,10 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                                             #{truncate(fight.loserId)}
                                         </span>
                                     </div>
-                                    <div key={fight.id} >
-                                        <button>View Fight</button>
+                                    <div>
+                                        <Link to={`${fight.id}`} ><button>View Fight</button></Link>
                                     </div>
                                 </div>
-                            </>
                         )
                     })
                 }
@@ -81,8 +79,8 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                                         #{truncate(fight.loserId)}
                                     </span>
                                 </div>
-                                <div key={fight.id} >
-                                    <button>View Fight</button>
+                                <div>
+                                   <Link to={`${fight.id}`} ><button>View Fight</button></Link> 
                                 </div>
                             </div>
                         )

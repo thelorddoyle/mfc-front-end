@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useQuery } from "@apollo/client"
 import { GET_FIGHT } from "../../graphql/fight"
 import { useState } from "react"
@@ -9,25 +9,29 @@ import { useParams } from "react-router"
 
 const Fight: React.FC = () => {
         
-    const { id } = useParams();
-    console.log(id);
+    const { id  }  = useParams();
     const [fightObject, setFightObject] = useState<any | null> ({})
     const fight = fightObject.getFight
-    const [delayWinner,setDelayWinner] = useState<any | null> (0);
+    const [delayWinner,setDelayWinner] = useState<any | null> (undefined);
     let player1Id:string = '';
     let player1UserName:string = '';
     let player2UserName:string = '';
 
     useScrollToTop();
     
-    const fightQuery = useQuery( GET_FIGHT, {
+    const scrollDown = (duration: number) => {
+        for (let i = 0; i < duration; i++) {
+            scrollFight(i,`fight-${i}`)
+        }
+    }
+    useQuery( GET_FIGHT, {
         variables: {
             fightId: id
         },
         onCompleted(fightData){
             setFightObject(fightData);
             setDelayWinner(fightData.getFight.fightReplay.length);
-            
+            scrollDown(fightData.getFight.fightReplay.length);
         },
         onError(error){
             console.log(error)
@@ -38,14 +42,8 @@ const Fight: React.FC = () => {
         player1Id = fight.nfts[0].id;
         player1UserName = fight.nfts[0].user.username;
         player2UserName = fight.nfts[1].user.username;
-        //scrollFight();
     }
-   
-    if(delayWinner){
-        for (let i = 0; i < delayWinner; i++) {
-            scrollFight(i,`fight-${i}`)
-        }
-    }
+    
 
     return (
 
@@ -66,7 +64,7 @@ const Fight: React.FC = () => {
                                                         {
                                                             fight.nfts[0].id === move.attackerId
                                                             ?
-                                                            <div key={index} id={`fight-${index}`} className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div key={`fight-${index}`} id={`fight-${index}`} className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[0].image} alt="" />
                                                                     </div>
@@ -77,7 +75,7 @@ const Fight: React.FC = () => {
                                                                 </div>
                                                             </div>
                                                             :
-                                                            <div key={index} id={`fight-${index}`} className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div key={`fight-${index}`} id={`fight-${index}`} className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[1].image} alt=""/>
                                                                     </div>
