@@ -1,13 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {  faUserGroup, faSackDollar, faHandBackFist, faRankingStar, faCog, faClone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useSelector, RootStateOrAny } from "react-redux";
 
 interface Props{
     onClick(component: string): void
 }
 
 const Sidebar: React.FC<Props> = (props) => {
+
+    // const user = useSelector((state:  RootStateOrAny) => state.data)
+
+    // if (!user) {
+    //     console.log('No user')
+    // }
 
     return (
         <div className="sidebar card-navbar">

@@ -48,6 +48,8 @@ const Fight: React.FC<Props> = (fightId) => {
         }
     }
 
+    console.log(fight)
+
     return (
 
                 <div className="fight-container">
@@ -69,7 +71,7 @@ const Fight: React.FC<Props> = (fightId) => {
                                                             ?
                                                             <div id={`fight-${index}`} className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
-                                                                        <img src={fight.nfts[0].image} alt="" />
+                                                                        <img src={fight.nfts[0].user.profileImage} alt="" className="user-image-for-fight"/>
                                                                     </div>
                                                                 <div className="sequence">
                                                                     <h1>
@@ -80,7 +82,7 @@ const Fight: React.FC<Props> = (fightId) => {
                                                             :
                                                             <div id={`fight-${index}`} className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
-                                                                        <img src={fight.nfts[1].image} alt=""/>
+                                                                        <img src={fight.nfts[1].user.profileImage} alt="" className="user-image-for-fight"/>
                                                                     </div>
                                                                     <div className="sequence" >
                                                                         <h1>

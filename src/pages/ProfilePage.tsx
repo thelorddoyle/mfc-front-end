@@ -75,6 +75,8 @@ const ProfilePage: React.FC = () => {
                 return <ProfileHomePage numberOfTournaments={numberOfTournaments} user={user}/>
         }
     }
+
+    console.log(user)
   
     return (
         <div className="container">
