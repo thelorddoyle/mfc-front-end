@@ -18,7 +18,7 @@ const Navbar: React.FC = () =>{
                 <div className="logo-mfc">
                     <Link to="/" >
                         <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647822121/Logos%20And%20Icons/MFC_White_diwtbf.png" alt="mfc_logo" />
-                        </Link> 
+                    </Link> 
                 </div>
                 <div className="nav-menu"> 
                 <Link to="/" className="nav-menu-link">HOME</Link>

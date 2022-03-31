@@ -11,8 +11,8 @@ import ConnectPage from './pages/ConnectPage';
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import MintPage from './pages/MintPage';
-import FightersPage from './pages/FightersPage';
-import Fight from './pages/FightPage'
+import ProfileHomePage from './components/profilePageComponents/ProfileHomePage';
+
 import Tournament from './components/profilePageComponents/Tournament';
 
 function App() {
@@ -27,9 +27,8 @@ function App() {
                 <Route path="/" element={ <LandingPage/> } />
                 <Route path="/login"  element = { <Login/> } />
                 <Route path="/connect"  element = { <ConnectPage/> } />
-                <Route path="/profile" element={<AuthRoute />} >
-                    <Route path="/profile" element={<ProfilePage />} />
-                    {/* <Route path="/profile/fighters" element={<FightersPage />} /> */}
+                <Route path="/profile" element={<ProfilePage />} >
+                    <Route path="" element={<ProfileHomePage  />} />  
                 </Route>
                 <Route path="/mint" element={<AuthRoute />} >
                     <Route path="/mint" element={<MintPage />} />
