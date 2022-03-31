@@ -4,14 +4,13 @@ import { GET_FIGHT } from "../../graphql/fight"
 import { useState } from "react"
 import "../../styles/fight.scss"
 import {truncate, useScrollToTop, scrollFight}  from '../../helpers/utils'
+import { useParams } from "react-router"
 
-interface Props{
-    fightId: any,
-    settingFightId: any
-}
-const Fight: React.FC<Props> = (fightId) => {
+
+const Fight: React.FC = () => {
         
-    const id = fightId.fightId
+    const { id } = useParams();
+    console.log(id);
     const [fightObject, setFightObject] = useState<any | null> ({})
     const fight = fightObject.getFight
     const [delayWinner,setDelayWinner] = useState<any | null> (0);
@@ -67,7 +66,7 @@ const Fight: React.FC<Props> = (fightId) => {
                                                         {
                                                             fight.nfts[0].id === move.attackerId
                                                             ?
-                                                            <div id={`fight-${index}`} className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div key={index} id={`fight-${index}`} className="fight-sequence"  style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[0].image} alt="" />
                                                                     </div>
@@ -78,7 +77,7 @@ const Fight: React.FC<Props> = (fightId) => {
                                                                 </div>
                                                             </div>
                                                             :
-                                                            <div id={`fight-${index}`} className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
+                                                            <div key={index} id={`fight-${index}`} className="fight-sequence-2" style={{ animationDelay: `${index * 1}s` }}>
                                                                     <div className="fighter-image">
                                                                         <img src={fight.nfts[1].image} alt=""/>
                                                                     </div>

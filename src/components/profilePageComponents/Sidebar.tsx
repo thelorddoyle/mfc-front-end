@@ -22,7 +22,7 @@ const Sidebar: React.FC = (props) => {
                     </div>    
                     <div className="nav-menu" >   
                         <FontAwesomeIcon icon={faUserGroup} />
-                        Fighters 
+                        <Link to="fighters"><span>Fighters</span></Link>
                     </div>
                     <div className="nav-menu" >
                         <FontAwesomeIcon  icon={faSackDollar}/> 

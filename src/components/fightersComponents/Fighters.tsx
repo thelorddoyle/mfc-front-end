@@ -13,11 +13,9 @@ interface Props{
     user: RootStateOrAny,
     nfts: Array<[]>,
     getUserNfts: QueryResult,
-    settingFightId:(id: string)=> void,
-    fightId: string,
 }
 
-const Fighters: React.FC<Props> = ({user, nfts, getUserNfts, settingFightId, fightId}) => {
+const Fighters: React.FC<Props> = ({user, nfts, getUserNfts}) => {
    
     const [infoNft, setInfoNft] = useState<any | null> ({})
 
@@ -27,17 +25,10 @@ const Fighters: React.FC<Props> = ({user, nfts, getUserNfts, settingFightId, fig
 
     return (
         <>
-            {
-            (fightId)
-            ?
-            <Fight fightId={fightId} settingFightId={settingFightId} />
-            :
-            <>
-                <ShowNfts  nfts={nfts} getUserNfts={getUserNfts} settingInfoNfts={settingInfoNfts} />
-                <ShowInfoNft infoNft={infoNft} user={user}/>
-                <ShowFightsNft infoNft={infoNft} settingFightId={settingFightId} />
-            </>
-            }
+            <ShowNfts  nfts={nfts} getUserNfts={getUserNfts} settingInfoNfts={settingInfoNfts} />
+            <ShowInfoNft infoNft={infoNft} user={user}/>
+            <ShowFightsNft infoNft={infoNft} />
+                
         </>
     )
 }

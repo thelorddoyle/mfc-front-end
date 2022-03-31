@@ -12,7 +12,7 @@ import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import MintPage from './pages/MintPage';
 import ProfileHomePage from './components/profilePageComponents/ProfileHomePage';
-
+import FightersPage from './pages/FightersPage';
 import Tournament from './components/profilePageComponents/Tournament';
 
 function App() {
@@ -27,8 +27,12 @@ function App() {
                 <Route path="/" element={ <LandingPage/> } />
                 <Route path="/login"  element = { <Login/> } />
                 <Route path="/connect"  element = { <ConnectPage/> } />
-                <Route path="/profile" element={<ProfilePage />} >
-                    <Route path="" element={<ProfileHomePage  />} />  
+                <Route path="/profile" element={<AuthRoute />} >
+                    <Route path="/profile" element={<ProfilePage />} >
+                        <Route path="" element={<ProfileHomePage />} /> 
+                        <Route path="fighters" element={<FightersPage /> } />
+                        <Route path="fighters/:id" element={<FightersPage /> } />
+                    </Route>
                 </Route>
                 <Route path="/mint" element={<AuthRoute />} >
                     <Route path="/mint" element={<MintPage />} />

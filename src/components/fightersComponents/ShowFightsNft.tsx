@@ -5,11 +5,9 @@ import { truncate } from "../../helpers/utils";
 
 interface Props{
     infoNft: any
-    settingFightId: any
-    
 }
 
-const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
+const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
     const [resolvedFights, setResolvedFights] = useState<any | null> ([]);
     const [upcomingFights, setUpcomingFights] = useState<any | null> ([]);
     
@@ -52,7 +50,7 @@ const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
                                             #{truncate(fight.loserId)}
                                         </span>
                                     </div>
-                                    <div key={fight.id} onClick={()=> settingFightId(fight.id) }>
+                                    <div key={fight.id} >
                                         <button>View Fight</button>
                                     </div>
                                 </div>
@@ -83,7 +81,7 @@ const ShowFightsNft: React.FC<Props> = ({infoNft, settingFightId}) => {
                                         #{truncate(fight.loserId)}
                                     </span>
                                 </div>
-                                <div key={fight.id} onClick={()=> settingFightId(fight.id) }>
+                                <div key={fight.id} >
                                     <button>View Fight</button>
                                 </div>
                             </div>

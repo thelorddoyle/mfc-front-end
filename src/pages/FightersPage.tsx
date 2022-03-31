@@ -7,12 +7,8 @@ import { useSelector, useDispatch, RootStateOrAny} from "react-redux";
 import { GET_USER_NFTS } from "../graphql/nft";
 import Fighters from "../components/fightersComponents/Fighters"
 
-interface Props{
-    settingFightId:(id: string)=> void,
-    fightId: string,
-}
 
-const FightersPage: React.FC<Props> = ({settingFightId, fightId}) => {
+const FightersPage: React.FC = () => {
     const user = useSelector((state:  RootStateOrAny) => state.data)
     const nfts = useSelector((state: RootStateOrAny) => state.nfts)
     const [errors, setErrors] = useState<ApolloError | undefined>()
@@ -41,8 +37,6 @@ const FightersPage: React.FC<Props> = ({settingFightId, fightId}) => {
                         user={user}
                         nfts={nfts} 
                         getUserNfts={getUserNfts}
-                        settingFightId={settingFightId}
-                        fightId={fightId}
                     />
                 :
                 <h1>There's has been an error</h1>
