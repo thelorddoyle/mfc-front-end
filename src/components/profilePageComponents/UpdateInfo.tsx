@@ -102,7 +102,7 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
         <div> 
             <form onSubmit={handleSubmit}>
                 <div className="split-account">
-                    <div>
+                    <div className="glass-card-update">
                         <div className="input-fields">
                             <label htmlFor="username">Username</label>
                             <input type="text" name="username" onChange={onChange} />

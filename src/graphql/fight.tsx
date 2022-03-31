@@ -18,6 +18,7 @@ query Query($fightId: ID!) {
       image
       user {
         username
+        profileImage
       }
     }
     tournament {
