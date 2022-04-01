@@ -25,6 +25,7 @@ const ProfileHomePage: React.FC = () => {
     //Getting all tournaments that users NFT's are taking part in
     const tournaments = useQuery( GET_MY_TOURNAMENTS, {
         onCompleted(data){
+            console.log(data);
             setNumberOfTournaments(data.getAllMyTournaments.length)
             dispatch({type: 'myTournaments', payload : data.getAllMyTournaments})
         },

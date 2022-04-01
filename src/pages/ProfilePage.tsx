@@ -18,7 +18,7 @@ import '../styles/fighters.scss'
 const ProfilePage: React.FC = () => {
 
     const user = useSelector((state: RootStateOrAny) => state.data)
-   
+    const nfts = useSelector((state: RootStateOrAny) => state.nfts)
 
    
       return (
@@ -45,7 +45,7 @@ const ProfilePage: React.FC = () => {
                                         }
                                     </div>
                                 </div>
-                                <Outlet context={user} />
+                                <Outlet context={{user, nfts}} />
                             </div>
                     </>
                 }

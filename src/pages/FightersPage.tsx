@@ -1,18 +1,20 @@
 import React, {useState} from "react"
 
 import { useQuery, ApolloError } from "@apollo/client";
-import { useSelector, useDispatch, RootStateOrAny} from "react-redux";
+import { useDispatch, } from "react-redux";
 
 
 import { GET_USER_NFTS } from "../graphql/nft";
 import Fighters from "../components/fightersComponents/Fighters"
+import { useOutletContext } from "react-router-dom";
 
 
 const FightersPage: React.FC = () => {
-    const user = useSelector((state:  RootStateOrAny) => state.data)
-    const nfts = useSelector((state: RootStateOrAny) => state.nfts)
-    const [errors, setErrors] = useState<ApolloError | undefined>()
+    const { user }: object | any = useOutletContext();
+    const { nfts }: object | any = useOutletContext();
+    
 
+    const [errors, setErrors] = useState<ApolloError | undefined>()
     const dispatch = useDispatch();
 
     const getUserNfts = useQuery( GET_USER_NFTS, {
