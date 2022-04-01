@@ -21,7 +21,7 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
     const [values, setValues] = useState<any | ''> ({});
     
     //Current user
-    const user:object | any = useOutletContext();
+    const {user}:object | any = useOutletContext();
     const dispatch = useDispatch();
     //Getting new values 
     const onChange = (ev:  React.ChangeEvent<HTMLInputElement>)=>{
