@@ -50,7 +50,7 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                                         </span>
                                     </div>
                                     <div>
-                                        <Link to={`${fight.id}`} ><button>View Fight</button></Link>
+                                        <Link to={`${fight.id}`} >View Fight</Link>
                                     </div>
                                 </div>
                         )
@@ -80,7 +80,7 @@ const ShowFightsNft: React.FC<Props> = ({infoNft}) => {
                                     </span>
                                 </div>
                                 <div>
-                                   <Link to={`${fight.id}`} ><button>View Fight</button></Link> 
+                                   <Link to={`${fight.id}`} >View Fight</Link> 
                                 </div>
                             </div>
                         )
