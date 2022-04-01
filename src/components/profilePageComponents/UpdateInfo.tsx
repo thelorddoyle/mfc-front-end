@@ -1,7 +1,8 @@
 import React,{ useState } from "react";
 import { useMutation } from "@apollo/client";
 import { UPDATE_USER_INFO } from "../../graphql/user";
-import { RootStateOrAny, useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
+import { useOutlet, useOutletContext } from "react-router";
 
 interface Props{
     changeForm(component: string): void
@@ -20,7 +21,7 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
     const [values, setValues] = useState<any | ''> ({});
     
     //Current user
-    const user = useSelector((state:  RootStateOrAny) => state.data)
+    const user:object | any = useOutletContext();
     const dispatch = useDispatch();
     //Getting new values 
     const onChange = (ev:  React.ChangeEvent<HTMLInputElement>)=>{
