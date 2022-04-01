@@ -12,7 +12,7 @@ const MyTournaments: React.FC<Props> = ({myTournaments, pendingTournaments, comp
     //TODO: list out all the contestants (get them from the fights of the tournament);
     //TODO: make a button that routes to the specific tournament (LATER). 
     return (
-        <div className="myTournaments card-navbar">
+        <div className="myTournaments ">
 
             <div className="past-fights">
                 <h1>UPCOMING TOURNAMENTS</h1>
