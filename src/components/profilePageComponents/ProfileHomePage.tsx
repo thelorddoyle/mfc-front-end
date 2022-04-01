@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, RootStateOrAny, useDispatch, } from "react-redux";
 
-import { ApolloError, useQuery } from "@apollo/client";
-import { GET_MY_TOURNAMENTS } from "../../graphql/user";
 
 import  OverallStats  from "./OverallStats";
 import AvailableEth from "./AvailabeEth";
@@ -16,32 +14,17 @@ import { Link } from "react-router-dom";
 const ProfileHomePage: React.FC = () => {
 
     const userNfts = useSelector((state: RootStateOrAny) => state.nfts);
-    const dispatch = useDispatch();
-    const [errors, setErrors] = useState<ApolloError | undefined>();
+   
     const [numberOfTournaments, setNumberOfTournaments] = useState<number | null>(1);
-    const user: object | any = useOutletContext();
+    const {myTournaments}: object | any = useOutletContext();
 
+    useEffect(()=>{
+        setNumberOfTournaments(myTournaments?.length);
+    },[])
     
-    //Getting all tournaments that users NFT's are taking part in
-    const tournaments = useQuery( GET_MY_TOURNAMENTS, {
-        onCompleted(data){
-            console.log(data);
-            setNumberOfTournaments(data.getAllMyTournaments.length)
-            dispatch({type: 'myTournaments', payload : data.getAllMyTournaments})
-        },
-        onError(error){
-            setErrors(error)
-        },
-        context: {
-            headers: { Authorization: `Bearer ${user.token}` }
-        }
-    })
-
+    
     return (
         <>
-            {
-              !errors ?
-                <>
                     <div className="display-stats"> 
                         <div className="tournaments"> 
                             <FontAwesomeIcon className="rotate-icon"  icon={faTrophy}/>
@@ -78,10 +61,7 @@ const ProfileHomePage: React.FC = () => {
                         </div>
                         <OverallStats/>
                     </div>
-                </>
-                :
-                <h1> Something went wrong </h1>
-            }
+               
         </> 
     )
 }

@@ -1,7 +1,11 @@
 //Modules/Packages
-import React from "react"
+import React, { useState } from "react"
+
 import { useSelector, RootStateOrAny } from "react-redux"
 import { Outlet } from "react-router";
+
+import { ApolloError, useQuery } from "@apollo/client";
+import { GET_MY_TOURNAMENTS } from "../graphql/user";
 
 //Components
 import Sidebar from "../components/profilePageComponents/Sidebar"
@@ -19,6 +23,20 @@ const ProfilePage: React.FC = () => {
 
     const user = useSelector((state: RootStateOrAny) => state.data)
     const nfts = useSelector((state: RootStateOrAny) => state.nfts)
+    const [myTournaments,setMyTournaments] = useState();
+    const [errors, setErrors] = useState<ApolloError | undefined>();
+    //Getting all tournaments that users NFT's are taking part in
+    useQuery( GET_MY_TOURNAMENTS, {
+        onCompleted(data){
+            setMyTournaments(data.getAllMyTournaments)
+        },
+        onError(error){
+            setErrors(error)
+        },
+        context: {
+            headers: { Authorization: `Bearer ${user.token}` }
+        }
+    })
 
    
       return (
@@ -45,7 +63,7 @@ const ProfilePage: React.FC = () => {
                                         }
                                     </div>
                                 </div>
-                                <Outlet context={{user, nfts}} />
+                                <Outlet context={{user, nfts, myTournaments}} />
                             </div>
                     </>
                 }
