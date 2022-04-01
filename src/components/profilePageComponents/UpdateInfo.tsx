@@ -21,7 +21,6 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
     
     //Current user
     const user = useSelector((state:  RootStateOrAny) => state.data)
-    console.log(user.profileImage)
     const dispatch = useDispatch();
     //Getting new values 
     const onChange = (ev:  React.ChangeEvent<HTMLInputElement>)=>{
@@ -75,7 +74,6 @@ const UpdateInfo: React.FC<Props> = ({changeForm}) => {
       );
   
       function openWidget () {
-          console.log('Widget opening')
           try {
               myWidget.open()
           } catch(err) {

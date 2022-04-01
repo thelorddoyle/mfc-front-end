@@ -23,30 +23,41 @@ const Sidebar: React.FC = (props) => {
                     <img src="https://res.cloudinary.com/metaverse-fc/image/upload/v1647822121/Logos%20And%20Icons/MFC_White_diwtbf.png" alt="mfc_logo" className="sidebar-logo-mfc" />
                     </Link> 
                 <div className="navigation">
-                    <div className="nav-menu" >
-                        <FontAwesomeIcon icon={faClone} />
-                        <Link to="/profile"><span>Dashboard</span></Link>  
-                    </div>    
-                    <div className="nav-menu" >   
-                        <FontAwesomeIcon icon={faUserGroup} />
-                        <Link to="fighters"><span>Fighters</span></Link>
-                    </div>
-                    <div className="nav-menu" >
-                        <FontAwesomeIcon  icon={faSackDollar}/> 
-                        <span>Tournaments</span>
-                    </div> 
+                    <Link to="/profile">    
+                        <div className="nav-menu" >
+                                <FontAwesomeIcon icon={faClone} />
+                                <span>Dashboard</span>
+                        </div>   
+                    </Link>  
+                    <Link to="fighters">
+                        <div className="nav-menu" >   
+                                <FontAwesomeIcon icon={faUserGroup} />
+                                <span>Fighters</span>
+                        </div>
+                    </Link>
+                    <Link to="tournaments">
+                        <div className="nav-menu" >
+                                <FontAwesomeIcon  icon={faSackDollar}/> 
+                                <span>Tournaments</span>
+                        </div> 
+                    </Link>
                     <div className="nav-menu">
                         <FontAwesomeIcon  icon={faHandBackFist}/> 
                         Fight 
                     </div>   
-                    <div className="nav-menu" >
-                        <FontAwesomeIcon  icon={faRankingStar}/>               
-                        <span>Rankings</span>
-                    </div>   
-                    <div className="nav-menu" >
-                        <FontAwesomeIcon  icon={faCog}/> 
-                        <span>Account</span>
-                    </div>   
+                    <Link to="rankings">
+                        <div className="nav-menu" >
+                        
+                            <FontAwesomeIcon  icon={faRankingStar}/>               
+                            <span>Rankings</span>
+                        </div>   
+                    </Link>
+                    <Link to="account">
+                        <div className="nav-menu" >
+                            <FontAwesomeIcon  icon={faCog}/> 
+                            <span>Account</span>
+                        </div>   
+                    </Link>
                 </div> 
                 <div className="bottom-nav">
                     <Link to='/mint'>

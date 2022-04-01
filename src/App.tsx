@@ -15,15 +15,16 @@ import ProfileHomePage from './components/profilePageComponents/ProfileHomePage'
 import FightersPage from './pages/FightersPage';
 import Tournament from './components/profilePageComponents/Tournament';
 import Fight from './components/fightersComponents/Fight';
+import TournamentsPage from './pages/TournamentsPage';
+import RankingsPage from './pages/RankingsPage';
+import AccountPage from './pages/AccountPage';
 
 function App() {
 
     return (
     <Provider store={ store }>
         <Router>
-
             <Navbar/>
-
             <Routes>
                 <Route path="/" element={ <LandingPage/> } />
                 <Route path="/login"  element = { <Login/> } />
@@ -33,6 +34,9 @@ function App() {
                         <Route path="" element={<ProfileHomePage />} /> 
                         <Route path="fighters" element={<FightersPage /> } />
                         <Route path="fighters/:id" element={<Fight /> } />
+                        <Route path="tournaments" element={<TournamentsPage /> } />
+                        <Route path="rankings" element={<RankingsPage />} />
+                        <Route path="account" element={<AccountPage />} />
                     </Route>
                 </Route>
                 <Route path="/mint" element={<AuthRoute />} >

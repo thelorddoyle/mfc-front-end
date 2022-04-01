@@ -10,6 +10,7 @@ import AvailableEth from "./AvailabeEth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useOutletContext } from "react-router";
+import { Link } from "react-router-dom";
 
 
 const ProfileHomePage: React.FC = () => {
@@ -52,9 +53,11 @@ const ProfileHomePage: React.FC = () => {
                     <div className="extra-info">
                         <div className="grid-4-info">
                             <div>
-                                <div className="grid-nfts my-fighters" ></div>
-                                <h1>My Fighters</h1>
-                                <h2>View your roster of fighters <FontAwesomeIcon  icon={faArrowRight}/> </h2>
+                                <Link to="fighters">
+                                    <div className="grid-nfts my-fighters" ></div>
+                                    <h1>My Fighters</h1>
+                                    <h2>View your roster of fighters <FontAwesomeIcon  icon={faArrowRight}/> </h2>
+                                </Link>
                             </div>
                             <div>
                                 <div className="grid-nfts lets-fight"></div>
