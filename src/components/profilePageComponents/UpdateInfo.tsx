@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 import { useMutation } from "@apollo/client";
 import { UPDATE_USER_INFO } from "../../graphql/user";
 import { useDispatch } from "react-redux"
-import { useOutlet, useOutletContext } from "react-router";
+import { useOutletContext } from "react-router";
 
 interface Props{
     changeForm(component: string): void
