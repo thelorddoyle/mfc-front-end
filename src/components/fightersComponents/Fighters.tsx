@@ -7,7 +7,6 @@ import { QueryResult } from "@apollo/client";
 import ShowNfts from "./ShowNfts";
 import ShowInfoNft from "./ShowInfoNft";
 import ShowFightsNft from "./ShowFightsNft";
-import Fight from './Fight'
 
 interface Props{
     user: RootStateOrAny,
